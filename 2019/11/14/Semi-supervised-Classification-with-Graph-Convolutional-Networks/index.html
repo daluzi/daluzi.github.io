@@ -103,11 +103,9 @@ function activateLightMode(){
 <p>1.The first generation of GCN is this formula:<strong>$$g{\theta} * x = Ug{\theta}U^Tx$$</strong>.</p>
 <p>In the formula ,$x$ is the eigenvector of the graph node ,$g{\theta}=diag(\theta)$ is the convolution kernel.$U$ is the matrix of eigenvectors of the normalized graph Laplacian $L$. And the $L = I_N - D^{-1/2}AD^{-1/2} = U{\Lambda}U^T$</p>
 <p><strong>But ,this is too complicated to calculate</strong></p>
-<p>2.To circumvent this problem ,$g{\theta}(\Lambda)$ can be well-approximated by a truncated expansion in terms of Chebyshev polynomial $T_k(x)$ up to $K^{th}$ order:</p>
-<p>​                                                        $$g{\theta}^<code>{\approx} {\sum_{k=0}^{K}{\theta}^</code>T_k(\Lambda^1)}$$</p>
+<p>2.To circumvent this problem ,$g{\theta}(\Lambda)$ can be well-approximated by a truncated expansion in terms of Chebyshev polynomial $T_k(x)$ up to $K^{th}$ order:$$g{\theta}^<code>{\approx} {\sum_{k=0}^{K}{\theta}^</code>T_k(\Lambda^1)}$$</p>
 <p>With a rescaled $\Lambda^1 = {\frac{2}{\lambda_{max}}}\Lambda - I_N$. $\lambda_{max}$ Denotes the largest eigenvalue of $L$. $\theta^`$ is now a vector of Chebyshev coefficients. The Chebyshev polynomials are recursively defined as $T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x)$, with $T_0(x) = 1$ and $T_1(x) = x$.</p>
-<p>So, now the formula is:</p>
-<p>​                                                    $$g{\theta}^<code>* x \approx {\sum_{k=0}^{K}{\theta}_k^</code>T_k(L^1)x}$$ </p>
+<p>So, now the formula is:$$g{\theta}^<code>* x \approx {\sum_{k=0}^{K}{\theta}_k^</code>T_k(L^1)x}$$</p>
 <p>With $L^1 = {\frac{2}{\lambda_{max}}L - I_N}$ .This expression is now K-localized since it is a <strong>$K^{th}$-order ploynomial in the Laplacian</strong>.</p>
 <h3 id="1.3">layer-wise linear model</h3>
 
@@ -117,8 +115,7 @@ function activateLightMode(){
 
 <p>In this example, they consider a two-layer GCN for semi-supervised node classification on a graph with a symmetric adjacency matrix A(binary or weighted). </p>
 <p>First, calculate $A^` = D1^{-1/2}A^1D1^{-1/2}$.</p>
-<p>And the forward model then takes the simple form:</p>
-<p>​                          $$Z = f(X,A) = softmax(A^<code>ReLU(A^</code>XW^{(0)})W^{(1)})$$</p>
+<p>And the forward model then takes the simple form:$$Z = f(X,A) = softmax(A^<code>ReLU(A^</code>XW^{(0)})W^{(1)})$$</p>
 <p>Here, $W^{(0)}$ is an input-to-hidden weight matrix for a hidden layer with H feature maps.</p>
 <p>$W^{(1)}$ is a hidden-to-output weight matrix.</p>
 <p>The softmax activation function defined as $softmax(x_i) = \frac{1}{\sum_i{exp(x_i)}}exp(x_i)$</p>
