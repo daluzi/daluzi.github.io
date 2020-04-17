@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</title>
     <url>/2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/</url>
     <content><![CDATA[<blockquote>
@@ -119,112 +101,21 @@
       </tags>
   </entry>
   <entry>
-    <title>HIN-Graph</title>
-    <url>/2020/04/03/HIN-Graph/</url>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
 </blockquote>
 </blockquote>
-<h2>Links</h2>
-
-<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
-<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
-<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
-<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
-<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
-<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
-<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
-<hr>
-<p>主流知识图谱表示学习算法:</p>
-<ul>
-<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
-</ul>
-]]></content>
-      <tags>
-        <tag>HIN</tag>
-        <tag>graph-learning</tag>
-        <tag>GNN/GCN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
-    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
-    <content><![CDATA[<blockquote>
 <blockquote>
-<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
-</blockquote>
-</blockquote>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
-<ul>
-<li><a href="#1">Introduction</a></li>
-<li><a href="#2">Problem formulation</a></li>
-<li><a href="#3">Related work</a><ul>
-<li><a href="3.1">Basic matrix factorization</a></li>
-<li><a href="3.2">CircleCon model</a></li>
-<li><a href="3.3">ContextMF model</a></li>
-</ul>
-</li>
-<li><a href="4">The approach</a><ul>
-<li><a href="4.1">User interest factor</a></li>
-<li><a href="4.2">Personalized recommendation model</a></li>
-<li><a href="4.3">Model training</a></li>
-</ul>
-</li>
-<li><a href="5">Experiments</a><ul>
-<li><a href="5.1">Datasets</a></li>
-<li><a href="5.2">Performance measures</a></li>
-<li><a href="5.3">Evaluation</a></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id='1'>Introduction</h2>
-Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
-
-<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
-<h2 id='2'>Problem formulation</h2>
-]]></content>
-      <tags>
-        <tag>RS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
-</blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
 </blockquote>
 ]]></content>
       <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图神经网络学习资源汇总</title>
-    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>GNN</tag>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
@@ -265,6 +156,35 @@ Recommender system(RS) has been successfully exploited to solve information over
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HIN-Graph</title>
+    <url>/2020/04/03/HIN-Graph/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+</blockquote>
+</blockquote>
+<h2>Links</h2>
+
+<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
+<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
+<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
+<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
+<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
+<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
+<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
+<hr>
+<p>主流知识图谱表示学习算法:</p>
+<ul>
+<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HIN</tag>
+        <tag>graph-learning</tag>
+        <tag>GNN/GCN</tag>
       </tags>
   </entry>
   <entry>
@@ -335,6 +255,48 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
+    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
+    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
+</blockquote>
+</blockquote>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#2">Problem formulation</a></li>
+<li><a href="#3">Related work</a><ul>
+<li><a href="3.1">Basic matrix factorization</a></li>
+<li><a href="3.2">CircleCon model</a></li>
+<li><a href="3.3">ContextMF model</a></li>
+</ul>
+</li>
+<li><a href="4">The approach</a><ul>
+<li><a href="4.1">User interest factor</a></li>
+<li><a href="4.2">Personalized recommendation model</a></li>
+<li><a href="4.3">Model training</a></li>
+</ul>
+</li>
+<li><a href="5">Experiments</a><ul>
+<li><a href="5.1">Datasets</a></li>
+<li><a href="5.2">Performance measures</a></li>
+<li><a href="5.3">Evaluation</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id='1'>Introduction</h2>
+Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+
+<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
+<h2 id='2'>Problem formulation</h2>
+]]></content>
+      <tags>
+        <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2019/11/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -351,5 +313,43 @@ Recommender system(RS) has been successfully exploited to solve information over
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图神经网络学习资源汇总</title>
+    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>GNN</tag>
+      </tags>
   </entry>
 </search>
