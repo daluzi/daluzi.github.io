@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HIN-Graph</title>
+    <url>/2020/04/03/HIN-Graph/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+</blockquote>
+</blockquote>
+<h2>Links</h2>
+
+<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
+<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
+<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
+<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
+<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
+<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
+<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
+<hr>
+<p>主流知识图谱表示学习算法:</p>
+<ul>
+<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HIN</tag>
+        <tag>graph-learning</tag>
+        <tag>GNN/GCN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Github搭建简单博客总结</title>
+    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</title>
     <url>/2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/</url>
     <content><![CDATA[<blockquote>
@@ -143,72 +212,21 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
-    <title>HIN-Graph</title>
-    <url>/2020/04/03/HIN-Graph/</url>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
 </blockquote>
 </blockquote>
-<h2>Links</h2>
-
-<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
-<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
-<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
-<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
-<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
-<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
-<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
-<hr>
-<p>主流知识图谱表示学习算法:</p>
-<ul>
-<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
-</ul>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>HIN</tag>
-        <tag>graph-learning</tag>
-        <tag>GNN/GCN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Github搭建简单博客总结</title>
-    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
-<p>前言：</p>
-<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
-<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
-<ol>
-<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
-</li>
-<li><p>再初始化Hexo:<code>$ npm install</code></p>
-<p>Hexo的大体文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
-</ul>
-<ol>
-<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
-</li>
-<li><p>Hexo部署</p>
-<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
-<p>在localhost:4000端口就可以查看到效果。</p>
-<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
-<p>接下来，在站点的config.yml文件中，部署如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
-
-<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
@@ -228,24 +246,6 @@ Recommender system(RS) has been successfully exploited to solve information over
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
   </entry>
   <entry>
     <title>Semi-supervised Classification with Graph Convolutional Networks</title>
@@ -312,6 +312,19 @@ Recommender system(RS) has been successfully exploited to solve information over
       <tags>
         <tag>GCN</tag>
         <tag>Deeplearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图神经网络学习资源汇总</title>
+    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>GNN</tag>
       </tags>
   </entry>
   <entry>
