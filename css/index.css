@@ -3126,7 +3126,7 @@ blockquote footer cite:before {
   display: box;
   display: flex;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1000px;
   -webkit-box-align: start;
   -moz-box-align: start;
   -o-box-align: start;
