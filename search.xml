@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Heterogeneous Graph Neural Network.md</title>
-    <url>/2020/05/20/Heterogeneous%20Graph%20Neural%20Network/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>heterogeneous GNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HIN-Graph</title>
     <url>/2020/04/03/HIN-Graph/</url>
     <content><![CDATA[<blockquote>
@@ -35,6 +27,65 @@
         <tag>HIN</tag>
         <tag>graph-learning</tag>
         <tag>GNN/GCN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Heterogeneous Graph Neural Network</title>
+    <url>/2020/05/20/Heterogeneous%20Graph%20Neural%20Network/</url>
+    <content><![CDATA[<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><hr>
+<h5 id="idea-of-the-article"><a href="#idea-of-the-article" class="headerlink" title="idea of the article"></a>idea of the article</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This paper models the heterogeneous graph network and gets each nodes&apos; vector representation.</span><br></pre></td></tr></table></figure>
+
+<p>First, <font color='red'>a reboot-based random walk strategy is used to select neighbors for each node according to the node type</font>.</p>
+<p>Then, two modules are used to aggregate the characteristics of neighbor nodes:</p>
+<ul>
+<li>Generate feature vectors by modeling <font color='red'>the features of different types of nodes.</font></li>
+<li><font color='red'>Aggregate different types of neighbor nodes</font>, and assign different weights to different types of nodes by fusing attention mechanism to obtain the final vector representation.</li>
+</ul>
+<p>Finally, establish loss function, use mini-batch gradient descent. </p>
+<p><em>the learnted vector can be used to *</em>link predict, recommendation, node classification, cluster, etc..***</p>
+]]></content>
+      <tags>
+        <tag>heterogeneous GNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Github搭建简单博客总结</title>
+    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -138,64 +189,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo+Github搭建简单博客总结</title>
-    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
-<p>前言：</p>
-<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
-<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
-<ol>
-<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
-</li>
-<li><p>再初始化Hexo:<code>$ npm install</code></p>
-<p>Hexo的大体文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
-</ul>
-<ol>
-<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
-</li>
-<li><p>Hexo部署</p>
-<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
-<p>在localhost:4000端口就可以查看到效果。</p>
-<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
-<p>接下来，在站点的config.yml文件中，部署如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
-
-<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Personalized Recommendation Combining User Interest and Social Circle</title>
     <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
     <content><![CDATA[<blockquote>
@@ -238,6 +231,42 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>图神经网络学习资源汇总</title>
     <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<blockquote>
@@ -248,6 +277,31 @@ Recommender system(RS) has been successfully exploited to solve information over
 ]]></content>
       <tags>
         <tag>GNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
       </tags>
   </entry>
   <entry>
@@ -316,48 +370,5 @@ Recommender system(RS) has been successfully exploited to solve information over
         <tag>GCN</tag>
         <tag>Deeplearning</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
   </entry>
 </search>
