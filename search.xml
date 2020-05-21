@@ -35,14 +35,23 @@
     <content><![CDATA[<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><hr>
 <h5 id="idea-of-the-article"><a href="#idea-of-the-article" class="headerlink" title="idea of the article"></a>idea of the article</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This paper models the heterogeneous graph network and gets each nodes&apos; vector representation.</span><br></pre></td></tr></table></figure>
 
-<p>First, <font color='red'>a reboot-based random walk strategy is used to select neighbors for each node according to the node type</font>.</p>
+<p>First, <font color="red">a reboot-based random walk strategy is used to select neighbors for each node according to the node type</font>.</p>
 <p>Then, two modules are used to aggregate the characteristics of neighbor nodes:</p>
 <ul>
-<li>Generate feature vectors by modeling <font color='red'>the features of different types of nodes.</font></li>
-<li><font color='red'>Aggregate different types of neighbor nodes</font>, and assign different weights to different types of nodes by fusing attention mechanism to obtain the final vector representation.</li>
+<li>Generate feature vectors by modeling <font color="red">the features of different types of nodes.</font></li>
+<li><font color="red">Aggregate different types of neighbor nodes</font>, and assign different weights to different types of nodes by fusing attention mechanism to obtain the final vector representation.</li>
 </ul>
 <p>Finally, establish loss function, use mini-batch gradient descent. </p>
 <p><em>the learnted vector can be used to *</em>link predict, recommendation, node classification, cluster, etc..***</p>
+<hr>
+<img alt="HetG_example.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/21/kLxdo3AM9jJPlVc.png" class="lazyload">
+
+<p><img alt="HGNN_challenge.jpeg" data-src="https://i.loli.net/2020/05/21/TFq79ogQsh1xCm3.jpg" class="lazyload"></p>
+<hr>
+<p>Reference :</p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow</a></li>
+</ul>
 ]]></content>
       <tags>
         <tag>heterogeneous GNN</tag>
@@ -87,6 +96,66 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
+    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
+</blockquote>
+</blockquote>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#2">Problem formulation</a></li>
+<li><a href="#3">Related work</a><ul>
+<li><a href="3.1">Basic matrix factorization</a></li>
+<li><a href="3.2">CircleCon model</a></li>
+<li><a href="3.3">ContextMF model</a></li>
+</ul>
+</li>
+<li><a href="4">The approach</a><ul>
+<li><a href="4.1">User interest factor</a></li>
+<li><a href="4.2">Personalized recommendation model</a></li>
+<li><a href="4.3">Model training</a></li>
+</ul>
+</li>
+<li><a href="5">Experiments</a><ul>
+<li><a href="5.1">Datasets</a></li>
+<li><a href="5.2">Performance measures</a></li>
+<li><a href="5.3">Evaluation</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id='1'>Introduction</h2>
+Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+
+<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
+<h2 id='2'>Problem formulation</h2>
+]]></content>
+      <tags>
+        <tag>RS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</title>
@@ -189,122 +258,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
-    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
-</blockquote>
-</blockquote>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
-<ul>
-<li><a href="#1">Introduction</a></li>
-<li><a href="#2">Problem formulation</a></li>
-<li><a href="#3">Related work</a><ul>
-<li><a href="3.1">Basic matrix factorization</a></li>
-<li><a href="3.2">CircleCon model</a></li>
-<li><a href="3.3">ContextMF model</a></li>
-</ul>
-</li>
-<li><a href="4">The approach</a><ul>
-<li><a href="4.1">User interest factor</a></li>
-<li><a href="4.2">Personalized recommendation model</a></li>
-<li><a href="4.3">Model training</a></li>
-</ul>
-</li>
-<li><a href="5">Experiments</a><ul>
-<li><a href="5.1">Datasets</a></li>
-<li><a href="5.2">Performance measures</a></li>
-<li><a href="5.3">Evaluation</a></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id='1'>Introduction</h2>
-Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
-
-<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
-<h2 id='2'>Problem formulation</h2>
-]]></content>
-      <tags>
-        <tag>RS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>图神经网络学习资源汇总</title>
-    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>GNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Semi-supervised Classification with Graph Convolutional Networks</title>
     <url>/2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/</url>
     <content><![CDATA[<blockquote>
@@ -369,6 +322,62 @@ Recommender system(RS) has been successfully exploited to solve information over
       <tags>
         <tag>GCN</tag>
         <tag>Deeplearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图神经网络学习资源汇总</title>
+    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>GNN</tag>
       </tags>
   </entry>
 </search>
