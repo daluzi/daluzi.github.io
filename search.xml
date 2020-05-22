@@ -1,80 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HIN-Graph</title>
-    <url>/2020/04/03/HIN-Graph/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
-</blockquote>
-</blockquote>
-<h2>Links</h2>
-
-<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
-<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
-<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
-<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
-<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
-<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
-<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
-<hr>
-<p>主流知识图谱表示学习算法:</p>
-<ul>
-<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
-</ul>
-]]></content>
-      <tags>
-        <tag>HIN</tag>
-        <tag>graph-learning</tag>
-        <tag>GNN/GCN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Github搭建简单博客总结</title>
-    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
-<p>前言：</p>
-<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
-<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
-<ol>
-<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
-</li>
-<li><p>再初始化Hexo:<code>$ npm install</code></p>
-<p>Hexo的大体文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
-</ul>
-<ol>
-<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
-</li>
-<li><p>Hexo部署</p>
-<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
-<p>在localhost:4000端口就可以查看到效果。</p>
-<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
-<p>接下来，在站点的config.yml文件中，部署如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
-
-<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Heterogeneous Graph Neural Network</title>
     <url>/2020/05/20/Heterogeneous%20Graph%20Neural%20Network/</url>
-    <content><![CDATA[<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><hr>
-<h5 id="idea-of-the-article-HetGNN"><a href="#idea-of-the-article-HetGNN" class="headerlink" title="idea of the article(HetGNN)"></a>idea of the article(HetGNN)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This paper models the heterogeneous graph network and gets each nodes&apos; vector representation.</span><br><span class="line">purpose: learn how to represent the vectors of each node in a heterogeneous graph.(embedding)</span><br></pre></td></tr></table></figure>
-
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Zhang C , Song D , Huang C , et al. Heterogeneous Graph Neural Network[C]// the 25th ACM SIGKDD International Conference. ACM, 2019.</p>
+</blockquote>
+</blockquote>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><h5 id="idea-of-the-article-HetGNN"><a href="#idea-of-the-article-HetGNN" class="headerlink" title="idea of the article(HetGNN)"></a>idea of the article(HetGNN)</h5><blockquote>
+<p>This paper models the heterogeneous graph network and gets each nodes’ vector representation.<br>purpose: learn how to represent the vectors of each node in a heterogeneous graph.(embedding)</p>
+</blockquote>
 <p>First, <font color="red">a reboot-based random walk strategy is used to select neighbors for each node according to the node type</font>.</p>
 <p>Then, two modules are used to aggregate the characteristics of neighbor nodes:</p>
 <ul>
@@ -82,13 +18,14 @@
 <li><font color="red">Aggregate different types of neighbor nodes</font>, and assign different weights to different types of nodes by fusing attention mechanism to obtain the final vector representation.</li>
 </ul>
 <p>Finally, establish loss function, use mini-batch gradient descent. </p>
-<p><em>the learnted vector can be used to *</em>link prediction, recommendation, nodes classification, cluster, etc..***</p>
+<p><em>the learnted vector can be used to <b>link prediction, recommendation, nodes classification, cluster, etc..</b></em></p>
 <hr>
 <p><img alt="HGNN_challenge.jpeg" data-src="https://i.loli.net/2020/05/21/TFq79ogQsh1xCm3.jpg" class="lazyload"></p>
 <hr>
 <h3>HetGNN模型结构</h3>
 
-<hr>
+
+
 <p>针对上文提到的异构网络面临的三个挑战，HetGNN分成了三个部分：</p>
 <ul>
 <li><p>邻居采样策略：Sampling Heterogeneous Neighbors（挑战一）</p>
@@ -101,7 +38,7 @@
 <p>最后，根据目标函数进行优化，进行训练和预测</p>
 <h5>Sampling Heterogeneous Neighbors(挑战一)</h5>
 
-<p><strong>挑战一：对异构图如何采样？</strong></p>
+<p><em>(挑战一：对异构图如何采样？)</em></p>
 <p>在异构图中，直接采样邻居面临的问题：</p>
 <ol>
 <li><p><font color="red">不能捕捉到不同类型邻居的信息。</font>比如说，在下图的作者-论文-会议的图中，作者之间并不相连，作者会议也不相连，但他们之间的关系不可被忽视。</p>
@@ -130,11 +67,65 @@
 </ol>
 <h5>Encoding Heterogeneous Contents(挑战二)</h5>
 
-<p><strong>挑战二：对不同类型的特征怎样进行编码？</strong></p>
+<p><em>(挑战二：对不同类型的特征怎样进行编码？)</em></p>
 <p>同一个节点，也往往有多种类型的特征，如图像，文字等，<span style="border-bottom:2px dashed red;">文章提出先对这一类特征进行预训练，如类别特征直接利用one-hot，文本特征利用par2vec，图像特征利用CNN，训练得到每类特征的向量表示后，利用Bi-LSTM进行编码后聚合</span>。模型架构如图所示：</p>
-<h3>Contribution:</h3>
+<img alt="embedding.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/u9vmF5WgNJ7PUjy.jpg" class="lazyload">
+
+<blockquote>
+<p>类别型特征（categorical feature）主要是指年龄，职业，血型等在有限类别内取值的特征。它的原始输入通常是字符串形式，除了决策树族的算法能直接接受类别型特征作为输入，对于支持向量机，逻辑回归等模型来说，必须对其做一定的处理，转换成可靠的数值特征才能正确运行。一般的处理方式就是<a href="https://zhuanlan.zhihu.com/p/88921408" target="_blank" rel="noopener">one-hot encoding</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.csdn.net/hero_fantao/article/details/69659457?locationNum=10&fps=1" target="_blank" rel="noopener">par2vec</a>: 是根据word2vec产生的，专门针对paragraph vector。</p>
+</blockquote>
+<p>在数学表达式上，节点v的向量表示$f{_1}(v)$为：</p>
+<img alt="f1_v_.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/TcMxmGuFK9ZkR2r.jpg" class="lazyload">
+
+<h5>Aggregating Heterogeneous Neighbors(挑战三)</h5>
+
+<p><em>(挑战三：对不同类型的节点如何聚合？)</em></p>
+<p>在上一部分，得到了每个节点的特征表示，在聚合上面临两个问题：对同样类型的不同节点怎样聚合？对不同类型的节点怎样聚合？分两步解决这两个问题：</p>
+<p>Same type neighbors aggregation:</p>
+<p>在采样中，我们对不同类型的节点进行采样，<font color="red">通过上一步得到了每个节点的特征，这里，需要对同一类型的节点特征进行聚合，此处仍然采用Bi-LSTM方法</font>：</p>
+<img alt="f2_v_.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/PAKxtBSkiIfaoJj.jpg" class="lazyload">
+
+<p><span style="border-bottom:2px dashed red;">输入为采样得到的相同类型邻居的特征表示，输出为这一类型邻居的向量表示</span>，有点类似与GraphSAGE的思想，<span style="border-bottom:2px dashed red;">利用Bi-LSTM对相同类型的邻居节点进行聚合</span>，模型结构如图所示：</p>
+<img alt="NN-2.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/j768MorHRWbhtUd.jpg" class="lazyload">
+
+<p>Type Combination:</p>
+<p>上述得到了每个类型节点的向量表示，这里，希望对这些类型的节点进行聚合，考虑到不同类型节点的邻居贡献不同，因此引入注意力机制l联合学习不同类型的邻居：</p>
+<img alt="FC8680C6-BD1C-4ADE-9DBF-A0B3C255DF27.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/TLhV1KUcCMB6pYP.jpg" class="lazyload">
+
+
+
+<p>模型结构如图所示：</p>
+<img alt="NN-3.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/wVPgWO1y8K3UJ2h.jpg" class="lazyload">
 
 <hr>
+<h3>Objective function and Framework</h3>
+
+<p>根据目标函数学习模型参数：</p>
+<img alt="fn.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/IAXLDbB9mT82onk.jpg" class="lazyload">
+
+<p>Framework:</p>
+<img alt="Framework.png" style="zoom:50%;" data-src="https://i.loli.net/2020/05/22/E3RnvjMmPidVucN.jpg" class="lazyload">
+
+<p><strong>分成5步：</strong></p>
+<ol>
+<li><p>对邻居节点进行采样，按照节点类型进行分类</p>
+</li>
+<li><p>NN-1：对节点不同类型特征学习</p>
+</li>
+<li><p>NN-2：对相同类型节点各个特征的聚合</p>
+</li>
+<li><p>NN-3：对不同类型节点的聚合</p>
+</li>
+<li><p>根据Graph Context Loss损失函数进行优化</p>
+</li>
+</ol>
+<p>最终得到每个节点的向量表示用于下游任务</p>
+<hr>
+<h3>Contribution:</h3>
+
 <ul>
 <li>Define heterogeneous graph: heterogeneous of graph structure and nodes information.</li>
 <li>Propose HetGNN, which can capture the heterogeneous of stucture and content at the same time. It can be applied to both direct and inductive tasks.</li>
@@ -144,6 +135,9 @@
 <p>Reference :</p>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow</a></li>
+<li><a href="https://www.jianshu.com/p/fd8355e3d5d5" target="_blank" rel="noopener">https://www.jianshu.com/p/fd8355e3d5d5</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/88921408" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/88921408</a></li>
+<li><a href="https://blog.csdn.net/hero_fantao/article/details/69659457?locationNum=10&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/hero_fantao/article/details/69659457?locationNum=10&amp;fps=1</a></li>
 </ul>
 <p>Paper:</p>
 <ul>
@@ -277,46 +271,116 @@
       </tags>
   </entry>
   <entry>
-    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
-    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
+    <title>HIN-Graph</title>
+    <url>/2020/04/03/HIN-Graph/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
+<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
 </blockquote>
 </blockquote>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
-<ul>
-<li><a href="#1">Introduction</a></li>
-<li><a href="#2">Problem formulation</a></li>
-<li><a href="#3">Related work</a><ul>
-<li><a href="3.1">Basic matrix factorization</a></li>
-<li><a href="3.2">CircleCon model</a></li>
-<li><a href="3.3">ContextMF model</a></li>
-</ul>
-</li>
-<li><a href="4">The approach</a><ul>
-<li><a href="4.1">User interest factor</a></li>
-<li><a href="4.2">Personalized recommendation model</a></li>
-<li><a href="4.3">Model training</a></li>
-</ul>
-</li>
-<li><a href="5">Experiments</a><ul>
-<li><a href="5.1">Datasets</a></li>
-<li><a href="5.2">Performance measures</a></li>
-<li><a href="5.3">Evaluation</a></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id='1'>Introduction</h2>
-Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+<h2>Links</h2>
 
-<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
-<h2 id='2'>Problem formulation</h2>
+<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
+<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
+<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
+<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
+<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
+<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
+<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
+<hr>
+<p>主流知识图谱表示学习算法:</p>
+<ul>
+<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+</ul>
 ]]></content>
       <tags>
-        <tag>RS</tag>
+        <tag>HIN</tag>
+        <tag>graph-learning</tag>
+        <tag>GNN/GCN</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Github搭建简单博客总结</title>
+    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Semi-supervised Classification with Graph Convolutional Networks</title>
@@ -386,46 +450,45 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/11/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
+    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
+<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
 </blockquote>
 </blockquote>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#2">Problem formulation</a></li>
+<li><a href="#3">Related work</a><ul>
+<li><a href="3.1">Basic matrix factorization</a></li>
+<li><a href="3.2">CircleCon model</a></li>
+<li><a href="3.3">ContextMF model</a></li>
+</ul>
+</li>
+<li><a href="4">The approach</a><ul>
+<li><a href="4.1">User interest factor</a></li>
+<li><a href="4.2">Personalized recommendation model</a></li>
+<li><a href="4.3">Model training</a></li>
+</ul>
+</li>
+<li><a href="5">Experiments</a><ul>
+<li><a href="5.1">Datasets</a></li>
+<li><a href="5.2">Performance measures</a></li>
+<li><a href="5.3">Evaluation</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id='1'>Introduction</h2>
+Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+
+<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
+<h2 id='2'>Problem formulation</h2>
 ]]></content>
       <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
+        <tag>RS</tag>
       </tags>
   </entry>
   <entry>
