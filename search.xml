@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HIN-Graph</title>
+    <url>/2020/04/03/HIN-Graph/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+</blockquote>
+</blockquote>
+<h2>Links</h2>
+
+<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
+<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
+<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
+<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
+<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
+<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
+<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
+<hr>
+<p>主流知识图谱表示学习算法:</p>
+<ul>
+<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HIN</tag>
+        <tag>graph-learning</tag>
+        <tag>GNN/GCN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Heterogeneous Graph Neural Network</title>
     <url>/2020/05/20/Heterogeneous%20Graph%20Neural%20Network/</url>
     <content><![CDATA[<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><hr>
@@ -16,7 +45,6 @@
 <p><em>the learnted vector can be used to *</em>link prediction, recommendation, nodes classification, cluster, etc..***</p>
 <hr>
 <p><img alt="HGNN_challenge.jpeg" data-src="https://i.loli.net/2020/05/21/TFq79ogQsh1xCm3.jpg" class="lazyload"></p>
-<hr>
 <p>###HetGNN模型结构</p>
 <p>针对上文提到的异构网络面临的三个挑战，HetGNN分成了三个部分：</p>
 <ul>
@@ -77,72 +105,70 @@
       </tags>
   </entry>
   <entry>
-    <title>HIN-Graph</title>
-    <url>/2020/04/03/HIN-Graph/</url>
+    <title>Semi-supervised Classification with Graph Convolutional Networks</title>
+    <url>/2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+<p>The convolution is extended to the data of the graph structure.Motivate the choice of our convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.The model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.</p>
+<p>In a number of experiments on <strong>citation networks</strong> and on a <strong>knowledge graph dataset</strong>,This model works well in semi-supervised tasks.</p>
 </blockquote>
 </blockquote>
-<h2>Links</h2>
-
-<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
-<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
-<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
-<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
-<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
-<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
-<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
-<hr>
-<p>主流知识图谱表示学习算法:</p>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
 <ul>
-<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+<li><a href="#1">The main content of the article</a><ul>
+<li><a href="#1.1">abstract</a></li>
+<li><a href="#1.2">spectral graph convolutions</a></li>
+<li><a href="#1.3">layer-wise linear model</a></li>
+<li><a href="#1.4">semi-supervised node classifacation</a></li>
 </ul>
+</li>
+<li><a href="#2">My learing understanding of semi-GCN</a></li>
+</ul>
+</blockquote>
+<h2 id="1">The main content of the article</h2>
+
+<h3 id="1.1">abstract</h3>
+
+<p>The authors motivate the choice of their convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.</p>
+<p>By training the structural model of convolution neural network with some tagged node data in the graph structural data ,the network model can further classify the remaining untagged data.</p>
+<p>So,on the whole , the way which the convolution is extended to the data of the graph structural ,can get a better data representation ,and it works well in semi-supervised tasks.</p>
+<blockquote>
+<p>Datasets: citation network datasets(Citeseer ,Cora ,Pubmed) ,bipartite graph dataset(NELL) </p>
+</blockquote>
+<h3 id="1.2">spectral graph convolutions</h3>
+
+<p><em>In this period ,I mainly refer to this website:<a href="https://blog.csdn.net/qq_41727666/article/details/84622965" target="_blank" rel="noopener">https://blog.csdn.net/qq_41727666/article/details/84622965</a></em></p>
+<p>In fact ,there are two versions of GCN:</p>
+<p>1.The first generation of GCN is this formula:<strong>$$g{\theta} * x = Ug{\theta}U^Tx$$</strong>.</p>
+<p>In the formula ,$x$ is the eigenvector of the graph node ,$g{\theta}=diag(\theta)$ is the convolution kernel.$U$ is the matrix of eigenvectors of the normalized graph Laplacian $L$. And the $L = I_N - D^{-1/2}AD^{-1/2} = U{\Lambda}U^T$</p>
+<p><strong>But ,this is too complicated to calculate</strong></p>
+<p>2.To circumvent this problem ,$g{\theta}(\Lambda)$ can be well-approximated by a truncated expansion in terms of Chebyshev polynomial $T_k(x)$ up to $K^{th}$ order:</p>
+<p>$$g{\theta}^<code>{\approx} {\sum_{k=0}^{K}{\theta}^</code>T_k(\Lambda^1)}$$</p>
+<p>With a rescaled $\Lambda^1 = {\frac{2}{\lambda_{max}}}\Lambda - I_N$. $\lambda_{max}$ Denotes the largest eigenvalue of $L$. $\theta^`$ is now a vector of Chebyshev coefficients. The Chebyshev polynomials are recursively defined as $T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x)$, with $T_0(x) = 1$ and $T_1(x) = x$.</p>
+<p>So, now the formula is:</p>
+<p>$$g{\theta}^<code>* x \approx {\sum_{k=0}^{K}{\theta}_k^</code>T_k(L^1)x}$$</p>
+<p>With $L^1 = {\frac{2}{\lambda_{max}}L - I_N}$ .This expression is now K-localized since it is a <strong>$K^{th}$-order ploynomial in the Laplacian</strong>.</p>
+<h3 id="1.3">layer-wise linear model</h3>
+
+<p>The authors approximate $\lambda_{max} \approx 2$, so now the formula is simplified to:</p>
+<p><img alt="semi_eq5.png" data-src="https://i.loli.net/2019/11/17/LdqIwO9NfxzXWJv.png" class="lazyload"></p>
+<h3 id="1.4">semi-supervised node classification</h3>
+
+<p>In this example, they consider a two-layer GCN for semi-supervised node classification on a graph with a symmetric adjacency matrix A(binary or weighted). </p>
+<p>First, calculate $A^` = D1^{-1/2}A^1D1^{-1/2}$.</p>
+<p>And the forward model then takes the simple form:$$Z = f(X,A) = softmax(A^<code>{ReLU}(A^</code>XW^{(0)})W^{(1)})$$</p>
+<p>Here, $W^{(0)}$ is an input-to-hidden weight matrix for a hidden layer with H feature maps.</p>
+<p>$W^{(1)}$ is a hidden-to-output weight matrix.</p>
+<p>The softmax activation function defined as $softmax(x_i) = \frac{1}{\sum_i{exp(x_i)}}exp(x_i)$</p>
+<p>For semi-supervised multiclass classification, they then evaluate the cross-entropy error over all labeled examples :$\xi = -\sum_{l\epsilon{y_l}}\sum_{f=1}^{F}Y_{lf}lnZ_{lf}$</p>
+<p>The author perform <strong>batch gradient descent</strong>. Stochasticity in the training process is in produced via <strong>dropout</strong>. </p>
+<h2 id="2">My learing understanding of semi-GCN</h2>
+
+<p><em>mainly depend on <a href="https://zhuanlan.zhihu.com/p/58178060" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/58178060</a></em></p>
 ]]></content>
       <tags>
-        <tag>HIN</tag>
-        <tag>graph-learning</tag>
-        <tag>GNN/GCN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Github搭建简单博客总结</title>
-    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
-<p>前言：</p>
-<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
-<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
-<ol>
-<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
-</li>
-<li><p>再初始化Hexo:<code>$ npm install</code></p>
-<p>Hexo的大体文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
-</ul>
-<ol>
-<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
-</li>
-<li><p>Hexo部署</p>
-<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
-<p>在localhost:4000端口就可以查看到效果。</p>
-<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
-<p>接下来，在站点的config.yml文件中，部署如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
-
-<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
+        <tag>GCN</tag>
+        <tag>Deeplearning</tag>
       </tags>
   </entry>
   <entry>
@@ -264,6 +290,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2019/11/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+</blockquote>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Personalized Recommendation Combining User Interest and Social Circle</title>
     <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
     <content><![CDATA[<blockquote>
@@ -306,113 +375,43 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Semi-supervised Classification with Graph Convolutional Networks</title>
-    <url>/2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>The convolution is extended to the data of the graph structure.Motivate the choice of our convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.The model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.</p>
-<p>In a number of experiments on <strong>citation networks</strong> and on a <strong>knowledge graph dataset</strong>,This model works well in semi-supervised tasks.</p>
-</blockquote>
-</blockquote>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
-<ul>
-<li><a href="#1">The main content of the article</a><ul>
-<li><a href="#1.1">abstract</a></li>
-<li><a href="#1.2">spectral graph convolutions</a></li>
-<li><a href="#1.3">layer-wise linear model</a></li>
-<li><a href="#1.4">semi-supervised node classifacation</a></li>
-</ul>
+    <title>Hexo+Github搭建简单博客总结</title>
+    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
 </li>
-<li><a href="#2">My learing understanding of semi-GCN</a></li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
 </ul>
-</blockquote>
-<h2 id="1">The main content of the article</h2>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
 
-<h3 id="1.1">abstract</h3>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
 
-<p>The authors motivate the choice of their convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.</p>
-<p>By training the structural model of convolution neural network with some tagged node data in the graph structural data ,the network model can further classify the remaining untagged data.</p>
-<p>So,on the whole , the way which the convolution is extended to the data of the graph structural ,can get a better data representation ,and it works well in semi-supervised tasks.</p>
-<blockquote>
-<p>Datasets: citation network datasets(Citeseer ,Cora ,Pubmed) ,bipartite graph dataset(NELL) </p>
-</blockquote>
-<h3 id="1.2">spectral graph convolutions</h3>
-
-<p><em>In this period ,I mainly refer to this website:<a href="https://blog.csdn.net/qq_41727666/article/details/84622965" target="_blank" rel="noopener">https://blog.csdn.net/qq_41727666/article/details/84622965</a></em></p>
-<p>In fact ,there are two versions of GCN:</p>
-<p>1.The first generation of GCN is this formula:<strong>$$g{\theta} * x = Ug{\theta}U^Tx$$</strong>.</p>
-<p>In the formula ,$x$ is the eigenvector of the graph node ,$g{\theta}=diag(\theta)$ is the convolution kernel.$U$ is the matrix of eigenvectors of the normalized graph Laplacian $L$. And the $L = I_N - D^{-1/2}AD^{-1/2} = U{\Lambda}U^T$</p>
-<p><strong>But ,this is too complicated to calculate</strong></p>
-<p>2.To circumvent this problem ,$g{\theta}(\Lambda)$ can be well-approximated by a truncated expansion in terms of Chebyshev polynomial $T_k(x)$ up to $K^{th}$ order:</p>
-<p>$$g{\theta}^<code>{\approx} {\sum_{k=0}^{K}{\theta}^</code>T_k(\Lambda^1)}$$</p>
-<p>With a rescaled $\Lambda^1 = {\frac{2}{\lambda_{max}}}\Lambda - I_N$. $\lambda_{max}$ Denotes the largest eigenvalue of $L$. $\theta^`$ is now a vector of Chebyshev coefficients. The Chebyshev polynomials are recursively defined as $T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x)$, with $T_0(x) = 1$ and $T_1(x) = x$.</p>
-<p>So, now the formula is:</p>
-<p>$$g{\theta}^<code>* x \approx {\sum_{k=0}^{K}{\theta}_k^</code>T_k(L^1)x}$$</p>
-<p>With $L^1 = {\frac{2}{\lambda_{max}}L - I_N}$ .This expression is now K-localized since it is a <strong>$K^{th}$-order ploynomial in the Laplacian</strong>.</p>
-<h3 id="1.3">layer-wise linear model</h3>
-
-<p>The authors approximate $\lambda_{max} \approx 2$, so now the formula is simplified to:</p>
-<p><img alt="semi_eq5.png" data-src="https://i.loli.net/2019/11/17/LdqIwO9NfxzXWJv.png" class="lazyload"></p>
-<h3 id="1.4">semi-supervised node classification</h3>
-
-<p>In this example, they consider a two-layer GCN for semi-supervised node classification on a graph with a symmetric adjacency matrix A(binary or weighted). </p>
-<p>First, calculate $A^` = D1^{-1/2}A^1D1^{-1/2}$.</p>
-<p>And the forward model then takes the simple form:$$Z = f(X,A) = softmax(A^<code>{ReLU}(A^</code>XW^{(0)})W^{(1)})$$</p>
-<p>Here, $W^{(0)}$ is an input-to-hidden weight matrix for a hidden layer with H feature maps.</p>
-<p>$W^{(1)}$ is a hidden-to-output weight matrix.</p>
-<p>The softmax activation function defined as $softmax(x_i) = \frac{1}{\sum_i{exp(x_i)}}exp(x_i)$</p>
-<p>For semi-supervised multiclass classification, they then evaluate the cross-entropy error over all labeled examples :$\xi = -\sum_{l\epsilon{y_l}}\sum_{f=1}^{F}Y_{lf}lnZ_{lf}$</p>
-<p>The author perform <strong>batch gradient descent</strong>. Stochasticity in the training process is in produced via <strong>dropout</strong>. </p>
-<h2 id="2">My learing understanding of semi-GCN</h2>
-
-<p><em>mainly depend on <a href="https://zhuanlan.zhihu.com/p/58178060" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/58178060</a></em></p>
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>GCN</tag>
-        <tag>Deeplearning</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
