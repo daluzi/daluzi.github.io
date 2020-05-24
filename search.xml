@@ -3,7 +3,56 @@
   <entry>
     <title>The FacT: Taming Latent Factor Models for Explainability with Factorization Trees</title>
     <url>/2020/05/23/The-FacT-Taming-Latent-Factor-Models-for-Explainability-with-Factorization-Trees/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<html><head></head><body><blockquote>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@inproceedings{tao2019the,</span><br><span class="line">	title="The FacT: Taming Latent Factor Models for Explainability with Factorization Trees",</span><br><span class="line">	author="Yiyi {Tao} and Yiling {Jia} and Nan {Wang} and Aobo {Yang} and Hongning {Wang}",</span><br><span class="line">	booktitle="SIGIR 2019 : 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval",</span><br><span class="line">	year="2019"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p> <a href="https://doi.org/10.1145/3331184.3331244" target="_blank" rel="noopener">https://doi.org/10.1145/3331184.3331244</a></p>
+</blockquote>
+<h2>Abstract</h2>
+
+<p>​        The FacT model aims at explaining latent factor based recommendation algorithms with rule-based explanations. It integrates <font color="red">regression trees</font> to guide the learning of latent factor models for recommendation, and uses the learned tree structure to explain the resulting latent factors. With user-generated reviews, regression trees on users and items are built respectively, and each node on the trees are asscoiated with a latent profile to represent users and items. </p>
+<h2>Methodology</h2>
+
+<p><b>Latent factor learning</b></p>
+<p>​        latent factor models have been widely deployed in modern recommender systems becuase its excellent recommendation quality. This work choices matrix factorization due to its simplicity.</p>
+<img alt="1.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/fK8aYMkwTldIHUi.jpg" class="lazyload">
+
+<p>​        (1) for point wise rating prediction loss; (2) for pairwise ranking loss.</p>
+<p><b>Explanation rule induction</b></p>
+<p>​        It selects the predicates among the item features extracted from user-generated reviews, and each lexicon entry takes the form of <span style="border-bottom:2px dashed red;">(feature, opinion, sentiment polarity)</span>, abbreviated as (f, o ,s), and represents the <span style="border-bottom:2px dashed red;">sentiment polarity s inferred from an opinionated text phrase o describing feature f.</span></p>
+<img alt="2.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/iXmpjxkQTIFnDzu.jpg" class="lazyload">
+
+<img alt="3.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/Z8JDPxUqAhgm9ej.jpg" class="lazyload">
+
+<img alt="4.jpeg" style="zoom: 50%;" data-src="https://i.loli.net/2020/05/24/pCk8Q4oLXSz1gZ9.jpg" class="lazyload">
+
+<p><img alt="IMG_1A6D7EF91195-1.jpeg" data-src="https://i.loli.net/2020/05/24/fACq4EtT3X82yHP.jpg" class="lazyload"></p>
+<h2>Evaluation</h2>
+
+<ul>
+<li>Normalized Discounted Cumulative Gain(NDCG)</li>
+</ul>
+<h2>Data</h2>
+
+<ul>
+<li>Amazon <a href="http://jmcauley.ucsd.edu/data/amazon/" target="_blank" rel="noopener">http://jmcauley.ucsd.edu/data/amazon/</a></li>
+<li>Yelp dataset challenge <a href="https://www.yelp.com/dataset" target="_blank" rel="noopener">https://www.yelp.com/dataset</a></li>
+</ul>
+<h2>Code</h2>
+
+<ul>
+<li><a href="https://github.com/yilingjia/TheFacT" target="_blank" rel="noopener">https://github.com/yilingjia/TheFacT</a></li>
+</ul>
+<h2>Reference</h2>
+
+<ul>
+<li><a href="https://blog.csdn.net/qq_38871942/article/details/104696210" target="_blank" rel="noopener">https://blog.csdn.net/qq_38871942/article/details/104696210</a></li>
+<li><a href="https://www.cnblogs.com/pinard/p/9128682.html" target="_blank" rel="noopener">https://www.cnblogs.com/pinard/p/9128682.html</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>explainable recommendation</category>
+      </categories>
       <tags>
         <tag>recommendation</tag>
         <tag>explainability</tag>
@@ -385,24 +434,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Github搭建简单博客总结</title>
     <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
@@ -440,6 +471,24 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
