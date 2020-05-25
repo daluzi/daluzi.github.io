@@ -1,72 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HIN-Graph</title>
-    <url>/2020/04/03/HIN-Graph/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
-</blockquote>
-</blockquote>
-<h2>Links</h2>
+    <title>The FacT: Taming Latent Factor Models for Explainability with Factorization Trees</title>
+    <url>/2020/05/23/The-FacT-Taming-Latent-Factor-Models-for-Explainability-with-Factorization-Trees/</url>
+    <content><![CDATA[<html><head></head><body><blockquote>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@inproceedings{tao2019the,</span><br><span class="line">	title="The FacT: Taming Latent Factor Models for Explainability with Factorization Trees",</span><br><span class="line">	author="Yiyi {Tao} and Yiling {Jia} and Nan {Wang} and Aobo {Yang} and Hongning {Wang}",</span><br><span class="line">	booktitle="SIGIR 2019 : 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval",</span><br><span class="line">	year="2019"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
-<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
-<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
-<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
-<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
-<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
-<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
-<hr>
-<p>主流知识图谱表示学习算法:</p>
-<ul>
-<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
-</ul>
-]]></content>
-      <tags>
-        <tag>HIN</tag>
-        <tag>graph-learning</tag>
-        <tag>GNN/GCN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Github搭建简单博客总结</title>
-    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
-<p>前言：</p>
-<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
-<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
-<ol>
-<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
-</li>
-<li><p>再初始化Hexo:<code>$ npm install</code></p>
-<p>Hexo的大体文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+<p> <a href="https://doi.org/10.1145/3331184.3331244" target="_blank" rel="noopener">https://doi.org/10.1145/3331184.3331244</a></p>
+</blockquote>
+<h2>Abstract</h2>
+
+<p>​        The FacT model aims at explaining latent factor based recommendation algorithms with rule-based explanations. It integrates <font color="red">regression trees</font> to guide the learning of latent factor models for recommendation, and uses the learned tree structure to explain the resulting latent factors. With user-generated reviews, regression trees on users and items are built respectively, and each node on the trees are asscoiated with a latent profile to represent users and items. </p>
+<h2>Methodology</h2>
+
+<p><b>Latent factor learning</b></p>
+<p>​        latent factor models have been widely deployed in modern recommender systems becuase its excellent recommendation quality. This work choices matrix factorization due to its simplicity.</p>
+<img alt="1.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/fK8aYMkwTldIHUi.jpg" class="lazyload">
+
+<p>​        (1) for point wise rating prediction loss; (2) for pairwise ranking loss.</p>
+<p><b>Explanation rule induction</b></p>
+<p>​        It selects the predicates among the item features extracted from user-generated reviews, and each lexicon entry takes the form of <span style="border-bottom:2px dashed red;">(feature, opinion, sentiment polarity)</span>, abbreviated as (f, o ,s), and represents the <span style="border-bottom:2px dashed red;">sentiment polarity s inferred from an opinionated text phrase o describing feature f.</span></p>
+<img alt="2.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/iXmpjxkQTIFnDzu.jpg" class="lazyload">
+
+<img alt="3.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/Z8JDPxUqAhgm9ej.jpg" class="lazyload">
+
+<img alt="4.jpeg" style="zoom: 50%;" data-src="https://i.loli.net/2020/05/24/pCk8Q4oLXSz1gZ9.jpg" class="lazyload">
+
+<p><img alt="IMG_1A6D7EF91195-1.jpeg" data-src="https://i.loli.net/2020/05/24/fACq4EtT3X82yHP.jpg" class="lazyload"></p>
+<h2>Evaluation</h2>
 
 <ul>
-<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+<li>Normalized Discounted Cumulative Gain(NDCG)</li>
 </ul>
-<ol>
-<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
-</li>
-<li><p>Hexo部署</p>
-<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
-<p>在localhost:4000端口就可以查看到效果。</p>
-<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
-<p>接下来，在站点的config.yml文件中，部署如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<h2>Data</h2>
 
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Amazon <a href="http://jmcauley.ucsd.edu/data/amazon/" target="_blank" rel="noopener">http://jmcauley.ucsd.edu/data/amazon/</a></li>
+<li>Yelp dataset challenge <a href="https://www.yelp.com/dataset" target="_blank" rel="noopener">https://www.yelp.com/dataset</a></li>
+</ul>
+<h2>Code</h2>
 
-<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
-</li>
-</ol>
-]]></content>
+<ul>
+<li><a href="https://github.com/yilingjia/TheFacT" target="_blank" rel="noopener">https://github.com/yilingjia/TheFacT</a></li>
+</ul>
+<h2>Reference</h2>
+
+<ul>
+<li><a href="https://blog.csdn.net/qq_38871942/article/details/104696210" target="_blank" rel="noopener">https://blog.csdn.net/qq_38871942/article/details/104696210</a></li>
+<li><a href="https://www.cnblogs.com/pinard/p/9128682.html" target="_blank" rel="noopener">https://www.cnblogs.com/pinard/p/9128682.html</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>recommendation</category>
+        <category>explainable recommendation</category>
+      </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>explainability</tag>
+        <tag>regression tree</tag>
+        <tag>recommendation</tag>
       </tags>
   </entry>
   <entry>
@@ -222,6 +213,149 @@
       </tags>
   </entry>
   <entry>
+    <title>学习资源汇总</title>
+    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Some links about graph network.</p>
+<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
+</blockquote>
+</blockquote>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s/J6GUf-pAXmI9jhFGyVyU8w" target="_blank" rel="noopener">图系列|三篇图层次化表示学习(Hierarchical GNN)：图分类以及节点分类</a></li>
+<li><a href="https://mp.weixin.qq.com/s/A64paLV_3Arhu1LKvKc63w" target="_blank" rel="noopener">PinSAGE | GCN 在工业级推荐系统中的应用</a><br>《Graph Convolutional Neural Networks for Web-Scale Recommender Systems》2018.</li>
+<li><a href="https://mp.weixin.qq.com/s/ewzsURiU7bfG3gObzIP2Mw" target="_blank" rel="noopener">深度长文：图神经网络欺诈检测方法总结</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Yj_yP6LjxrG_UJX9W3cAHQ" target="_blank" rel="noopener">腾讯 at IJCAI 2020，基于内部-环境注意力网络的推荐多队列冷启动召回</a></li>
+<li><a href="https://mp.weixin.qq.com/s/rjWOkwzX3IE59Kc9P9leAQ" target="_blank" rel="noopener">格“物”致知：多模态预训练再次入门</a></li>
+<li><a href="https://mp.weixin.qq.com/s/FtUxxRWkUJ7346gWAJqQDQ" target="_blank" rel="noopener">【KDD2020-MSU】图结构学习的鲁棒图神经网络，克服对抗攻击提升GNN防御能力</a></li>
+<li><a href="https://mp.weixin.qq.com/s/6OMMboBdbLVA-HsEjA3bSA" target="_blank" rel="noopener">Ctr 预估之 Calibration</a></li>
+<li><a href="https://mp.weixin.qq.com/s/aNx9or0-eHHT1XI1BJyB7w" target="_blank" rel="noopener">综述|73页近百篇参考文献JMLR20动态图上的表示学习</a></li>
+<li><a href="https://mp.weixin.qq.com/s/lbRymEKPcCrLsk9r9w1tlQ" target="_blank" rel="noopener">高性能涨点的动态卷积 DyNet 与 CondConv、DynamicConv 有什么区别联系？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/7_cZhszsnfBKyoUKYMkQhw" target="_blank" rel="noopener">近期必读的五篇计算机视觉顶会CVPR 2020【图神经网络 (GNN) 】相关论文-Part 3</a></li>
+<li><a href="https://mp.weixin.qq.com/s/KHbCbzP1JMgoYMjY5cMOmA" target="_blank" rel="noopener">华为诺亚实验室开源Disout算法，直接对标谷歌申请专利的Dropout算法</a></li>
+<li><a href="https://mp.weixin.qq.com/s/n3CSdTdsk5erpwRpZE9Qvw" target="_blank" rel="noopener">图专题|IJCAI2020两篇多层次/多视角相关的图神经网络GNN研究论文</a></li>
+<li><a href="https://mp.weixin.qq.com/s/_VBO_9yiZ0qngq4yfwcxEg" target="_blank" rel="noopener">从EMD、WMD到WRD：文本向量序列的相似度计算</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Fjr2iCbeTy9AYNAwvJr7Og" target="_blank" rel="noopener">Mila唐建博士最新《图表示学习:算法与应用》2020研究进展，附59页ppt</a></li>
+<li><a href="https://mp.weixin.qq.com/s/DKDlFDRwoedSlhL8cu99DA" target="_blank" rel="noopener">从 Triplet loss 看推荐系统中文章Embedding</a></li>
+<li><a href="https://mp.weixin.qq.com/s/aCICOsif_jYNUkOTiB_-FQ" target="_blank" rel="noopener">【Code】GraphSAGE 源码解析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/upXLNJsyq1muoNn3uJCKJg" target="_blank" rel="noopener">入门推荐系统，这25篇综述文章足够了</a></li>
+<li><a href="https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow" target="_blank" rel="noopener">KDD19开源论文 Heterogeneous Graph Neural Network</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Xn1xMXu0V7nkolX5x_h2lw" target="_blank" rel="noopener">SDM(Sequential Deep Matching Model)的复现之路</a></li>
+<li><a href="https://mp.weixin.qq.com/s/WnF-fqQyr2VNqr75Jzoqsw" target="_blank" rel="noopener">【GNN】Diff Pool：网络图的层次化表达</a></li>
+<li><a href="https://mp.weixin.qq.com/s/jIVhXMmP95G7hJP_KtksxA" target="_blank" rel="noopener">Youtube推荐RL首弹，基于Top-K的Off-Policy矫正解决推荐中的信息茧房困境</a></li>
+<li><a href="https://mp.weixin.qq.com/s/yyE0ki5rymOCyGa6CNfnzQ" target="_blank" rel="noopener">《深度学习推荐系统》读书笔记之Embedding技术在推荐中的应用</a></li>
+<li><a href="https://mp.weixin.qq.com/s/FZoiDfM05rWIqWJQg8F-5w" target="_blank" rel="noopener">RecSys 2019最佳论文：基于深度学习的推荐系统是否真的优于传统经典方法？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/daIWHWMulVlqAsm04qyi6w" target="_blank" rel="noopener">2019年，异质图神经网络领域有哪些值得读的顶会论文？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/63lTwUB2wsvhikWnNKa0CQ" target="_blank" rel="noopener">「工业落地」基于异质图神经网络的异常账户检测</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Ry8R6FmiAGSq5RBC7UqcAQ" target="_blank" rel="noopener">深入理解图注意力机制（Graph Attention Network）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/1xVPRIVwQQJfEen0RiNYvg" target="_blank" rel="noopener">谈谈推荐系统中的用户行为序列建模最新进展</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Jmutb3fWuxxmbpX4CWS3HA" target="_blank" rel="noopener">《深度学习推荐系统》读书笔记之推荐系统的进化之路</a></li>
+<li><a href="https://mp.weixin.qq.com/s/zLBq2VVSAr0AUtozK7qqVA" target="_blank" rel="noopener">浅析Faiss在推荐系统中的应用及原理</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Fg9GKw-QLlOskEqX7pl1dA" target="_blank" rel="noopener">推荐系统之FM算法原理及实现（附代码）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/dSa0-BydmzmqDfrICJoUBQ" target="_blank" rel="noopener">ECAI2020推荐系统论文聚焦</a></li>
+<li><a href="https://mp.weixin.qq.com/s/wLjBcK9PQHz6lUIsiZCjgg" target="_blank" rel="noopener">长文|三大主题全方位梳理图论与图学习中的基本概念：图搜索，最短路径，聚类系数，中心度等</a></li>
+<li><a href="https://mp.weixin.qq.com/s/jVG_JJN5OalJcbtTGti9AA" target="_blank" rel="noopener">「工业落地」阿里异质图神经网络推荐：19KDD IntentGC</a></li>
+<li><a href="https://mp.weixin.qq.com/s/3gHKD8g3tB6z88DVq5AkIw" target="_blank" rel="noopener">「工业落地」阿里异构图表示学习：19KDD GATNE</a></li>
+<li><a href="https://mp.weixin.qq.com/s/y94JACgjTxObvNDhmUfulA" target="_blank" rel="noopener">图神经网络入门（三）GAT图注意力网络</a></li>
+<li><a href="https://mp.weixin.qq.com/s/3x6FtOMzGitTlwwJs-dN9w" target="_blank" rel="noopener">从ACL 2020和ICLR 2020看知识图谱嵌入的近期研究进展</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4CPfejPrAhJuYMgSj6aGsw" target="_blank" rel="noopener">【香港理工】生成式对抗网络(GANs)最新2020综述，41页pdf阐述GAN训练、 挑战、解决方案和未来方向</a></li>
+<li><a href="https://mp.weixin.qq.com/s/53zPX7N7YLlUnvD23kT6pg" target="_blank" rel="noopener">SIGIR 20 | 腾讯看点首次在推荐中应用迁移学习提出PeterRec框架，从少量行为数据中学习用户表示</a></li>
+<li><a href="https://mp.weixin.qq.com/s/lf9BjP9qs_cn8f9vGUECpw" target="_blank" rel="noopener">比CNN更强有力，港中文贾佳亚团队提出两类新型自注意力网络｜CVPR2020</a></li>
+<li><a href="https://www.toutiao.com/a6825468794287161860/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1589325241&app=news_article&utm_source=weixin&utm_medium=toutiao_ios&req_id=202005130714000101941000345D3EC4DC&group_id=6825468794287161860" target="_blank" rel="noopener">33 个神经网络「炼丹」技巧</a></li>
+<li><a href="https://mp.weixin.qq.com/s/azgdVJ3-Ge1HJC1mVTRVfA" target="_blank" rel="noopener">自动化神经网络理论进展缓慢，AutoML 算法的边界到底在哪</a></li>
+<li><a href="https://mp.weixin.qq.com/s/SqBU40sfo3IEj_iHnb4cXQ" target="_blank" rel="noopener">高效利用无标注数据：自监督学习简述</a></li>
+<li><a href="https://mp.weixin.qq.com/s/0Jn79XT9A70sQEMOImzFLg" target="_blank" rel="noopener">【斯坦福谷歌】最新《图机器学习》综述论文，38页pdf阐述最新图表示学习进展</a></li>
+<li><a href="https://mp.weixin.qq.com/s/GCoyRPKe9ND7CnG9-zWTkA" target="_blank" rel="noopener">近期必读的5篇顶会CVPR 2020【场景图+图神经网络（SG+GNN）】相关论文</a></li>
+<li><a href="https://mp.weixin.qq.com/s/SOaA9XNnymLgGgJ5JNSdBg" target="_blank" rel="noopener">对比学习（Contrastive Learning）相关进展梳理</a></li>
+<li><a href="https://mp.weixin.qq.com/s/0jPOSvSqsTEtwjQ_nRgQ_g" target="_blank" rel="noopener">干货！2019五大顶会必读的Graph Embedding相关的论文</a></li>
+<li><a href="https://mp.weixin.qq.com/s/W2UTCtoTqRW739EFxCFf1w" target="_blank" rel="noopener">在深度学习顶会ICLR 2020上，Transformer模型有什么新进展？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/z0UMPHLYFOaiTCxqt65uRg" target="_blank" rel="noopener">当深度学习遇上量化交易——图与知识图谱篇</a></li>
+<li><a href="https://mp.weixin.qq.com/s/wLvTo_k67VwiwrfW9dfSWg" target="_blank" rel="noopener">「工业落地」阿里在图神经网络推荐的探</a></li>
+<li><a href="https://mp.weixin.qq.com/s/RhnyQUnXxMDybv8B-dSj4Q" target="_blank" rel="noopener">图系列|WWW2020 图学习/图神经网络GNN相关论文速览</a></li>
+<li><a href="https://mp.weixin.qq.com/s/byVdEPcCmVPJOk-uIyGsbw" target="_blank" rel="noopener">【重磅】GCN大佬Thomas Kipf博士论文《深度学习图结构表示》178页pdf阐述图卷积神经网络等机制与应用</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>recommendation</tag>
+        <tag>GNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HIN-Graph</title>
+    <url>/2020/04/03/HIN-Graph/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>Summarying the recent works on <strong>heterogeneous graph neural networks</strong></p>
+</blockquote>
+</blockquote>
+<h2>Links</h2>
+
+<p>清华朱文武老师组关于图上的深度学习综述(2018) <a href="https://arxiv.org/abs/1812.04202v1" target="_blank" rel="noopener" title="With a Title">Deep Learning on Graphs: A Survey</a>. </p>
+<p>IEEE Fellow关于图神经网络综述(2019) <a href="https://arxiv.org/abs/1901.00596" target="_blank" rel="noopener" title="With a Title">A Comprehensive Survey on Graph Neural Networks</a>. </p>
+<p>Ziniu Hu关于异质图Transformer的研究(2020) <a href="https://arxiv.org/abs/2003.01332" target="_blank" rel="noopener" title="With a Title">Heterogeneous Graph Transformer</a>. </p>
+<p>纪厚业做的分享： <a href="https://www.bilibili.com/video/BV1HE41157GD?t=6492" target="_blank" rel="noopener" title="With a Title">异质图神经网络：模型和应用</a>. 介绍了异质图网络、以及一些模型和三个实际落地的论文</p>
+<p>发表在数据库顶会VLDB上的最新异质图表示学习的综述(2020) <a href="https://arxiv.org/abs/1801.05852" target="_blank" rel="noopener" title="With a Title">Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond</a>.</p>
+<p>图数据上的对抗攻击和防御综述(2020) <a href="https://arxiv.org/abs/1812.10528v1" target="_blank" rel="noopener" title="With a Title">Adversarial Attack and Defense on Graph Data: A Survey</a>. </p>
+<p>用于构建动态图的例子《Dynamic Network Embedding by Modelling Triadic Closure Process(2018)》 <a href="https://github.com/luckiezhou/DynamicTriad" target="_blank" rel="noopener" title="With a Title">https://github.com/luckiezhou/DynamicTriad</a>. </p>
+<hr>
+<p>主流知识图谱表示学习算法:</p>
+<ul>
+<li>TransE、ComplEx、DistMult、TransR、RESCAL、RotatE </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HIN</tag>
+        <tag>graph-learning</tag>
+        <tag>GNN/GCN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
+    <content><![CDATA[<html><head></head><body><blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+<p><a href="http://dx.doi.org/10.1145/3097983.3098036" target="_blank" rel="noopener">http://dx.doi.org/10.1145/3097983.3098036</a></p>
+</blockquote>
+</blockquote>
+<img alt="1.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/25/Afdic56XJB1YWKT.jpg" class="lazyload">
+
+
+
+
+
+<h2>Data</h2>
+
+<ul>
+<li>AMiner Computer Science dataset</li>
+<li>Database and Information Systems dataset</li>
+</ul>
+<h2>Coding</h2>
+
+<ul>
+<li><a href="https://ericdongyx.github.io/metapath2vec/m2v.html" target="_blank" rel="noopener">https://ericdongyx.github.io/metapath2vec/m2v.html</a> </li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>Heterogeneous Networks</category>
+      </categories>
+      <tags>
+        <tag>meta path</tag>
+        <tag>heterogeneous</tag>
+        <tag>skip-gram</tag>
+        <tag>negative sampling-based method</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</title>
     <url>/2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/</url>
     <content><![CDATA[<html><head></head><body><blockquote>
@@ -326,6 +460,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo+Github搭建简单博客总结</title>
+    <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
     <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
     <content><![CDATA[<blockquote>
@@ -341,91 +515,6 @@
         <tag>Muilimodal</tag>
         <tag>machine learning</tag>
         <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
-    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
-</blockquote>
-</blockquote>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
-<ul>
-<li><a href="#1">Introduction</a></li>
-<li><a href="#2">Problem formulation</a></li>
-<li><a href="#3">Related work</a><ul>
-<li><a href="3.1">Basic matrix factorization</a></li>
-<li><a href="3.2">CircleCon model</a></li>
-<li><a href="3.3">ContextMF model</a></li>
-</ul>
-</li>
-<li><a href="4">The approach</a><ul>
-<li><a href="4.1">User interest factor</a></li>
-<li><a href="4.2">Personalized recommendation model</a></li>
-<li><a href="4.3">Model training</a></li>
-</ul>
-</li>
-<li><a href="5">Experiments</a><ul>
-<li><a href="5.1">Datasets</a></li>
-<li><a href="5.2">Performance measures</a></li>
-<li><a href="5.3">Evaluation</a></li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id='1'>Introduction</h2>
-Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
-
-<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
-<h2 id='2'>Problem formulation</h2>
-]]></content>
-      <tags>
-        <tag>RS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/11/12/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-    <url>/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
-<p>In metapath2vec: </p>
-<ul>
-<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
-<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
-</ul>
-<p>In metapath2vec++:</p>
-<ul>
-<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
-</ul>
-</blockquote>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>meta path</tag>
-        <tag>heterogeneous</tag>
-        <tag>skip-gram</tag>
-        <tag>negative sampling-based method</tag>
       </tags>
   </entry>
   <entry>
@@ -496,131 +585,63 @@ Recommender system(RS) has been successfully exploited to solve information over
       </tags>
   </entry>
   <entry>
-    <title>学习资源汇总</title>
-    <url>/2020/04/17/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/</url>
+    <title>Personalized Recommendation Combining User Interest and Social Circle</title>
+    <url>/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/</url>
     <content><![CDATA[<blockquote>
 <blockquote>
-<p>Some links about graph network.</p>
-<p>Learning resources about GNN \ graph embedding \ LSTM etc..</p>
+<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
 </blockquote>
 </blockquote>
-<ol>
-<li><a href="https://mp.weixin.qq.com/s/J6GUf-pAXmI9jhFGyVyU8w" target="_blank" rel="noopener">图系列|三篇图层次化表示学习(Hierarchical GNN)：图分类以及节点分类</a></li>
-<li><a href="https://mp.weixin.qq.com/s/A64paLV_3Arhu1LKvKc63w" target="_blank" rel="noopener">PinSAGE | GCN 在工业级推荐系统中的应用</a><br>《Graph Convolutional Neural Networks for Web-Scale Recommender Systems》2018.</li>
-<li><a href="https://mp.weixin.qq.com/s/ewzsURiU7bfG3gObzIP2Mw" target="_blank" rel="noopener">深度长文：图神经网络欺诈检测方法总结</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Yj_yP6LjxrG_UJX9W3cAHQ" target="_blank" rel="noopener">腾讯 at IJCAI 2020，基于内部-环境注意力网络的推荐多队列冷启动召回</a></li>
-<li><a href="https://mp.weixin.qq.com/s/rjWOkwzX3IE59Kc9P9leAQ" target="_blank" rel="noopener">格“物”致知：多模态预训练再次入门</a></li>
-<li><a href="https://mp.weixin.qq.com/s/FtUxxRWkUJ7346gWAJqQDQ" target="_blank" rel="noopener">【KDD2020-MSU】图结构学习的鲁棒图神经网络，克服对抗攻击提升GNN防御能力</a></li>
-<li><a href="https://mp.weixin.qq.com/s/6OMMboBdbLVA-HsEjA3bSA" target="_blank" rel="noopener">Ctr 预估之 Calibration</a></li>
-<li><a href="https://mp.weixin.qq.com/s/aNx9or0-eHHT1XI1BJyB7w" target="_blank" rel="noopener">综述|73页近百篇参考文献JMLR20动态图上的表示学习</a></li>
-<li><a href="https://mp.weixin.qq.com/s/lbRymEKPcCrLsk9r9w1tlQ" target="_blank" rel="noopener">高性能涨点的动态卷积 DyNet 与 CondConv、DynamicConv 有什么区别联系？</a></li>
-<li><a href="https://mp.weixin.qq.com/s/7_cZhszsnfBKyoUKYMkQhw" target="_blank" rel="noopener">近期必读的五篇计算机视觉顶会CVPR 2020【图神经网络 (GNN) 】相关论文-Part 3</a></li>
-<li><a href="https://mp.weixin.qq.com/s/KHbCbzP1JMgoYMjY5cMOmA" target="_blank" rel="noopener">华为诺亚实验室开源Disout算法，直接对标谷歌申请专利的Dropout算法</a></li>
-<li><a href="https://mp.weixin.qq.com/s/n3CSdTdsk5erpwRpZE9Qvw" target="_blank" rel="noopener">图专题|IJCAI2020两篇多层次/多视角相关的图神经网络GNN研究论文</a></li>
-<li><a href="https://mp.weixin.qq.com/s/_VBO_9yiZ0qngq4yfwcxEg" target="_blank" rel="noopener">从EMD、WMD到WRD：文本向量序列的相似度计算</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Fjr2iCbeTy9AYNAwvJr7Og" target="_blank" rel="noopener">Mila唐建博士最新《图表示学习:算法与应用》2020研究进展，附59页ppt</a></li>
-<li><a href="https://mp.weixin.qq.com/s/DKDlFDRwoedSlhL8cu99DA" target="_blank" rel="noopener">从 Triplet loss 看推荐系统中文章Embedding</a></li>
-<li><a href="https://mp.weixin.qq.com/s/aCICOsif_jYNUkOTiB_-FQ" target="_blank" rel="noopener">【Code】GraphSAGE 源码解析</a></li>
-<li><a href="https://mp.weixin.qq.com/s/upXLNJsyq1muoNn3uJCKJg" target="_blank" rel="noopener">入门推荐系统，这25篇综述文章足够了</a></li>
-<li><a href="https://mp.weixin.qq.com/s/w0KhXwE3tkZtjzQcRApRow" target="_blank" rel="noopener">KDD19开源论文 Heterogeneous Graph Neural Network</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Xn1xMXu0V7nkolX5x_h2lw" target="_blank" rel="noopener">SDM(Sequential Deep Matching Model)的复现之路</a></li>
-<li><a href="https://mp.weixin.qq.com/s/WnF-fqQyr2VNqr75Jzoqsw" target="_blank" rel="noopener">【GNN】Diff Pool：网络图的层次化表达</a></li>
-<li><a href="https://mp.weixin.qq.com/s/jIVhXMmP95G7hJP_KtksxA" target="_blank" rel="noopener">Youtube推荐RL首弹，基于Top-K的Off-Policy矫正解决推荐中的信息茧房困境</a></li>
-<li><a href="https://mp.weixin.qq.com/s/yyE0ki5rymOCyGa6CNfnzQ" target="_blank" rel="noopener">《深度学习推荐系统》读书笔记之Embedding技术在推荐中的应用</a></li>
-<li><a href="https://mp.weixin.qq.com/s/FZoiDfM05rWIqWJQg8F-5w" target="_blank" rel="noopener">RecSys 2019最佳论文：基于深度学习的推荐系统是否真的优于传统经典方法？</a></li>
-<li><a href="https://mp.weixin.qq.com/s/daIWHWMulVlqAsm04qyi6w" target="_blank" rel="noopener">2019年，异质图神经网络领域有哪些值得读的顶会论文？</a></li>
-<li><a href="https://mp.weixin.qq.com/s/63lTwUB2wsvhikWnNKa0CQ" target="_blank" rel="noopener">「工业落地」基于异质图神经网络的异常账户检测</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Ry8R6FmiAGSq5RBC7UqcAQ" target="_blank" rel="noopener">深入理解图注意力机制（Graph Attention Network）</a></li>
-<li><a href="https://mp.weixin.qq.com/s/1xVPRIVwQQJfEen0RiNYvg" target="_blank" rel="noopener">谈谈推荐系统中的用户行为序列建模最新进展</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Jmutb3fWuxxmbpX4CWS3HA" target="_blank" rel="noopener">《深度学习推荐系统》读书笔记之推荐系统的进化之路</a></li>
-<li><a href="https://mp.weixin.qq.com/s/zLBq2VVSAr0AUtozK7qqVA" target="_blank" rel="noopener">浅析Faiss在推荐系统中的应用及原理</a></li>
-<li><a href="https://mp.weixin.qq.com/s/Fg9GKw-QLlOskEqX7pl1dA" target="_blank" rel="noopener">推荐系统之FM算法原理及实现（附代码）</a></li>
-<li><a href="https://mp.weixin.qq.com/s/dSa0-BydmzmqDfrICJoUBQ" target="_blank" rel="noopener">ECAI2020推荐系统论文聚焦</a></li>
-<li><a href="https://mp.weixin.qq.com/s/wLjBcK9PQHz6lUIsiZCjgg" target="_blank" rel="noopener">长文|三大主题全方位梳理图论与图学习中的基本概念：图搜索，最短路径，聚类系数，中心度等</a></li>
-<li><a href="https://mp.weixin.qq.com/s/jVG_JJN5OalJcbtTGti9AA" target="_blank" rel="noopener">「工业落地」阿里异质图神经网络推荐：19KDD IntentGC</a></li>
-<li><a href="https://mp.weixin.qq.com/s/3gHKD8g3tB6z88DVq5AkIw" target="_blank" rel="noopener">「工业落地」阿里异构图表示学习：19KDD GATNE</a></li>
-<li><a href="https://mp.weixin.qq.com/s/y94JACgjTxObvNDhmUfulA" target="_blank" rel="noopener">图神经网络入门（三）GAT图注意力网络</a></li>
-<li><a href="https://mp.weixin.qq.com/s/3x6FtOMzGitTlwwJs-dN9w" target="_blank" rel="noopener">从ACL 2020和ICLR 2020看知识图谱嵌入的近期研究进展</a></li>
-<li><a href="https://mp.weixin.qq.com/s/4CPfejPrAhJuYMgSj6aGsw" target="_blank" rel="noopener">【香港理工】生成式对抗网络(GANs)最新2020综述，41页pdf阐述GAN训练、 挑战、解决方案和未来方向</a></li>
-<li><a href="https://mp.weixin.qq.com/s/53zPX7N7YLlUnvD23kT6pg" target="_blank" rel="noopener">SIGIR 20 | 腾讯看点首次在推荐中应用迁移学习提出PeterRec框架，从少量行为数据中学习用户表示</a></li>
-<li><a href="https://mp.weixin.qq.com/s/lf9BjP9qs_cn8f9vGUECpw" target="_blank" rel="noopener">比CNN更强有力，港中文贾佳亚团队提出两类新型自注意力网络｜CVPR2020</a></li>
-<li><a href="https://www.toutiao.com/a6825468794287161860/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1589325241&app=news_article&utm_source=weixin&utm_medium=toutiao_ios&req_id=202005130714000101941000345D3EC4DC&group_id=6825468794287161860" target="_blank" rel="noopener">33 个神经网络「炼丹」技巧</a></li>
-<li><a href="https://mp.weixin.qq.com/s/azgdVJ3-Ge1HJC1mVTRVfA" target="_blank" rel="noopener">自动化神经网络理论进展缓慢，AutoML 算法的边界到底在哪</a></li>
-<li><a href="https://mp.weixin.qq.com/s/SqBU40sfo3IEj_iHnb4cXQ" target="_blank" rel="noopener">高效利用无标注数据：自监督学习简述</a></li>
-<li><a href="https://mp.weixin.qq.com/s/0Jn79XT9A70sQEMOImzFLg" target="_blank" rel="noopener">【斯坦福谷歌】最新《图机器学习》综述论文，38页pdf阐述最新图表示学习进展</a></li>
-<li><a href="https://mp.weixin.qq.com/s/GCoyRPKe9ND7CnG9-zWTkA" target="_blank" rel="noopener">近期必读的5篇顶会CVPR 2020【场景图+图神经网络（SG+GNN）】相关论文</a></li>
-<li><a href="https://mp.weixin.qq.com/s/SOaA9XNnymLgGgJ5JNSdBg" target="_blank" rel="noopener">对比学习（Contrastive Learning）相关进展梳理</a></li>
-<li><a href="https://mp.weixin.qq.com/s/0jPOSvSqsTEtwjQ_nRgQ_g" target="_blank" rel="noopener">干货！2019五大顶会必读的Graph Embedding相关的论文</a></li>
-<li><a href="https://mp.weixin.qq.com/s/W2UTCtoTqRW739EFxCFf1w" target="_blank" rel="noopener">在深度学习顶会ICLR 2020上，Transformer模型有什么新进展？</a></li>
-<li><a href="https://mp.weixin.qq.com/s/z0UMPHLYFOaiTCxqt65uRg" target="_blank" rel="noopener">当深度学习遇上量化交易——图与知识图谱篇</a></li>
-<li><a href="https://mp.weixin.qq.com/s/wLvTo_k67VwiwrfW9dfSWg" target="_blank" rel="noopener">「工业落地」阿里在图神经网络推荐的探</a></li>
-<li><a href="https://mp.weixin.qq.com/s/RhnyQUnXxMDybv8B-dSj4Q" target="_blank" rel="noopener">图系列|WWW2020 图学习/图神经网络GNN相关论文速览</a></li>
-<li><a href="https://mp.weixin.qq.com/s/byVdEPcCmVPJOk-uIyGsbw" target="_blank" rel="noopener">【重磅】GCN大佬Thomas Kipf博士论文《深度学习图结构表示》178页pdf阐述图卷积神经网络等机制与应用</a></li>
-</ol>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#2">Problem formulation</a></li>
+<li><a href="#3">Related work</a><ul>
+<li><a href="3.1">Basic matrix factorization</a></li>
+<li><a href="3.2">CircleCon model</a></li>
+<li><a href="3.3">ContextMF model</a></li>
+</ul>
+</li>
+<li><a href="4">The approach</a><ul>
+<li><a href="4.1">User interest factor</a></li>
+<li><a href="4.2">Personalized recommendation model</a></li>
+<li><a href="4.3">Model training</a></li>
+</ul>
+</li>
+<li><a href="5">Experiments</a><ul>
+<li><a href="5.1">Datasets</a></li>
+<li><a href="5.2">Performance measures</a></li>
+<li><a href="5.3">Evaluation</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id='1'>Introduction</h2>
+Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+
+<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
+<h2 id='2'>Problem formulation</h2>
 ]]></content>
       <tags>
-        <tag>GNN</tag>
-        <tag>recommendation</tag>
+        <tag>RS</tag>
       </tags>
   </entry>
   <entry>
-    <title>The FacT: Taming Latent Factor Models for Explainability with Factorization Trees</title>
-    <url>/2020/05/23/The-FacT-Taming-Latent-Factor-Models-for-Explainability-with-Factorization-Trees/</url>
-    <content><![CDATA[<html><head></head><body><blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">@inproceedings{tao2019the,</span><br><span class="line">	title="The FacT: Taming Latent Factor Models for Explainability with Factorization Trees",</span><br><span class="line">	author="Yiyi {Tao} and Yiling {Jia} and Nan {Wang} and Aobo {Yang} and Hongning {Wang}",</span><br><span class="line">	booktitle="SIGIR 2019 : 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval",</span><br><span class="line">	year="2019"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+    <title>Hello World</title>
+    <url>/2019/11/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p> <a href="https://doi.org/10.1145/3331184.3331244" target="_blank" rel="noopener">https://doi.org/10.1145/3331184.3331244</a></p>
-</blockquote>
-<h2>Abstract</h2>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>​        The FacT model aims at explaining latent factor based recommendation algorithms with rule-based explanations. It integrates <font color="red">regression trees</font> to guide the learning of latent factor models for recommendation, and uses the learned tree structure to explain the resulting latent factors. With user-generated reviews, regression trees on users and items are built respectively, and each node on the trees are asscoiated with a latent profile to represent users and items. </p>
-<h2>Methodology</h2>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p><b>Latent factor learning</b></p>
-<p>​        latent factor models have been widely deployed in modern recommender systems becuase its excellent recommendation quality. This work choices matrix factorization due to its simplicity.</p>
-<img alt="1.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/fK8aYMkwTldIHUi.jpg" class="lazyload">
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>​        (1) for point wise rating prediction loss; (2) for pairwise ranking loss.</p>
-<p><b>Explanation rule induction</b></p>
-<p>​        It selects the predicates among the item features extracted from user-generated reviews, and each lexicon entry takes the form of <span style="border-bottom:2px dashed red;">(feature, opinion, sentiment polarity)</span>, abbreviated as (f, o ,s), and represents the <span style="border-bottom:2px dashed red;">sentiment polarity s inferred from an opinionated text phrase o describing feature f.</span></p>
-<img alt="2.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/iXmpjxkQTIFnDzu.jpg" class="lazyload">
-
-<img alt="3.jpeg" style="zoom:50%;" data-src="https://i.loli.net/2020/05/24/Z8JDPxUqAhgm9ej.jpg" class="lazyload">
-
-<img alt="4.jpeg" style="zoom: 50%;" data-src="https://i.loli.net/2020/05/24/pCk8Q4oLXSz1gZ9.jpg" class="lazyload">
-
-<p><img alt="IMG_1A6D7EF91195-1.jpeg" data-src="https://i.loli.net/2020/05/24/fACq4EtT3X82yHP.jpg" class="lazyload"></p>
-<h2>Evaluation</h2>
-
-<ul>
-<li>Normalized Discounted Cumulative Gain(NDCG)</li>
-</ul>
-<h2>Data</h2>
-
-<ul>
-<li>Amazon <a href="http://jmcauley.ucsd.edu/data/amazon/" target="_blank" rel="noopener">http://jmcauley.ucsd.edu/data/amazon/</a></li>
-<li>Yelp dataset challenge <a href="https://www.yelp.com/dataset" target="_blank" rel="noopener">https://www.yelp.com/dataset</a></li>
-</ul>
-<h2>Code</h2>
-
-<ul>
-<li><a href="https://github.com/yilingjia/TheFacT" target="_blank" rel="noopener">https://github.com/yilingjia/TheFacT</a></li>
-</ul>
-<h2>Reference</h2>
-
-<ul>
-<li><a href="https://blog.csdn.net/qq_38871942/article/details/104696210" target="_blank" rel="noopener">https://blog.csdn.net/qq_38871942/article/details/104696210</a></li>
-<li><a href="https://www.cnblogs.com/pinard/p/9128682.html" target="_blank" rel="noopener">https://www.cnblogs.com/pinard/p/9128682.html</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>recommendation</category>
-        <category>explainable recommendation</category>
-      </categories>
-      <tags>
-        <tag>recommendation</tag>
-        <tag>explainability</tag>
-        <tag>regression tree</tag>
-      </tags>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
 </search>
