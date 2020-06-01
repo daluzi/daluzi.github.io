@@ -3,33 +3,33 @@
   <entry>
     <title>leetcode record</title>
     <url>/2020/06/01/leetcode-record/</url>
-    <content><![CDATA[<h4 id="974-和可被K整除的子数组-中等"><a href="#974-和可被K整除的子数组-中等" class="headerlink" title="974.和可被K整除的子数组(中等)"></a>974.和可被K整除的子数组(中等)</h4><hr>
+    <content><![CDATA[<html><head></head><body><h4 id="974-和可被K整除的子数组-中等"><a href="#974-和可被K整除的子数组-中等" class="headerlink" title="974.和可被K整除的子数组(中等)"></a>974.和可被K整除的子数组(中等)</h4><hr>
 <p>给定一个整数数组 <code>A</code>，返回其中元素之和可被 <code>K</code> 整除的（连续、非空）子数组的数目。</p>
 <p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：A = [4,5,0,-2,-3,1], K = 5</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">有 7 个子数组满足其元素之和可被 K = 5 整除：</span><br><span class="line">[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：A = [4,5,0,-2,-3,1], K = 5</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">有 7 个子数组满足其元素之和可被 K = 5 整除：</span><br><span class="line">[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>思路：</p>
 <p> 通常，涉及连续子数组问题的时候，使用前缀和来解决。</p>
 <p> 我们令 P[i]=A[0]+A[1]+…+A[i] 。那么每个连续子数组的和sum(i,j) 就可以写成P[j]−P<a href="0<i<j">i</a> 的形式。此时，判断子数组的和能否被K整除就等价于判断(P[j]−P[i−1])modK==0，根据同余定理，只要P[j]modK==P[i−1]modK就行。</p>
 <p> 因此我们可以考虑对数组进行遍历，在遍历同时统计答案。当我们遍历到第 i个元素时，我们统计以 i 结尾的符合条件的子数组个数。我们可以维护一个以前缀和模 K 的值为键，出现次数为值的哈希表 record，在遍历的同时进行更新。这样在计算以 i结尾的符合条件的子数组个数时，根据上面的分析，答案即为[0..i−1] 中前缀和模K也为P[i]modK的位置个数，即record[P[i]modK]。</p>
 <p> 最后的答案即为以每一个位置为数尾的符合条件的子数组个数之和。需要注意的一个边界条件是，我们需要对哈希表初始化，记录record[0]=1，这样就考虑了前缀和本身被 K 整除的情况。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def subarraysDivByK(self, A: List[int], K: int) -&gt; int:</span><br><span class="line">        record = &#123;0: 1&#125;</span><br><span class="line">        total, ans = 0, 0</span><br><span class="line">        for elem in A:</span><br><span class="line">            total += elem</span><br><span class="line">            modulus = total % K</span><br><span class="line">            same = record.get(modulus, 0)</span><br><span class="line">            ans += same</span><br><span class="line">            record[modulus] = same + 1</span><br><span class="line">        return ans</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def subarraysDivByK(self, A: List[int], K: int) -> int:</span><br><span class="line">        record = {0: 1}</span><br><span class="line">        total, ans = 0, 0</span><br><span class="line">        for elem in A:</span><br><span class="line">            total += elem</span><br><span class="line">            modulus = total % K</span><br><span class="line">            same = record.get(modulus, 0)</span><br><span class="line">            ans += same</span><br><span class="line">            record[modulus] = same + 1</span><br><span class="line">        return ans</span><br></pre></td></tr></tbody></table></figure>
 
 <p>复杂度分析</p>
 <ul>
 <li>时间复杂度：O(N)，其中 N 是数组 A 的长度。我们只需要从前往后遍历一次数组，在遍历数组的过程中，维护哈希表的各个操作均为 O(1)，因此总时间复杂度为 O(N)。</li>
-<li>空间复杂度：O(min(N,K))，即哈希表需要的空间。当 N≤K 时，最多有N 个前缀和，因此哈希表中最多有N+1个键值对；当 N&gt;K 时，最多有K 个不同的余数，因此哈希表中最多有 K 个键值对。也就是说，哈希表需要的空间取决于N 和 K中的较小值。</li>
+<li>空间复杂度：O(min(N,K))，即哈希表需要的空间。当 N≤K 时，最多有N 个前缀和，因此哈希表中最多有N+1个键值对；当 N>K 时，最多有K 个不同的余数，因此哈希表中最多有 K 个键值对。也就是说，哈希表需要的空间取决于N 和 K中的较小值。</li>
 </ul>
 <h4 id="394-字符串解码-中等"><a href="#394-字符串解码-中等" class="headerlink" title="394.字符串解码(中等)"></a>394.字符串解码(中等)</h4><hr>
 <p>给定一个经过编码的字符串，返回它解码后的字符串。</p>
 <p>编码规则为:k[encodedstring]，表示其中方括号内部的 encodedstring 正好重复 k 次。注意 k 保证为正整数。你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4]的输入。</p>
 <p>示例:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s = &quot;3[a]2[bc]&quot;, 返回 &quot;aaabcbc&quot;.</span><br><span class="line">s = &quot;3[a2[c]]&quot;, 返回 &quot;accaccacc&quot;.</span><br><span class="line">s = &quot;2[abc]3[cd]ef&quot;, 返回 &quot;abcabccdcdcdef&quot;.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">s = "3[a]2[bc]", 返回 "aaabcbc".</span><br><span class="line">s = "3[a2[c]]", 返回 "accaccacc".</span><br><span class="line">s = "2[abc]3[cd]ef", 返回 "abcabccdcdcdef".</span><br></pre></td></tr></tbody></table></figure>
 
 <p>用栈的思想：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def decodeString(self, s: str) -&gt; str:</span><br><span class="line">        stack = [[&apos;&apos;, 1]]</span><br><span class="line">        num = &apos;&apos;</span><br><span class="line">        for c in s:</span><br><span class="line">            if c.isdigit():</span><br><span class="line">                num += c</span><br><span class="line">            elif c == &apos;[&apos;:</span><br><span class="line">                stack.append([&apos;&apos;, int(num)])</span><br><span class="line">                num = &apos;&apos;</span><br><span class="line">            elif c == &apos;]&apos;:</span><br><span class="line">                subs, k = stack.pop()</span><br><span class="line">                stack[-1][0] += subs * k</span><br><span class="line">            else:</span><br><span class="line">                stack[-1][0] += c</span><br><span class="line">        return stack[0][0] * stack[0][1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def decodeString(self, s: str) -> str:</span><br><span class="line">        stack = [['', 1]]</span><br><span class="line">        num = ''</span><br><span class="line">        for c in s:</span><br><span class="line">            if c.isdigit():</span><br><span class="line">                num += c</span><br><span class="line">            elif c == '[':</span><br><span class="line">                stack.append(['', int(num)])</span><br><span class="line">                num = ''</span><br><span class="line">            elif c == ']':</span><br><span class="line">                subs, k = stack.pop()</span><br><span class="line">                stack[-1][0] += subs * k</span><br><span class="line">            else:</span><br><span class="line">                stack[-1][0] += c</span><br><span class="line">        return stack[0][0] * stack[0][1]</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198.打家劫舍"></a>198.打家劫舍</h4><hr>
+<h4 id="198-打家劫舍-中等"><a href="#198-打家劫舍-中等" class="headerlink" title="198.打家劫舍(中等)"></a>198.打家劫舍(中等)</h4><hr>
 <p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。</p>
 <p>示例 1:</p>
 <p>输入: [1,2,3,1] 输出: 4 解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。 偷窃到的最高金额 = 1 + 3 = 4 。 示例 2:</p>
@@ -37,7 +37,7 @@
 <p><strong>思路：</strong></p>
 <p>动态规划+滚动数组：</p>
 <p>首先考虑最简单的情况：如果只有一个房间，则偷窃该房屋，可以偷窃到最高总金额。如果只有两个房间，则由于两间房屋相邻，不能同时偷窃，只能偷窃其中的一间屋子，因此选择其中金额较高的房屋进行偷窃，可以偷窃到最高总金额。</p>
-<p>如果房屋数量大于两间，应该如何计算能够偷窃到的最高总金额呢？对于第 k(k&gt;2) 间房屋，有两个选项：</p>
+<p>如果房屋数量大于两间，应该如何计算能够偷窃到的最高总金额呢？对于第 k(k>2) 间房屋，有两个选项：</p>
 <p>偷窃第 k 间房屋，那么就不能偷窃第 k−1 间房屋，偷窃总金额为前 k−2 间房屋的最高总金额与第 k 间房屋的金额之和。</p>
 <p>不偷窃第k 间房屋，偷窃总金额为前 k−1间房屋的最高总金额。</p>
 <p>在两个选项中选择偷窃总金额较大的选项，该选项对应的偷窃总金额即为前 k 间房屋能偷窃到的最高总金额。</p>
@@ -46,15 +46,61 @@
 <p>边界条件为：</p>
 <p>{dp[0]=nums[0]只有一间房屋，则偷窃该房屋 dp[1]=max(nums[0],nums[1])只有两间房屋，选择其中金额较高的房屋进行偷窃</p>
 <p>只有一间房屋，则偷窃该房屋 只有两间房屋，选择其中金额较高的房屋进行偷窃 最终的答案即为 dp[n−1]，其中 n 是数组的长度。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rob(self, nums: List[int]) -&gt; int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line"></span><br><span class="line">        size = len(nums)</span><br><span class="line">        if size == 1:</span><br><span class="line">            return nums[0]</span><br><span class="line">        </span><br><span class="line">        dp = [0] * size</span><br><span class="line">        dp[0] = nums[0]</span><br><span class="line">        dp[1] = max(nums[0], nums[1])</span><br><span class="line">        for i in range(2, size):</span><br><span class="line">            dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])</span><br><span class="line">        </span><br><span class="line">        return dp[size - 1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rob(self, nums: List[int]) -> int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line"></span><br><span class="line">        size = len(nums)</span><br><span class="line">        if size == 1:</span><br><span class="line">            return nums[0]</span><br><span class="line">        </span><br><span class="line">        dp = [0] * size</span><br><span class="line">        dp[0] = nums[0]</span><br><span class="line">        dp[1] = max(nums[0], nums[1])</span><br><span class="line">        for i in range(2, size):</span><br><span class="line">            dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])</span><br><span class="line">        </span><br><span class="line">        return dp[size - 1]</span><br></pre></td></tr></tbody></table></figure>
 
 <p>上述方法使用了数组存储结果。考虑到每间房屋的最高总金额只和该房屋的前两间房屋的最高总金额相关，因此可以使用滚动数组，在每个时刻只需要存储前两间房屋的最高总金额。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rob(self, nums: List[int]) -&gt; int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line"></span><br><span class="line">        size = len(nums)</span><br><span class="line">        if size == 1:</span><br><span class="line">            return nums[0]</span><br><span class="line">        </span><br><span class="line">        first, second = nums[0], max(nums[0], nums[1])</span><br><span class="line">        for i in range(2, size):</span><br><span class="line">            first, second = second, max(first + nums[i], second)</span><br><span class="line">        </span><br><span class="line">        return second</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rob(self, nums: List[int]) -> int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line"></span><br><span class="line">        size = len(nums)</span><br><span class="line">        if size == 1:</span><br><span class="line">            return nums[0]</span><br><span class="line">        </span><br><span class="line">        first, second = nums[0], max(nums[0], nums[1])</span><br><span class="line">        for i in range(2, size):</span><br><span class="line">            first, second = second, max(first + nums[i], second)</span><br><span class="line">        </span><br><span class="line">        return second</span><br></pre></td></tr></tbody></table></figure>
 
 <p>复杂度分析</p>
 <p>时间复杂度：O(n)，其中 n 是数组长度。只需要对数组遍历一次。</p>
 <p>空间复杂度：O(1)。使用滚动数组，可以只存储前两间房屋的最高总金额，而不需要存储整个数组的结果，因此空间复杂度是 O(1)。</p>
-]]></content>
+<h4>1431.拥有最多糖果的孩子(简单)</h4>
+
+<hr>
+<p>给你一个数组 candies 和一个整数 extraCandies ，其中 candies[i] 代表第 i 个孩子拥有的糖果数目。</p>
+<p>对每一个孩子，检查是否存在一种方案，将额外的 extraCandies 个糖果分配给孩子们之后，此孩子有 最多 的糖果。注意，允许有多个孩子同时拥有 最多 的糖果数目。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：candies = [2,3,5,1,3], extraCandies = 3</span><br><span class="line">输出：[true,true,true,false,true] </span><br><span class="line">解释：</span><br><span class="line">孩子 1 有 2 个糖果，如果他得到所有额外的糖果（3个），那么他总共有 5 个糖果，他将成为拥有最多糖果的孩子。</span><br><span class="line">孩子 2 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。</span><br><span class="line">孩子 3 有 5 个糖果，他已经是拥有最多糖果的孩子。</span><br><span class="line">孩子 4 有 1 个糖果，即使他得到所有额外的糖果，他也只有 4 个糖果，无法成为拥有糖果最多的孩子。</span><br><span class="line">孩子 5 有 3 个糖果，如果他得到至少 2 个额外糖果，那么他将成为拥有最多糖果的孩子。</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：candies = [4,2,1,1,2], extraCandies = 1</span><br><span class="line">输出：[true,false,false,false,false] </span><br><span class="line">解释：只有 1 个额外糖果，所以不管额外糖果给谁，只有孩子 1 可以成为拥有糖果最多的孩子。</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入：candies = [12,1,12], extraCandies = 10</span><br><span class="line">输出：[true,false,true]</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kidsWithCandies</span><span class="params">(self, candies: List[int], extraCandies: int)</span> -> List[bool]:</span></span><br><span class="line">        m = max(candies)</span><br><span class="line">        a = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> candies:</span><br><span class="line">            <span class="keyword">if</span> (i + extraCandies) >= m:</span><br><span class="line">                a.append(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a.append(<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></tbody></table></figure>
+
+<h4>101.对称二叉树(简单)</h4>
+
+<hr>
+<p>给定一个二叉树，检查它是否是镜像对称的。</p>
+<p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   2</span><br><span class="line"> / \ / \</span><br><span class="line">3  4 4  3</span><br></pre></td></tr></tbody></table></figure>
+
+<p>但是下面这个 <code>[1,2,2,null,3,null,3]</code> 则不是镜像对称的:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">  1</span><br><span class="line"> / \</span><br><span class="line">2   2</span><br><span class="line"> \   \</span><br><span class="line"> 3    3</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSymmetric</span><span class="params">(self, root: TreeNode)</span> -> bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> self.isSTree(root.left,root.right)</span><br><span class="line">    <span class="comment">#     global r</span></span><br><span class="line">    <span class="comment">#     r =  []</span></span><br><span class="line">    <span class="comment">#     f = 0</span></span><br><span class="line">    <span class="comment">#     self.mid(root, f)</span></span><br><span class="line">    <span class="comment">#     print(r)</span></span><br><span class="line">    <span class="comment">#     if r == r[::-1]:</span></span><br><span class="line">    <span class="comment">#         return True</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># def mid(self, root, f):</span></span><br><span class="line">    <span class="comment">#     f += 1</span></span><br><span class="line">    <span class="comment">#     if root == None:</span></span><br><span class="line">    <span class="comment">#         r.append(f)</span></span><br><span class="line">    <span class="comment">#     else:</span></span><br><span class="line">    <span class="comment">#         self.mid(root.left, f)</span></span><br><span class="line">    <span class="comment">#         r.append(root.val)</span></span><br><span class="line">    <span class="comment">#         self.mid(root.right, f)</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSTree</span><span class="params">(self,left,right)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> right <span class="keyword">is</span> <span class="literal">None</span>: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> right <span class="keyword">is</span> <span class="literal">None</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> left.val != right.val: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> self.isSTree(left.left,right.right) <span class="keyword">and</span> self.isSTree(left.right, right.left)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>我采用了中序遍历和递归两种方式，注释掉的部分为中序遍历。递归判断时想清楚递归的终止情况与返回值：（1）左右子树都为空 → True （2）左右子树一个为空 → False （3）左右子树都不空，但是值不相等 → False （4）若上述情况都不满足， 检查 左左&右右， 左右&右左。</p>
+<h4>84.柱状图中最大的矩形(困难)</h4>
+
+<hr>
+<p>给定 <em>n</em> 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<img alt="1.png" style="zoom:50%;" data-src="https://i.loli.net/2020/06/01/gPviFIYRh2xmOjf.jpg" class="lazyload">
+
+<p>以上是柱状图的示例，其中每个柱子的宽度为 1，给定的高度为 <code>[2,1,5,6,2,3]</code>。</p>
+<img alt="2.png" style="zoom:50%;" data-src="https://i.loli.net/2020/06/01/whXgI2TFcaU7rNm.jpg" class="lazyload">
+
+<p>图中阴影部分为所能勾勒出的最大矩形面积，其面积为 <code>10</code> 个单位。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">输入: [2,1,5,6,2,3]</span><br><span class="line">输出: 10</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">largestRectangleArea</span><span class="params">(self, heights: List[int])</span> -> int:</span></span><br><span class="line">        n = len(heights)</span><br><span class="line">        left, right = [<span class="number">0</span>] * n, [<span class="number">0</span>] * n</span><br><span class="line"></span><br><span class="line">        mono_stack = list()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">while</span> mono_stack <span class="keyword">and</span> heights[mono_stack[<span class="number">-1</span>]] >= heights[i]:</span><br><span class="line">                mono_stack.pop()</span><br><span class="line">            left[i] = mono_stack[<span class="number">-1</span>] <span class="keyword">if</span> mono_stack <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">            mono_stack.append(i)</span><br><span class="line">        </span><br><span class="line">        mono_stack = list()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">while</span> mono_stack <span class="keyword">and</span> heights[mono_stack[<span class="number">-1</span>]] >= heights[i]:</span><br><span class="line">                mono_stack.pop()</span><br><span class="line">            right[i] = mono_stack[<span class="number">-1</span>] <span class="keyword">if</span> mono_stack <span class="keyword">else</span> n</span><br><span class="line">            mono_stack.append(i)</span><br><span class="line">        </span><br><span class="line">        ans = max((right[i] - left[i] - <span class="number">1</span>) * heights[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)) <span class="keyword">if</span> n > <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+
+<p>采用的是单调栈。</p>
+</body></html>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
