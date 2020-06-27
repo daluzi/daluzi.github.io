@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第一章</title>
+    <url>/2020/06/27/%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>《深度学习推荐系统》</category>
+      </categories>
+      <tags>
+        <tag>recommendation</tag>
+        <tag>DL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KG_learning</title>
     <url>/2020/06/22/KG-learning/</url>
     <content><![CDATA[<html><head></head><body><h3>知识图谱</h3>
