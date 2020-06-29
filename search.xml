@@ -202,6 +202,17 @@
 <blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ docker container cp [containID]:[/path/to/file] .</span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>​    Windows上安装了docker之后，netkeeper报如下错误：</p>
+<p>​    <b>sorry,this application cannot be run under a Virtual Machine</b></p>
+<img alt="error.png" style="zoom:50%;" data-src="https://i.loli.net/2020/06/29/bpL5eSUHEQGAOtT.png" class="lazyload">
+
+<p>​    搜索了到如下几种参考方法(直接看第三种即可)：</p>
+<p>​    1.开机时打开BIOS，关闭virtual tchnology这一选项,具体操作参考下面链接(<a href="http://www.udaxia.com/upqd/5254.html).但对于我没法尝试,华为笔记本BIOS只有Main部分,无法关闭virtual" target="_blank" rel="noopener">http://www.udaxia.com/upqd/5254.html).但对于我没法尝试,华为笔记本BIOS只有Main部分,无法关闭virtual</a> tchnology.(失败)<br>​    2.在控制面板→程序→启用或关闭 Windows 功能下,取消Hyper-V选项,重启电脑,参考下面链接（<a href="https://blog.csdn.net/sdut15110581043/article/details/53330481/).尝试无数遍,重启无数遍,均失败.(失败)" target="_blank" rel="noopener">https://blog.csdn.net/sdut15110581043/article/details/53330481/).尝试无数遍,重启无数遍,均失败.(失败)</a></p>
+<p>​    <b>可忽略上面失败的解决方案</b><br>​    3.禁用Hyper-V正确姿势来了(第二种方法不行)<br>​    ①打开Windows PowerShell（管理员）</p>
+<p>​    ②运行命令bcdedit /set hypervisorlaunchtype off<br>​    注意:上述命令有一个空格的存在</p>
+<p>​    ③重启计算机</p>
+<p>​    如果要重新开启Hyper-V，按照方法3执行bcdedit / set hypervisorlaunchtype auto 命令并重启计算机即可。</p>
+<p>原文链接：<a href="https://blog.csdn.net/qq_43942195/article/details/88600624" target="_blank" rel="noopener">https://blog.csdn.net/qq_43942195/article/details/88600624</a></p>
 <h4 id="reference"><a href="#reference" class="headerlink" title="reference:"></a>reference:</h4><ul>
 <li><a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker官网</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">阮一峰的Dockers入门</a></li>
@@ -966,24 +977,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Github搭建简单博客总结</title>
     <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
@@ -1021,6 +1014,24 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
