@@ -250,12 +250,14 @@
 <li>皮尔逊相关系数：$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>i)(R</em>{j,P}-\hat{R}<em>j)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>i)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}<em>j)^2}}$<br>其中，`R</em>{i,p}<code>代表用户</code>i<code>对物品</code>p<code>的评分，$\hat{R}_i$是代表用户</code>i<code>对所有物品的平均评分，</code>p`代表所有物品的集合。</li>
 <li>基于皮尔逊系数的思路，还可以通过引入物品平均分的方式，<b>减少物品评分偏置对结果的影响:</b>$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>P)(R</em>{j,P}-\hat{R}<em>P)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>P)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}_P)^2}}$<br>其中，$\hat{R}_p$代表物品<code>p</code>得到所有评分的平均分。</li>
 </ol>
-<p>####2.3 最终结果的排序</p>
+<h4>2.3 最终结果的排序</h4>
+
 <p>假设“目标用户与其相似用户的喜好是相似的”</p>
 <p>最常用的方式是<b>利用用户相似度和相似用户的评价的加权平均获得目标用户的评分预测</b>，如下：</p>
 <p>$$R_{u,p}=\frac{\Sigma_{s\in S}(W_{u,s}·R_{s,p})}{\Sigma_{s\in S}W_{u,s}}$$</p>
 <p>其中，权重$W_{u,s}$是用户<code>u</code>和用户<code>s</code>的相似度，$R_{s,P}$是用户<code>s</code>对物品<code>p</code>的评分。</p>
-<p>####2.4 ItemCF</p>
+<h4>2.4 ItemCF</h4>
+
 <p>ItemCF是基于物品相似度进行推荐的协同过滤算法。通过计算共现矩阵中物品列向量的相似度得到物品之间的相似矩阵，再找到用户的历史正反馈物品的相似物品进行进一步排序和推荐。</p>
 <ol>
 <li>基于历史数据，构建以用户（假设用户总数为m）为行坐标，物品（物品总数为n）为列坐标的<code>m * n</code>维的共现矩阵。</li>
@@ -273,7 +275,8 @@
 <p>矩阵分解在CF中“共现矩阵”的基础上，加入了<b>隐向量</b>的概念，加强了模型处理稀疏矩阵的能力。</p>
 <img alt="A9DA0BC6-B77A-485E-8A5D-DE44BE271712.png" style="zoom:50%;" data-src="https://i.loli.net/2020/07/11/bFJ4WoyBGTvUDpg.jpg" class="lazyload">
 
-<p>####3.1矩阵分解的求解过程</p>
+<h4>3.1矩阵分解的求解过程</h4>
+
 <p>主要方法有三种：</p>
 <ul>
 <li>特征值分解（Eigen Decomposition）：只能作用于方阵</li>
