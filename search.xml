@@ -247,8 +247,8 @@
 <h4 id="2-2-用户相似度计算"><a href="#2-2-用户相似度计算" class="headerlink" title="2.2 用户相似度计算"></a>2.2 用户相似度计算</h4><p>对于用户向量<code>i</code>和用户向量<code>j</code></p>
 <ol>
 <li>余弦相似度：$sim(i,j)=cos(i,j)=\frac{i·j}{||i||·||j||}$</li>
-<li>皮尔逊相关系数：$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>i)(R</em>{j,P}-\hat{R}<em>j)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>i)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}<em>j)^2}}$<br>其中，`R</em>{i,p}<code>代表用户</code>i<code>对物品</code>p<code>的评分，$\hat{R}_i$是代表用户</code>i<code>对所有物品的平均评分，</code>p`代表所有物品的集合。</li>
-<li>基于皮尔逊系数的思路，还可以通过引入物品平均分的方式，<b>减少物品评分偏置对结果的影响:</b>$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>P)(R</em>{j,P}-\hat{R}<em>P)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>P)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}_P)^2}}$<br>其中，$\hat{R}_p$代表物品<code>p</code>得到所有评分的平均分。</li>
+<li>皮尔逊相关系数：<br>$$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>i)(R</em>{j,P}-\hat{R}<em>j)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>i)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}<em>j)^2}}$$<br>其中，`R</em>{i,p}<code>代表用户</code>i<code>对物品</code>p<code>的评分，$\hat{R}_i$是代表用户</code>i<code>对所有物品的平均评分，</code>p`代表所有物品的集合。</li>
+<li>基于皮尔逊系数的思路，还可以通过引入物品平均分的方式，<b>减少物品评分偏置对结果的影响:</b><br>$$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>P)(R</em>{j,P}-\hat{R}<em>P)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>P)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}_P)^2}}$$<br>其中，$\hat{R}_p$代表物品<code>p</code>得到所有评分的平均分。</li>
 </ol>
 <h4>2.3 最终结果的排序</h4>
 
@@ -281,7 +281,7 @@
 <ul>
 <li>特征值分解（Eigen Decomposition）：只能作用于方阵</li>
 <li>奇异值分解（singular Value Decomposition, SVD）：<img alt="6812192D-0640-4957-90E1-9A131EF5B6A9.png" data-src="https://i.loli.net/2020/07/11/Uzw2Id8ER1t3Prx.jpg" class="lazyload"></li>
-<li>梯度下降（Gradient Descent）:<br>求解矩阵分解的目标函数：$$min_{q^<em>,p^</em>}\Sigma_{(u,i)\in K}(r_{u,i}-q_i^Tp_u)^2+\lambda(||q_i||+||p_u||)^2$$</li>
+<li>梯度下降（Gradient Descent）:<br>求解矩阵分解的目标函数：<br>$$min_{q^<em>,p^</em>}\Sigma_{(u,i)\in K}(r_{u,i}-q_i^Tp_u)^2+\lambda(||q_i||+||p_u||)^2$$</li>
 </ul>
 <p>在矩阵分解算法中，由于隐向量的存在，使人意的用户和物品之间都可以得到预测分值。而隐向量的生成过程其实是对共现矩阵进行全局拟合的过程，因此隐向量其实是利用全局信息生成的，有更强的泛化能力。</p>
 <h4 id="3-2-MF优缺点"><a href="#3-2-MF优缺点" class="headerlink" title="3.2 MF优缺点"></a>3.2 MF优缺点</h4><ul>
