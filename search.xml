@@ -228,7 +228,8 @@
   <entry>
     <title>第二章：推荐系统的进化之路</title>
     <url>/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</url>
-    <content><![CDATA[<html><head></head><body><p>##一、整体框架</p>
+    <content><![CDATA[<html><head></head><body><h2>一、整体框架</h2>
+
 <p><img alt="1.png" data-src="https://i.loli.net/2020/07/11/vndB6QLsTbFJNGg.jpg" class="lazyload"></p>
 <p>传统推荐系统的发展脉络主要由以下四个部分组成：</p>
 <ul>
@@ -237,7 +238,8 @@
 <li><b>因子分解机模型族：</b>在传统逻辑回归的基础上，加入了二阶部分，使模型具备了进行<font color="red">特征组合</font>的能力。FM模型、FFM模型；</li>
 <li><b>组合模型：</b>为了融合多个模型的优点，将不同模型组合使用是构建推荐模型常用的方法。GBDT+LR等。</li>
 </ul>
-<p>##二、协同过滤</p>
+<h2>二、协同过滤</h2>
+
 <p><em>协同过滤的提出：2003年Amazon发表文章<a href="https://ieeexplore.ieee.org/document/1167344" target="_blank" rel="noopener">Amazon.com recommendations: item-to-item collaborative filtering</a></em></p>
 <h4 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h4><p>协同大家的反馈、评价和意见一起对海量的信息进行过滤，从中筛选出目标用户可能感兴趣的信息的推荐过程。</p>
 <p><img alt="366139DF-46C7-47B9-A03F-7237B62B0EEA.png" data-src="https://i.loli.net/2020/07/11/Xjb4Q8YEUoDknJ3.jpg" class="lazyload"></p>
@@ -266,7 +268,8 @@
 <li>CF的天然缺陷：推荐结果的头部效应较明显，处理稀疏向量的能力弱。</li>
 <li>CF仅利用用户和物品的交互信息，无法有效地引入用户年龄、性别、商品描述、商品分类、当前时间等一系列用户特征、物品特征和上下文特征。</li>
 </ul>
-<p>##三、矩阵分解</p>
+<h2>三、矩阵分解</h2>
+
 <p>矩阵分解在CF中“共现矩阵”的基础上，加入了<b>隐向量</b>的概念，加强了模型处理稀疏矩阵的能力。</p>
 <img alt="A9DA0BC6-B77A-485E-8A5D-DE44BE271712.png" style="zoom:50%;" data-src="https://i.loli.net/2020/07/11/bFJ4WoyBGTvUDpg.jpg" class="lazyload">
 
@@ -293,7 +296,8 @@
 </ol>
 </li>
 </ul>
-<p>##四、逻辑回归</p>
+<h2>四、逻辑回归</h2>
+
 </body></html>]]></content>
       <categories>
         <category>《深度学习推荐系统》</category>
