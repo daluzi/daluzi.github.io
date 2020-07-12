@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo+Github搭建简单博客总结 | daluzi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo+Github搭建简易博客总结参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？ 前言： 一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。 软件准备：Node.js、Git  先安装Hexo: $ npm inst">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Github搭建简单博客总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;daluzi.top&#x2F;2019&#x2F;11&#x2F;23&#x2F;Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:site_name" content="daluzi">
+<meta property="og:description" content="Hexo+Github搭建简易博客总结参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？ 前言： 一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。 软件准备：Node.js、Git  先安装Hexo: $ npm inst">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-23T14:01:22.974Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="../../../../atom.xml" title="daluzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../../../index.html" id="logo">daluzi</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="../../../../index.html">Home</a>
+        
+          <a class="main-nav-link" href="../../../../archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../../../atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://daluzi.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo+Github搭建简易博客总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time datetime="2019-11-23T13:50:59.000Z" itemprop="datePublished">2019-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo+Github搭建简单博客总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" data-id="ckcitwrus000a3rxeggjx35x9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../../../12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks
+        
+      </div>
+    </a>
+  
+  
+    <a href="../Multimodal-Machine-Learning-A-Survey-and-Taxonomy/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Multimodal Machine Learning:A Survey and Taxonomy</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/Heterogeneous-Networks/">Heterogeneous Networks</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/KG/">KG</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/recommendation/">recommendation</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/recommendation/HIN/">HIN</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/recommendation/explainable-recommendation/">explainable recommendation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/">《深度学习推荐系统》</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/DL/" rel="tag">DL</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Deeplearning/" rel="tag">Deeplearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/GCN/" rel="tag">GCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/GNN/" rel="tag">GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/GNN-GCN/" rel="tag">GNN/GCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/HIN/" rel="tag">HIN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Heterogeneous-Information-Networks/" rel="tag">Heterogeneous Information Networks</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/KG/" rel="tag">KG</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Meta-graph/" rel="tag">Meta-graph</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Muilimodal/" rel="tag">Muilimodal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/RS/" rel="tag">RS</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Recommendation/" rel="tag">Recommendation</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/explainability/" rel="tag">explainability</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/graph-learning/" rel="tag">graph-learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/heterogeneous/" rel="tag">heterogeneous</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/heterogeneous-GNN/" rel="tag">heterogeneous GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/meta-path/" rel="tag">meta path</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/negative-sampling-based-method/" rel="tag">negative sampling-based method</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/recommendation/" rel="tag">recommendation</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/regression-tree/" rel="tag">regression tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/skip-gram/" rel="tag">skip-gram</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/survey/" rel="tag">survey</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="../../../../tags/DL/" style="font-size: 15px;">DL</a> <a href="../../../../tags/Deeplearning/" style="font-size: 10px;">Deeplearning</a> <a href="../../../../tags/GCN/" style="font-size: 10px;">GCN</a> <a href="../../../../tags/GNN/" style="font-size: 10px;">GNN</a> <a href="../../../../tags/GNN-GCN/" style="font-size: 10px;">GNN/GCN</a> <a href="../../../../tags/HIN/" style="font-size: 10px;">HIN</a> <a href="../../../../tags/Heterogeneous-Information-Networks/" style="font-size: 10px;">Heterogeneous Information Networks</a> <a href="../../../../tags/KG/" style="font-size: 10px;">KG</a> <a href="../../../../tags/Meta-graph/" style="font-size: 10px;">Meta-graph</a> <a href="../../../../tags/Muilimodal/" style="font-size: 10px;">Muilimodal</a> <a href="../../../../tags/RS/" style="font-size: 10px;">RS</a> <a href="../../../../tags/Recommendation/" style="font-size: 10px;">Recommendation</a> <a href="../../../../tags/docker/" style="font-size: 10px;">docker</a> <a href="../../../../tags/explainability/" style="font-size: 10px;">explainability</a> <a href="../../../../tags/graph-learning/" style="font-size: 10px;">graph-learning</a> <a href="../../../../tags/heterogeneous/" style="font-size: 10px;">heterogeneous</a> <a href="../../../../tags/heterogeneous-GNN/" style="font-size: 10px;">heterogeneous GNN</a> <a href="../../../../tags/hexo/" style="font-size: 10px;">hexo</a> <a href="../../../../tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="../../../../tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="../../../../tags/meta-path/" style="font-size: 10px;">meta path</a> <a href="../../../../tags/negative-sampling-based-method/" style="font-size: 10px;">negative sampling-based method</a> <a href="../../../../tags/recommendation/" style="font-size: 20px;">recommendation</a> <a href="../../../../tags/regression-tree/" style="font-size: 10px;">regression tree</a> <a href="../../../../tags/skip-gram/" style="font-size: 10px;">skip-gram</a> <a href="../../../../tags/survey/" style="font-size: 10px;">survey</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../../../../2020/07/12/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="../../../../2020/06/28/Docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="../../../../2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/">第二章：推荐系统的进化之路</a>
+          </li>
+        
+          <li>
+            <a href="../../../../2020/06/27/%E7%AC%AC%E4%B8%80%E7%AB%A0/">第一章</a>
+          </li>
+        
+          <li>
+            <a href="../../../../2020/06/22/KG-learning/">KG_learning</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 daluzi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="../../../../fancybox/jquery.fancybox.css">
+  <script src="../../../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../../../js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

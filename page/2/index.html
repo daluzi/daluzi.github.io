@@ -1,98 +1,719 @@
-<!DOCTYPE html><html lang="en-US" data-theme="right"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>daluzi</title><meta name="description" content=""><meta name="keywords"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="daluzi"><meta name="twitter:description" content=""><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="daluzi"><meta property="og:url" content="http://daluzi.top/page/2/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content=""><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
-var t = Cookies.get("theme");
-if (autoChangeMode == '1'){
-const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
-const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-if (t === undefined){
-  if (isLightMode) activateLightMode()
-  else if (isDarkMode) activateDarkMode()
-  else if (isNotSpecified || hasNoSupport){
-    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
-    now = new Date();
-    hour = now.getHours();
-    isNight = hour < 6 || hour >= 18
-    isNight ? activateDarkMode() : activateLightMode()
-}
-} else if (t == 'light') activateLightMode()
-else activateDarkMode()
-
-
-} else if (autoChangeMode == '2'){
-  now = new Date();
-  hour = now.getHours();
-  isNight = hour < 6 || hour >= 18
-  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
-  else if (t === 'light') activateLightMode()
-  else activateDarkMode() 
-} else {
-  if ( t == 'dark' ) activateDarkMode()
-  else if ( t == 'light') activateLightMode()
-}
-
-function activateDarkMode(){
-  document.documentElement.setAttribute('data-theme', 'dark')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
-  }
-}
-function activateLightMode(){
-  document.documentElement.setAttribute('data-theme', 'light')
-  if (document.querySelector('meta[name="theme-color"]') !== null){
-  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
-  }
-}</script><link rel="stylesheet" href="../../css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://daluzi.top/page/2/"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"http://daluzi.top/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
-  highlight_copy: 'false',
-  highlight_lang: 'true',
-  highlight_shrink: 'false',
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  bookmark: {
-    title: 'Snackbar.bookmark.title',
-    message_prev: 'Press',
-    message_next: 'to bookmark this page'
-  },
-  runtime_unit: 'days',
-  copyright: undefined,
-  copy_copyright_js: false,
-  ClickShowText: undefined,
-  medium_zoom: 'false',
-  Snackbar: undefined
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
   
-}</script></head><body><div id="header"> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="../../index.html">daluzi</a></span><i class="fa fa-bars fa-fw toggle-menu pull_right close" aria-hidden="true"></i><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></span><span class="pull_right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lazyload avatar_img" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="../../archives/"><div class="headline">Articles</div><div class="length_num">17</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="../../tags/"><div class="headline">Tags</div><div class="length_num">26</div></a></div></div><div class="mobile_data_item is_center">     <div class="mobile_data_link"><a href="../../categories/"><div class="headline">Categories</div><div class="length_num">8</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><nav class="full_page" id="nav"><div class="nav_bg" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle">daluzi</span></div><div id="site-sub-title"><span class="subtitle"></span></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/daluzi" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon" href="1210415250@qq.com" target="_blank"><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div></nav><div id="content-outer"><div class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="../../2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/" title="metapath2vec: Scalable Representation Learning for Heterogeneous Networks"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/12/12/JLtEblZ162Hy5MQ.jpg" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/" title="metapath2vec: Scalable Representation Learning for Heterogeneous Networks">metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a><div class="content">
 
-This article proposed two scalable representation learning models: metapath2vec and metapath2vec++. 
-In metapath2vec: 
+  
+  <title>daluzi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="daluzi">
+<meta property="og:url" content="http:&#x2F;&#x2F;daluzi.top&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="daluzi">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="../../atom.xml" title="daluzi" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
 
-First, they propose meta-pat ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_right right_radius"><a href="../../2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/" title="Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/12/09/wjOSsENmKGR2yY9.jpg" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/" title="Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks">Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</a><div class="content">
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">daluzi</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="../../index.html">Home</a>
+        
+          <a class="main-nav-link" href="../../archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="../../atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://daluzi.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/" class="article-date">
+  <time datetime="2019-12-12T15:22:57.000Z" itemprop="datePublished">2019-12-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../../categories/Heterogeneous-Networks/">Heterogeneous Networks</a>
+  </div>
 
-This article is paper about recommendation over heterogeneous information networks. Because HIN faces two problems: 1, how to represent the high-lev ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="../../2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/" title="Multimodal Machine Learning:A Survey and Taxonomy"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/11/23/pIzhQfb9OyN7xkX.jpg" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/" title="Multimodal Machine Learning:A Survey and Taxonomy">Multimodal Machine Learning:A Survey and Taxonomy</a><div class="content">
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/">metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a>
+    </h1>
+  
 
-This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents  ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_right right_radius"><a href="../../2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" title="Hexo+Github搭建简单博客总结"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/11/23/J1gtZrx8LOYe6MA.jpg" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" title="Hexo+Github搭建简单博客总结">Hexo+Github搭建简单博客总结</a><div class="content">Hexo+Github搭建简易博客总结参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？
-前言：
-一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="../../2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/" title="Semi-supervised Classification with Graph Convolutional Networks"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/11/14/LVUEdmMueZ1APTt.jpg" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/" title="Semi-supervised Classification with Graph Convolutional Networks">Semi-supervised Classification with Graph Convolutional Networks</a><div class="content">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>This article proposed two scalable representation learning models: <strong>metapath2vec</strong> and <strong>metapath2vec++</strong>. </p>
+<p>In metapath2vec: </p>
+<ul>
+<li>First, they propose <strong>meta-path</strong> based <strong>random walks</strong> in heterogeneous networks to generate <strong>hetetogeneous neighborhoods</strong> with network semantics for various types of nodes.</li>
+<li>Second, they extend the <strong>skip-gram</strong> model to facilitate the modeling of geographically and semantically close nodes.</li>
+</ul>
+<p>In metapath2vec++:</p>
+<ul>
+<li>they develop a <strong>heterogeneous negative sampling-based</strong> method that enables the accurate and efficient prediction of a node’s heterogeneous neighborhood.</li>
+</ul>
+<p><a href="http://dx.doi.org/10.1145/3097983.3098036" target="_blank" rel="noopener">http://dx.doi.org/10.1145/3097983.3098036</a></p>
+</blockquote>
+</blockquote>
+<img src="https://i.loli.net/2020/05/25/Afdic56XJB1YWKT.jpg" alt="1.jpeg" style="zoom:50%;" />
 
-The convolution is extended to the data of the graph structure.Motivate the choice of our convolutional architecture via a localized first-order app ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_right right_radius"><a href="../../2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/" title="Personalized Recommendation Combining User Interest and Social Circle"><img class="post_bg lazyload" data-src="https://i.loli.net/2019/11/13/s6KeruPkCjfvzWi.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/" title="Personalized Recommendation Combining User Interest and Social Circle">Personalized Recommendation Combining User Interest and Social Circle</a><div class="content">
 
-Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used th ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover pull_left left_radius"><a href="../../2019/11/12/hello-world/" title="Hello World"><img class="post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"></a></div><div class="recent-post-info">  <a class="article-title" href="../../2019/11/12/hello-world/" title="Hello World">Hello World</a><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in  ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="../../"><i class="fa fa-chevron-left"></i></a><a class="page-number" href="../../">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card_widget card-author"><div class="card-content"><div class="post_data"><div class="data-item is_center"><img class="lazyload avatar_img" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"><p class="author-info__name is_center">daluzi</p><p class="author-info__description is_center"></p></div></div><div class="post_data data_config"><div class="data-item is_center"><div class="data_link"><a href="../../archives/"><p class="headline">Articles</p><p class="length_num">17</p></a></div></div><div class="data-item is_center">      <div class="data_link"><a href="../../tags/"><p class="headline">Tags</p><p class="length_num">26</p></a></div></div><div class="data-item is_center">     <div class="data_link"><a href="../../categories/"><p class="headline">Categories</p><p class="length_num">8</p></a></div></div></div><div class="post_data is_center"><a class="data-item bookmark bookmarke--primary bookmark--animated" id="bookmark-it" href="javascript:;" title="Add to bookmark" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>Add to bookmark</span></a></div><div class="post_data data_config"><div id="aside-social-icons"> <a class="social-icon data-item" href="https://github.com/daluzi" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon data-item" href="1210415250@qq.com" target="_blank"><i class="fa fa-envelope"></i></a><a class="social-icon data-item" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div></div></div><div class="card_widget card-announcement"><div class="card-content"><div class="item_headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>Announcement</span></div><div class="announcement_content">A paper a week,keep girls away;A paper a day,make you a gay!</div></div></div><div class="card_widget card-recent-post"><div class="card-content"><div class="item_headline"><i class="fa fa-history" aria-hidden="true"></i><span>Recent Post</span></div><div class="aside_recent_item"><div class="aside_recent_post"><a href="../../2020/07/12/test/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" title="test"></div><div id="aside_title"><div class="aside_post_title" href="../../2020/07/12/test/" title="test">test</div></div></a></div><div class="aside_recent_post"><a href="../../2020/06/28/Docker/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png" onerror="onerror=null;src='/img/404.jpg'" title="Docker"></div><div id="aside_title"><div class="aside_post_title" href="../../2020/06/28/Docker/" title="Docker">Docker</div></div></a></div><div class="aside_recent_post"><a href="../../2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://i.loli.net/2020/06/27/bALKwWlMsRvogtJ.jpg" onerror="onerror=null;src='/img/404.jpg'" title="第二章：推荐系统的进化之路"></div><div id="aside_title"><div class="aside_post_title" href="../../2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="第二章：推荐系统的进化之路">第二章：推荐系统的进化之路</div></div></a></div><div class="aside_recent_post"><a href="../../2020/06/27/%E7%AC%AC%E4%B8%80%E7%AB%A0/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://i.loli.net/2020/06/27/TDHuM3RhKmGaqr6.jpg" onerror="onerror=null;src='/img/404.jpg'" title="第一章"></div><div id="aside_title"><div class="aside_post_title" href="../../2020/06/27/%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="第一章">第一章</div></div></a></div><div class="aside_recent_post"><a href="../../2020/06/22/KG-learning/"><div class="aside_post_cover"><img class="aside_post_bg lazyload" data-src="https://i.loli.net/2020/06/22/JVkxWDiMCZTds2U.jpg" onerror="onerror=null;src='/img/404.jpg'" title="KG_learning"></div><div id="aside_title"><div class="aside_post_title" href="../../2020/06/22/KG-learning/" title="KG_learning">KG_learning</div></div></a></div></div></div></div><div class="card_widget card-categories"><div class="card-content"><div class="item_headline"><i class="fa fa-folder-open" aria-hidden="true"></i><span>Categories</span></div><ul class="aside_category_item">       <li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/Docker/"><span class="aside_category_list_name">Docker</span><span class="aside_category_list_length">1</span></a></li><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/Heterogeneous-Networks/"><span class="aside_category_list_name">Heterogeneous Networks</span><span class="aside_category_list_length">1</span></a></li><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/KG/"><span class="aside_category_list_name">KG</span><span class="aside_category_list_length">1</span></a></li><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/leetcode/"><span class="aside_category_list_name">leetcode</span><span class="aside_category_list_length">1</span></a></li><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/recommendation/"><span class="aside_category_list_name">recommendation</span><span class="aside_category_list_length">2</span></a></li><ul class="aside_category_item child"><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/recommendation/HIN/"><span class="aside_category_list_name">HIN</span><span class="aside_category_list_length">1</span></a></li><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/recommendation/explainable-recommendation/"><span class="aside_category_list_name">explainable recommendation</span><span class="aside_category_list_length">1</span></a></li></ul><li class="aside_category_list"><a class="aside_category_list_link" href="../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/"><span class="aside_category_list_name">《深度学习推荐系统》</span><span class="aside_category_list_length">2</span></a></li></ul></div></div><div class="card_widget card-tags"><div class="card-content"><div class="item_headline"><i class="fa fa-tags" aria-hidden="true"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="../../tags/DL/" style="font-size: 20px; color: #4d4d4d">DL</a> <a href="../../tags/Deeplearning/" style="font-size: 16px; color: #999">Deeplearning</a> <a href="../../tags/GCN/" style="font-size: 16px; color: #999">GCN</a> <a href="../../tags/GNN/" style="font-size: 16px; color: #999">GNN</a> <a href="../../tags/GNN-GCN/" style="font-size: 16px; color: #999">GNN/GCN</a> <a href="../../tags/HIN/" style="font-size: 16px; color: #999">HIN</a> <a href="../../tags/Heterogeneous-Information-Networks/" style="font-size: 16px; color: #999">Heterogeneous Information Networks</a> <a href="../../tags/KG/" style="font-size: 16px; color: #999">KG</a> <a href="../../tags/Meta-graph/" style="font-size: 16px; color: #999">Meta-graph</a> <a href="../../tags/Muilimodal/" style="font-size: 16px; color: #999">Muilimodal</a> <a href="../../tags/RS/" style="font-size: 16px; color: #999">RS</a> <a href="../../tags/Recommendation/" style="font-size: 16px; color: #999">Recommendation</a> <a href="../../tags/docker/" style="font-size: 16px; color: #999">docker</a> <a href="../../tags/explainability/" style="font-size: 16px; color: #999">explainability</a> <a href="../../tags/graph-learning/" style="font-size: 16px; color: #999">graph-learning</a> <a href="../../tags/heterogeneous/" style="font-size: 16px; color: #999">heterogeneous</a> <a href="../../tags/heterogeneous-GNN/" style="font-size: 16px; color: #999">heterogeneous GNN</a> <a href="../../tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="../../tags/leetcode/" style="font-size: 16px; color: #999">leetcode</a> <a href="../../tags/machine-learning/" style="font-size: 16px; color: #999">machine learning</a> <a href="../../tags/meta-path/" style="font-size: 16px; color: #999">meta path</a> <a href="../../tags/negative-sampling-based-method/" style="font-size: 16px; color: #999">negative sampling-based method</a> <a href="../../tags/recommendation/" style="font-size: 24px; color: #000">recommendation</a> <a href="../../tags/regression-tree/" style="font-size: 16px; color: #999">regression tree</a> <a href="../../tags/skip-gram/" style="font-size: 16px; color: #999">skip-gram</a> <a href="../../tags/survey/" style="font-size: 16px; color: #999">survey</a></div></div></div><div class="card_widget card-archives"><div class="card-content"><div class="item_headline"><i class="fa fa-archive" aria-hidden="true"></i><span>Archives</span></div><div class="archives_item"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">2020年07月<span class="archive-list-count">1</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">2020年06月<span class="archive-list-count">5</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/05/">2020年05月<span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">2020年04月<span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">2019年12月<span class="archive-list-count">2</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/11/">2019年11月<span class="archive-list-count">5</span></a></li></ul></div></div></div><div class="card_widget card-webinfo"><div class="card-content"><div class="item_headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>Info</span></div><div class="webinfo"><div class="webinfo_item"><div class="webinfo_article_name">Article :</div><div class="webinfo_article_count">17</div></div><div class="webinfo_item"><div class="webinfo_runtime_name">Run time :</div><div class="webinfo_runtime_count" id="webinfo_runtime_count"></div><script id="runtionshow" src="../../js/runtimeshow.js" start_date="1/10/2019 00:00:00">      </script></div><div class="webinfo_item">      <div class="webinfo_site_uv_name">UV :</div><div class="webinfo_site_uv_count" id="busuanzi_value_site_uv"></div></div><div class="webinfo_item"><div class="webinfo_site_name">PV :</div><div class="webinfo_site_pv_count" id="busuanzi_value_site_pv"></div></div></div></div></div><div class="card_widget card-links"><div class="card-content"><div class="item_headline"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>aside.card_links</span></div><ul class="aside_category_item"><li class="aside_category_list"><a href="https://gojay.top/" title="gojay : https://gojay.top/" target="_blank"><img class="lozad" data-src="https://i.loli.net/2020/05/24/637PiCmxJGwNclp.jpg" alt="gojay" onerror="onerror=null;src='/img/friend_404.gif'" height="35px"><item>gojay</item></a></li><li class="aside_category_list find_more"><a href="https://gojay.top/" target="_blank">查看更多</a></li></ul></div></div></div></div></div><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By daluzi</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">简</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="../../js/utils.js"></script><script src="../../js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="../../js/baidupush.js"> </script><script src="../../js/tw_cn.js"></script><script>translateInitilization()
-</script><script>if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {} else {
-  $('.full_page .nav_bg').css('background-attachment', 'fixed');
-}
 
-</script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var typed = new Typed(".subtitle", {
-strings: '今日事&#44;今日畢,学习分享'.split(","),
-startDelay: 300,
-typeSpeed: 100,
-loop: true,
-backSpeed: 50
-});
-</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
+
+
+<h2>Data</h2>
+
+<ul>
+<li>AMiner Computer Science dataset</li>
+<li>Database and Information Systems dataset</li>
+</ul>
+<h2>Coding</h2>
+
+<ul>
+<li><a href="https://ericdongyx.github.io/metapath2vec/m2v.html" target="_blank" rel="noopener">https://ericdongyx.github.io/metapath2vec/m2v.html</a> </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/12/12/metapath2vec-Scalable-Representation-Learning-for-Heterogeneous-Networks/" data-id="ckcitwrv8000u3rxe2gwlbtwk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/heterogeneous/" rel="tag">heterogeneous</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/meta-path/" rel="tag">meta path</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/negative-sampling-based-method/" rel="tag">negative sampling-based method</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/skip-gram/" rel="tag">skip-gram</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/" class="article-date">
+  <time datetime="2019-12-09T09:05:15.000Z" itemprop="datePublished">2019-12-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../../categories/recommendation/">recommendation</a>►<a class="article-category-link" href="../../categories/recommendation/HIN/">HIN</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/">Meta-Graph Based Recommendation Fusion over Heterogeneous Information Networks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>This article is paper about recommendation over heterogeneous information networks. Because HIN faces two problems: 1, how to represent the high-level semantics of recommendations and 2, how to fuse the heterogeneous information to make recommendations, the author first introduced the concept of <strong>meta-graph</strong> to HIN-based recommendation, and then solved the information fusion problem with a <strong>“matrix factorization(MF) + factorization machine(FM)”</strong> approach.</p>
+<p>I think the author made two innovations:</p>
+<p>1, use meta-graph and commute matrix to construct similarity matrix;</p>
+<p>2, for each meta-graph, he calculate user-item’s similarity matrix, then factorize users and items’ feature vectors by using matrix factorization (MF). So he can obtain many different users and items vectors of many different meta-graph. for all of then, he use factorization machine(FM) to component then.</p>
+<p>A user-item score prediction problem.</p>
+</blockquote>
+</blockquote>
+<p><strong>KEYWORDS:  Recommendation system; Collaborative filtering; Heterogeneous information networks; Factorization machine.</strong></p>
+<h2>Contents</h2>
+> * [INTRODUCTION](#1)
+> * [FRAMEWORK](#2)
+>   * [Meta-graph based Similarity](#2.1)
+>   * [Meta-graph based Latent Features](#2.2)
+>   * [Recommendation Model](2.3)
+>   * [Comparison with Previous Latent Feature based Model](2.4)
+> * [MODEL OPTIMIZATION](#3)
+>   * [Optimization](#3.1)
+>   * [Complexity Analysis](3.2)
+> * [EXPERIMENTS](4)
+>   * [Datasets](4.1)
+>   * [Evaluation Metric](#4.2)
+>   * [Baseline Models](#4.3)
+
+
+
+<h2 id='1'>INTRODUCTION</h2>
+​        Heterogeneous information networks(**HINs**) have been proposed as a general data representation for many different types of data. 
+
+<p>​        At the beginning, HINs were used to handle entity search and similarity measure problems. Later, it was extended to handle heterogeneous entity recommendation problems. Then, the semantic relatedness constrained by the entity types can be defined by the similarities between two entities along meta-graph.</p>
+<p>​        For traditional collaborative filtering, we always build a simple meta-path <em>Business –&gt; User</em> and learn from this meta-path to make generalization. From HIN’s schema, we can build more complicated meta-paths like <em>User–&gt;Review–&gt;Word–&gt;Review–&gt;Business</em>. </p>
+<p>​        There are two major challenges when applying meta-path based similarities to recommender systems: <strong>First</strong>, meta-path may not be the best way to characterize the rich semantics. So, in this paper, they used <strong>meta-graph(or meta-structure)</strong> to compute similarity between homogeneous type of entities over HINs. <strong>Second</strong>, different meta-paths or meta-graphs result in different similarities. How to assemble them in an effective way is another challenge.</p>
+<p>​        So, in this paper, in order to solve the above two problems, author first used <strong>the concept of meta-graph</strong> and then applied <strong>matrix factorization(MF) + factorization machine(FM)</strong>.</p>
+<pre><code>* for each meta-graph, compute the user-item similarity matrix
+* Use unsupervised MF to factorize it into a set of user and item latent vectors.
+* Use FM to assemble them to learn from the rating matrix. </code></pre><h2 id='2'>FRAMEWORK</h2>
+<h3 id='2.1'>Meta-graph based Similarity</h3>
+​        The definition of Meta-graph:
+
+<p><img src="https://i.loli.net/2019/12/09/VePI7wiHLXqt8fQ.jpg" alt="meta-graph.png"></p>
+<p>​        All of the meta-graphs on Amazon and Yelp:</p>
+<p><img src="https://i.loli.net/2019/12/09/wjOSsENmKGR2yY9.jpg" alt="all of the meta-graphs for Amazon and Yelp"></p>
+<p>​        The author used <strong>commuting matrices</strong> to compute the counting based similarity matrix of a meta-path. For example: if we have a meta-path:<img src="https://i.loli.net/2019/12/09/Pkmpr4n9MUfvV5s.jpg" alt="meta-path.png"></p>
+<p>And, we define a matrix $W_{A_iA_j}$ as the adjacency matrix between type $A_i$ and $A_j$. So the commuting matrix for path p is:<img src="https://i.loli.net/2019/12/09/esYuT4iBoKzdtrN.jpg" alt="ABF68C6E-64CD-469A-BC2E-7D1B19ED3D31.png"></p>
+<p><strong>Algorithm 1 Computing commuting matrix for CM9 :</strong></p>
+<p><img src="https://i.loli.net/2019/12/09/Yshg3R91MzpqZ48.jpg" alt="B07D1FB3-2139-4357-A000-0EA870DA1635.png"></p>
+<h3 id='2.2'>Meta-graph based Latent Features</h3>
+​        By use of matrix factorization method, we can obtain user and item's low-rank matrices:![low-rank.png](https://i.loli.net/2019/12/09/z4JjWdDx5TnMNf3.jpg)
+
+<p><img src="https://i.loli.net/2019/12/09/pmxiLPM6atBTrq8.jpg" alt="702CE1AE-D96F-4C88-BA2E-B80D483F536C.png"></p>
+<p>Which ${\lambda_u},{\lambda_b}$ are the hyper-parameters that control the influence of Frobenius norm regularization to aviod overfitting.</p>
+<h3 id='2.3'>Recommendation Model</h3>
+​        For the L groups of user and item latent features and F ranks which used to factorize every similarity matrix, we concatenate all of the corresponding user and item features form all of the L meta-graphs:![EADE9E6C-D305-4B2C-BF96-033AC1A9BAF7.png](https://i.loli.net/2019/12/09/abOz2gnh9PDwklq.jpg)
+
+<p>​        So the rating for the sample $x^n$ based on FM is computed as follows:</p>
+<p><img src="https://i.loli.net/2019/12/09/5oRL7Dfn9Sl1vGt.jpg" alt="99A1983D-A650-43E0-95B0-C2D2E7826EA3.png"></p>
+<p>Where $w_0$ is the global bias representing the first-order weights for the features, and $V = [v_i]$ represents the second-order weights to model the interactions across different features. $&lt;.,.&gt;$ is the dot product of two vectors of size K.</p>
+<p>​        The parameters can be learned by minimizing the mean square loss:<img src="https://i.loli.net/2019/12/11/k63WYeTtjAdoalO.jpg" alt="mean square loss.png"></p>
+<p>Where $y^n$ is an observed rating for the n-th sample, N is the number of all the observed ratings.</p>
+<p><strong>There are two problems when applying the FM model to the meta-graph based latent features:</strong></p>
+<ul>
+<li>It may bring noise when working with many meta-graphs thus impairing the predicting capability of the model. In practice, some meta-graphs can be useless since information provided by some meta-paths can be covered by others.</li>
+<li>Computational cost.</li>
+</ul>
+<p>​        To alleviate the above two problems, we propose a novel regularization for FM,i.e., the group lasso regularization, which is a feature selection method on a group of variables. The group lasso regularization of parameters p is defined as follows:<img src="https://i.loli.net/2019/12/09/THbdrAQpqiRCLlI.jpg" alt="6F205C97-3FB4-4FE5-B2D8-9A5A8E0B7ECA.png"></p>
+<h3 id='2.4'>Comparison with Previous Latent Feature based Model</h3>
+​        The previous approaches of recommendation based on HIN is not adequate, as it fails to capture the interactions between inter-meta-graph features, i.e. features across different meta-graphs, as well as the intra-meta-graph features, i.e. It may decrease the prediction ability of all of the user and item features.
+
+
+
+<h2 id='3'>MODEL OPTIMIZATION</h2>
+​        The author define FM over meta-graph(FMG) model with the following objective function:
+
+<p><img src="https://i.loli.net/2019/12/09/FYwu3NTrWsHG5hy.jpg" alt="1CB932AA-8575-4885-82D5-3190F9CA0128.png"></p>
+<p>​        We can see now the object function is non-convex and non-smooth. So author used <strong>proximal gradient (nmAPG) algorithm</strong>.</p>
+<h2 id='4'> EXPERIMENTS</h2>
+<h3 id='4.1'>Datasets</h3>
+* Yelp (https://www.yelp.com/dataset_challenge)
+* Amazon Electronics (http://jmcauley.ucsd.edu/data/amazon/)
+
+<h3 id='4.2'>Evaluation Metric</h3>
+​        RMSE
+
+<h3 id='4.3'>Baseline Models</h3>
+* RegSVD: RegSVD is the basic matrix factorization with L2 regularization, which uses only the user-item rating matrix. (https://www.librec.net/)
+* FMR: FMR is the factorization machine with only the user-item rating matrix.(http://www.libfm.org/)
+* HeteRec: HeteRec method is based on meta-path based similarity between users and items.
+* SemRec: SemRec is a meta-path based recommendation on weighted HIN, which is built by connecting users and items with the same ratings.(https://github.com/zzqsmall/SemRec)
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/12/09/Meta-Graph-Based-Recommendation-Fusion-over-Heterogeneous-Information-Networks/" data-id="ckcitwrux000e3rxee6i3bpjz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Heterogeneous-Information-Networks/" rel="tag">Heterogeneous Information Networks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Meta-graph/" rel="tag">Meta-graph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Recommendation/" rel="tag">Recommendation</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hexo+Github搭建简易博客总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2019-11-23T13:50:59.000Z" itemprop="datePublished">2019-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/">Hexo+Github搭建简单博客总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo-Github搭建简易博客总结"><a href="#Hexo-Github搭建简易博客总结" class="headerlink" title="Hexo+Github搭建简易博客总结"></a>Hexo+Github搭建简易博客总结</h1><p><a href="https://www.zhihu.com/question/39183612" target="_blank" rel="noopener">参考知乎问题: 如何使用10个小时搭建出个人域名而又Geek的独立博客？</a></p>
+<p>前言：</p>
+<p>一直没有尝试自己搭建一个博客，之前本来想着自己前后端搭建，但是懒惰。。。。。hexo+github是一个傻瓜式的自助搭建博客方式，很简便，如果是稍微有点代码基础的，应该都能在几个小时之内熟悉搭建整个过程。</p>
+<p>软件准备：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></p>
+<ol>
+<li><p>先安装Hexo: <code>$ npm install -g hexo-cli</code></p>
+</li>
+<li><p>再初始化Hexo:<code>$ npm install</code></p>
+<p>Hexo的大体文件：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹+ themes 存放主题的文件夹+ source 博客资源文件夹+ source/_drafts 草稿文件夹+ source/_posts 文章文件夹+ themes/landscape 默认皮肤文件夹</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml 全局配置文件。要注意的是，该文件格式要求极为严格，缺少一个空格都会导致运行错误。小提示：不要用Tab缩进，两个空格符， <strong>冒号：后面只用一个空格即可*</strong>。</li>
+</ul>
+<ol>
+<li><p>我采用的还是最常用的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Next主题</a>，修改了一连串配置，包括侧栏等等</p>
+</li>
+<li><p>Hexo部署</p>
+<p>到这里，就可以启动本地服务器打开了：<code>$ hexo s</code></p>
+<p>在localhost:4000端口就可以查看到效果。</p>
+<p>在git上创建了一个和本地的文件夹名称一致，我都是创见的daluzi.github.io，然后把本地的文件夹朴实到远程仓库里面。</p>
+<p>接下来，在站点的config.yml文件中，部署如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:  	 type: git 部署类型若有问题，其他类型自行google之  	 repository: https://github.com/daluzi/daluzi.github.io.git  	 branch: master  	 plugins: -hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g #生成静态网页# hexo d #开始部署</span><br></pre></td></tr></table></figure>
+
+<p>好了，在浏览器输入daluzi.github.io就能查看博客了，接下来就是挂载域名。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" data-id="ckcitwrus000a3rxeggjx35x9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Multimodal-Machine-Learning-A-Survey-and-Taxonomy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/" class="article-date">
+  <time datetime="2019-11-23T13:50:59.000Z" itemprop="datePublished">2019-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/">Multimodal Machine Learning:A Survey and Taxonomy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/" data-id="ckcitwruv000c3rxe59j6a8l5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Muilimodal/" rel="tag">Muilimodal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/machine-learning/" rel="tag">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/survey/" rel="tag">survey</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Semi-supervised-Classification-with-Graph-Convolutional-Networks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/" class="article-date">
+  <time datetime="2019-11-14T06:19:32.000Z" itemprop="datePublished">2019-11-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/">Semi-supervised Classification with Graph Convolutional Networks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>The convolution is extended to the data of the graph structure.Motivate the choice of our convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.The model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes.</p>
+<p>In a number of experiments on <strong>citation networks</strong> and on a <strong>knowledge graph dataset</strong>,This model works well in semi-supervised tasks.</p>
+</blockquote>
+</blockquote>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">The main content of the article</a><ul>
+<li><a href="#1.1">abstract</a></li>
+<li><a href="#1.2">spectral graph convolutions</a></li>
+<li><a href="#1.3">layer-wise linear model</a></li>
+<li><a href="#1.4">semi-supervised node classifacation</a></li>
+</ul>
+</li>
+<li><a href="#2">My learing understanding of semi-GCN</a></li>
+</ul>
+</blockquote>
+<h2 id='1'>The main content of the article</h2>
+
+<h3 id='1.1'>abstract</h3>
+
+<p>The authors motivate the choice of their convolutional architecture via a localized first-order approximation of <strong>spectral graph convolutions</strong>.</p>
+<p>By training the structural model of convolution neural network with some tagged node data in the graph structural data ,the network model can further classify the remaining untagged data.</p>
+<p>So,on the whole , the way which the convolution is extended to the data of the graph structural ,can get a better data representation ,and it works well in semi-supervised tasks.</p>
+<blockquote>
+<p>Datasets: citation network datasets(Citeseer ,Cora ,Pubmed) ,bipartite graph dataset(NELL) </p>
+</blockquote>
+<h3 id='1.2'>spectral graph convolutions</h3>
+
+<p><em>In this period ,I mainly refer to this website:<a href="https://blog.csdn.net/qq_41727666/article/details/84622965" target="_blank" rel="noopener">https://blog.csdn.net/qq_41727666/article/details/84622965</a></em></p>
+<p>In fact ,there are two versions of GCN:</p>
+<p>1.The first generation of GCN is this formula:<strong>$$g{\theta} * x = Ug{\theta}U^Tx$$</strong>.</p>
+<p>In the formula ,$x$ is the eigenvector of the graph node ,$g{\theta}=diag(\theta)$ is the convolution kernel.$U$ is the matrix of eigenvectors of the normalized graph Laplacian $L$. And the $L = I_N - D^{-1/2}AD^{-1/2} = U{\Lambda}U^T$</p>
+<p><strong>But ,this is too complicated to calculate</strong></p>
+<p>2.To circumvent this problem ,$g{\theta}(\Lambda)$ can be well-approximated by a truncated expansion in terms of Chebyshev polynomial $T_k(x)$ up to $K^{th}$ order:</p>
+<p>$$g{\theta}^<code>{\approx} {\sum_{k=0}^{K}{\theta}^</code>T_k(\Lambda^1)}$$</p>
+<p>With a rescaled $\Lambda^1 = {\frac{2}{\lambda_{max}}}\Lambda - I_N$. $\lambda_{max}$ Denotes the largest eigenvalue of $L$. $\theta^`$ is now a vector of Chebyshev coefficients. The Chebyshev polynomials are recursively defined as $T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x)$, with $T_0(x) = 1$ and $T_1(x) = x$.</p>
+<p>So, now the formula is:</p>
+<p>$$g{\theta}^<code>* x \approx {\sum_{k=0}^{K}{\theta}_k^</code>T_k(L^1)x}$$</p>
+<p>With $L^1 = {\frac{2}{\lambda_{max}}L - I_N}$ .This expression is now K-localized since it is a <strong>$K^{th}$-order ploynomial in the Laplacian</strong>.</p>
+<h3 id='1.3'>layer-wise linear model</h3>
+
+<p>The authors approximate $\lambda_{max} \approx 2$, so now the formula is simplified to:</p>
+<p><img src="https://i.loli.net/2019/11/17/LdqIwO9NfxzXWJv.png" alt="semi_eq5.png"></p>
+<h3 id='1.4'>semi-supervised node classification</h3>
+
+<p>In this example, they consider a two-layer GCN for semi-supervised node classification on a graph with a symmetric adjacency matrix A(binary or weighted). </p>
+<p>First, calculate $A^` = D1^{-1/2}A^1D1^{-1/2}$.</p>
+<p>And the forward model then takes the simple form:$$Z = f(X,A) = softmax(A^<code>{ReLU}(A^</code>XW^{(0)})W^{(1)})$$</p>
+<p>Here, $W^{(0)}$ is an input-to-hidden weight matrix for a hidden layer with H feature maps.</p>
+<p>$W^{(1)}$ is a hidden-to-output weight matrix.</p>
+<p>The softmax activation function defined as $softmax(x_i) = \frac{1}{\sum_i{exp(x_i)}}exp(x_i)$</p>
+<p>For semi-supervised multiclass classification, they then evaluate the cross-entropy error over all labeled examples :$\xi = -\sum_{l\epsilon{y_l}}\sum_{f=1}^{F}Y_{lf}lnZ_{lf}$</p>
+<p>The author perform <strong>batch gradient descent</strong>. Stochasticity in the training process is in produced via <strong>dropout</strong>. </p>
+<h2 id='2'>My learing understanding of semi-GCN</h2>
+
+<p><em>mainly depend on <a href="https://zhuanlan.zhihu.com/p/58178060" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/58178060</a></em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/14/Semi-supervised-Classification-with-Graph-Convolutional-Networks/" data-id="ckcitwruz000g3rxe3bg9fmi8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/Deeplearning/" rel="tag">Deeplearning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/GCN/" rel="tag">GCN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Personalized-Recommendation-Combining-User-Interest-and-Social-Circle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/" class="article-date">
+  <time datetime="2019-11-13T14:41:32.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/">Personalized Recommendation Combining User Interest and Social Circle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>Interpersonal influence and interest based on circles of friends can be used to solve cold start and sparsity problem of datasets.This paper used three social factors:<strong>personal interest</strong>,<strong>interpersonal interest similarity</strong> and <strong>interpersonal influence</strong> to make personalized recommendation.</p>
+</blockquote>
+</blockquote>
+<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><blockquote>
+<ul>
+<li><a href="#1">Introduction</a></li>
+<li><a href="#2">Problem formulation</a></li>
+<li><a href="#3">Related work</a><ul>
+<li><a href="3.1">Basic matrix factorization</a></li>
+<li><a href="3.2">CircleCon model</a></li>
+<li><a href="3.3">ContextMF model</a></li>
+</ul>
+</li>
+<li><a href="4">The approach</a><ul>
+<li><a href="4.1">User interest factor</a></li>
+<li><a href="4.2">Personalized recommendation model</a></li>
+<li><a href="4.3">Model training</a></li>
+</ul>
+</li>
+<li><a href="5">Experiments</a><ul>
+<li><a href="5.1">Datasets</a></li>
+<li><a href="5.2">Performance measures</a></li>
+<li><a href="5.3">Evaluation</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id='1'>Introduction</h2>
+Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
+
+<p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
+<h2 id='2'>Problem formulation</h2>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/13/Personalized-Recommendation-Combining-User-Interest-and-Social-Circle/" data-id="ckcitwrv1000j3rxegyf49xgg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/RS/" rel="tag">RS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="../../2019/11/12/hello-world/" class="article-date">
+  <time datetime="2019-11-12T08:44:58.803Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2019/11/12/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://daluzi.top/2019/11/12/hello-world/" data-id="ckcitwrv5000o3rxe0oxt2k5n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="../../">&amp;laquo; Prev</a><a class="page-number" href="../../">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="../../categories/Heterogeneous-Networks/">Heterogeneous Networks</a></li><li class="category-list-item"><a class="category-list-link" href="../../categories/KG/">KG</a></li><li class="category-list-item"><a class="category-list-link" href="../../categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="../../categories/recommendation/">recommendation</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="../../categories/recommendation/HIN/">HIN</a></li><li class="category-list-item"><a class="category-list-link" href="../../categories/recommendation/explainable-recommendation/">explainable recommendation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/">《深度学习推荐系统》</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/DL/" rel="tag">DL</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Deeplearning/" rel="tag">Deeplearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/GCN/" rel="tag">GCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/GNN/" rel="tag">GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/GNN-GCN/" rel="tag">GNN/GCN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/HIN/" rel="tag">HIN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Heterogeneous-Information-Networks/" rel="tag">Heterogeneous Information Networks</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/KG/" rel="tag">KG</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Meta-graph/" rel="tag">Meta-graph</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Muilimodal/" rel="tag">Muilimodal</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/RS/" rel="tag">RS</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/Recommendation/" rel="tag">Recommendation</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/explainability/" rel="tag">explainability</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/graph-learning/" rel="tag">graph-learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/heterogeneous/" rel="tag">heterogeneous</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/heterogeneous-GNN/" rel="tag">heterogeneous GNN</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/meta-path/" rel="tag">meta path</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/negative-sampling-based-method/" rel="tag">negative sampling-based method</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/recommendation/" rel="tag">recommendation</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/regression-tree/" rel="tag">regression tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/skip-gram/" rel="tag">skip-gram</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/survey/" rel="tag">survey</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/DL/" style="font-size: 15px;">DL</a> <a href="../../tags/Deeplearning/" style="font-size: 10px;">Deeplearning</a> <a href="../../tags/GCN/" style="font-size: 10px;">GCN</a> <a href="../../tags/GNN/" style="font-size: 10px;">GNN</a> <a href="../../tags/GNN-GCN/" style="font-size: 10px;">GNN/GCN</a> <a href="../../tags/HIN/" style="font-size: 10px;">HIN</a> <a href="../../tags/Heterogeneous-Information-Networks/" style="font-size: 10px;">Heterogeneous Information Networks</a> <a href="../../tags/KG/" style="font-size: 10px;">KG</a> <a href="../../tags/Meta-graph/" style="font-size: 10px;">Meta-graph</a> <a href="../../tags/Muilimodal/" style="font-size: 10px;">Muilimodal</a> <a href="../../tags/RS/" style="font-size: 10px;">RS</a> <a href="../../tags/Recommendation/" style="font-size: 10px;">Recommendation</a> <a href="../../tags/docker/" style="font-size: 10px;">docker</a> <a href="../../tags/explainability/" style="font-size: 10px;">explainability</a> <a href="../../tags/graph-learning/" style="font-size: 10px;">graph-learning</a> <a href="../../tags/heterogeneous/" style="font-size: 10px;">heterogeneous</a> <a href="../../tags/heterogeneous-GNN/" style="font-size: 10px;">heterogeneous GNN</a> <a href="../../tags/hexo/" style="font-size: 10px;">hexo</a> <a href="../../tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="../../tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="../../tags/meta-path/" style="font-size: 10px;">meta path</a> <a href="../../tags/negative-sampling-based-method/" style="font-size: 10px;">negative sampling-based method</a> <a href="../../tags/recommendation/" style="font-size: 20px;">recommendation</a> <a href="../../tags/regression-tree/" style="font-size: 10px;">regression tree</a> <a href="../../tags/skip-gram/" style="font-size: 10px;">skip-gram</a> <a href="../../tags/survey/" style="font-size: 10px;">survey</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../../2020/07/12/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="../../2020/06/28/Docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="../../2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/">第二章：推荐系统的进化之路</a>
+          </li>
+        
+          <li>
+            <a href="../../2020/06/27/%E7%AC%AC%E4%B8%80%E7%AB%A0/">第一章</a>
+          </li>
+        
+          <li>
+            <a href="../../2020/06/22/KG-learning/">KG_learning</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 daluzi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="../../fancybox/jquery.fancybox.css">
+  <script src="../../fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="../../js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
