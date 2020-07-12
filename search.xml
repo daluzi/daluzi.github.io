@@ -633,9 +633,9 @@ $$min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda
         <category>explainable recommendation</category>
       </categories>
       <tags>
-        <tag>recommendation</tag>
         <tag>explainability</tag>
         <tag>regression tree</tag>
+        <tag>recommendation</tag>
       </tags>
   </entry>
   <entry>
