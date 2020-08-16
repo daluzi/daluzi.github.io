@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>第三章</title>
+    <url>/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>《深度学习推荐系统》</category>
+      </categories>
+      <tags>
+        <tag>recommendation</tag>
+        <tag>DL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker</title>
     <url>/2020/06/28/Docker/</url>
     <content><![CDATA[<h2 id="Docker"><a class="header-anchor" href="#Docker">¶</a>Docker</h2>
