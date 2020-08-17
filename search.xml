@@ -3,7 +3,22 @@
   <entry>
     <title>第三章</title>
     <url>/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1>一、深度学习推荐模型的演化关系图</h1>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/17/wEVPFOIKdDo1Rj6.jpg" alt="BBA75C44-476D-4786-B990-7EEE2FB4DF45.png"></p>
+<p>整体来说，主要是以<font color='red'>多层感知机(Multi-Layer Perceptron，MLP)</font>为核心，通过改变神经网络的结构来构建各异的模型，比如：</p>
+<ul>
+<li>改变神经网络的复杂程度</li>
+<li>改变特征交叉方式</li>
+<li>组合多种模型</li>
+<li>FM模型的深度学习演化版本</li>
+<li>注意力机制与推荐模型的结合</li>
+<li>序列模型与推荐模型的结合</li>
+<li>强化学习与推荐模型的结合</li>
+<li>等</li>
+</ul>
+<h1>二、AutoRec——单隐层神经网络推荐模型</h1>
+<p><em>2015 澳大利亚国立大学提出</em></p>
+]]></content>
       <categories>
         <category>《深度学习推荐系统》</category>
       </categories>
