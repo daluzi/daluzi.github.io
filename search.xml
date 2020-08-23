@@ -4,7 +4,7 @@
     <title>第三章</title>
     <url>/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/</url>
     <content><![CDATA[<h1>一、深度学习推荐模型的演化关系图</h1>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/17/wEVPFOIKdDo1Rj6.jpg" alt="BBA75C44-476D-4786-B990-7EEE2FB4DF45.png"></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/17/wEVPFOIKdDo1Rj6.jpg" alt="BBA75C44-476D-4786-B990-7EEE2FB4DF45.png" style="zoom:50%;" />
 <p>整体来说，主要是以<font color='red'>多层感知机(Multi-Layer Perceptron，MLP)</font>为核心，通过改变神经网络的结构来构建各异的模型，比如：</p>
 <ul>
 <li>改变神经网络的复杂程度</li>
@@ -26,9 +26,16 @@
 <p>假设自编码器的重建函数为$ h(r;\theta) $，那么自编码器的目标函数为：</p>
 <p>$$ min_\theta\sum_{r\in S}||r - h(r;\theta)||_2^2 $$</p>
 <p>其中，S是所有数据向量的集合。</p>
-<p>一般来说，重建函数的参数数量远小于输入向量的维度数量，因此自编码器相当于完成了数据压缩和将为的工作。</p>
+<p>一般来说，重建函数的参数数量远小于输入向量的维度数量，因此自编码器相当于完成了<b>数据压缩和降维</b>的工作。</p>
 </blockquote>
 <p>AutoRec使用单隐层神经网络的结构来解决构建重建函数的问题。模型结构图如下：</p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/23/wo71GfOnrbxZcI6.jpg" alt="84CCD42D-718C-4122-8F08-7A8DCD155589.png" style="zoom:50%;" />
+<p>网络的输入层是物品的评分向量<code>r</code>，输出层是一个多分类层。图中蓝色的神经元代表模型的<code>k</code>维单隐层，其中<code>k&lt;&lt;m</code>。图中的<code>V</code>和<code>W</code>分别代表输入层到隐层，以及隐层到输出层的参数矩阵。该模型结构代表的重建函数的具体形式如：</p>
+<p>$$h(r;\theta)=f(W·g(V_r+\mu)+b)$$</p>
+<p>其中，<code>f(.)</code>，<code>g(.)</code>分别为输出层神经元和隐层神经元的激活函数。</p>
+<p><b>为防止过拟合，在加入<code>L2</code>正则化后，</b>AutoRec目标函数的具体形式为：</p>
+<p>$$ min_\theta\sum_{i=1}<sup>n||r</sup>{(i)} - h(r<sup>{(i)};\theta)||_2</sup>2+\lambda/2·(||W||_F<sup>2+||V||_F</sup>2) $$</p>
+<p>模型的训练利用梯度反向传播即可完成。</p>
 ]]></content>
       <categories>
         <category>《深度学习推荐系统》</category>
