@@ -256,6 +256,15 @@
 </blockquote>
 <h1>五、PNN模型</h1>
 <p><em>2016年，上海交大提出PNN模型，给出了特征交互方式的几种设计思路。</em></p>
+<p>同样是解决CTR预估和推荐系统的问题，结构上，和Deep Crossing类似，唯一的区别就是<font color='red'>PNN模型使用乘积层（Product Layer）代替了Deep Crossing模型中的Stacking层。</font>因此，不同特征之间进行了两两交互，获取了更多的交叉信息。模型结构如下图：</p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/02/P2e1UAwvNXcDHKT.jpg" alt="938F6510-F504-42CC-AD81-897BF995258B.png" style="zoom:50%;" />
+<p><b>Product层：</b></p>
+<p>由上图，模型的乘积层由<font color='red'>内积操作部分</font>和<font color='red'>外积操作部分</font>组成。</p>
+<p>【内积】就是经典的向量内积运算，假设输入特征向量分别为$f_i,f_j$，特征的内积互操作$g_{inner}(f_i,f_j)$的定义为：</p>
+<p>$$g_{inner}(f_i,f_j)=\langle f_i,f_j \rangle$$</p>
+<p>【外积】就是对输入特征向量$f_i,f_j$的各维度进行两两交叉，生成特征交叉矩阵，外积互操作$g_{inner}(f_i,f_j)$的定义为：</p>
+<p>$$g_{inner}(f_i,f_j)=f_i,f_j^T$$</p>
+<p>外积互操作生成的是特征向量$f_i,f_j$各维度两两交叉而成的一个$M*M$的方阵。</p>
 ]]></content>
       <categories>
         <category>《深度学习推荐系统》</category>
