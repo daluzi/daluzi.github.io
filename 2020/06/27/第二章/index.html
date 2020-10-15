@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第二章：推荐系统的进化之路 | daluzi</title><meta name="description" content="一、整体框架  传统推荐系统的发展脉络主要由以下四个部分组成：  协同过滤算法族：物品协同过滤（ItemCF）、用户协同过滤（UserCF）、矩阵分解模型（Matrix Factorization）及各分支模型； 逻辑回归模型族：逻辑回归能够利用和融合更多用户、物品和上下文特征。LR模型、LS-PLM模型等； 因子分解机模型族：在传统逻辑回归的基础上，加入了二阶部分，使模型具备了进行特征组合的能力"><meta name="keywords" content="recommendation,DL"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="第二章：推荐系统的进化之路"><meta property="og:url" content="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="一、整体框架  传统推荐系统的发展脉络主要由以下四个部分组成：  协同过滤算法族：物品协同过滤（ItemCF）、用户协同过滤（UserCF）、矩阵分解模型（Matrix Factorization）及各分支模型； 逻辑回归模型族：逻辑回归能够利用和融合更多用户、物品和上下文特征。LR模型、LS-PLM模型等； 因子分解机模型族：在传统逻辑回归的基础上，加入了二阶部分，使模型具备了进行特征组合的能力"><meta property="og:image" content="https://i.loli.net/2020/06/27/bALKwWlMsRvogtJ.jpg"><meta property="article:published_time" content="2020-06-27T11:48:46.000Z"><meta property="article:modified_time" content="2020-09-03T08:24:03.317Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第二章：推荐系统的进化之路 | daluzi</title><meta name="description" content="一、整体框架   传统推荐系统的发展脉络主要由以下四个部分组成：  协同过滤算法族：物品协同过滤（ItemCF）、用户协同过滤（UserCF）、矩阵分解模型（Matrix Factorization）及各分支模型； 逻辑回归模型族：逻辑回归能够利用和融合更多用户、物品和上下文特征。LR模型、LS-PLM模型等； 因子分解机模型族：在传统逻辑回归的基础上，加入了二阶部分，使模型具备了进行特征组合的能"><meta name="keywords" content="recommendation,DL"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="第二章：推荐系统的进化之路"><meta property="og:url" content="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="一、整体框架   传统推荐系统的发展脉络主要由以下四个部分组成：  协同过滤算法族：物品协同过滤（ItemCF）、用户协同过滤（UserCF）、矩阵分解模型（Matrix Factorization）及各分支模型； 逻辑回归模型族：逻辑回归能够利用和融合更多用户、物品和上下文特征。LR模型、LS-PLM模型等； 因子分解机模型族：在传统逻辑回归的基础上，加入了二阶部分，使模型具备了进行特征组合的能"><meta property="og:image" content="https://i.loli.net/2020/06/27/bALKwWlMsRvogtJ.jpg"><meta property="article:published_time" content="2020-06-27T11:48:46.000Z"><meta property="article:modified_time" content="2020-09-03T08:24:03.317Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -95,7 +95,8 @@ if (autoChangeMode === '1') {
 .justified-gallery img{
   opacity: 1
 }
-</style></noscript></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="../img/bitbug_favicon.ico" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="../archives/"><div class="headline">Articles</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="../tags/"><div class="headline">Tags</div><div class="length_num">27</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/"><div class="headline">Categories</div><div class="length_num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">一、整体框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">二、协同过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-定义"><span class="toc-number">2.0.1.</span> <span class="toc-text">¶2.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-用户相似度计算"><span class="toc-number">2.0.2.</span> <span class="toc-text">¶2.2 用户相似度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3 最终结果的排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">2.0.4.</span> <span class="toc-text">2.4 ItemCF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-CF的缺点"><span class="toc-number">2.0.5.</span> <span class="toc-text">¶2.5 CF的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">三、矩阵分解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1矩阵分解的求解过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-MF优缺点"><span class="toc-number">3.0.2.</span> <span class="toc-text">¶3.2 MF优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 流程：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2 数学形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.3 LR的优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">五、自动特征交叉的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.1.</span> <span class="toc-text">5.1 “辛普森悖论”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.2.</span> <span class="toc-text">5.2 POLY2模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.3.</span> <span class="toc-text">5.3 FM模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.4.</span> <span class="toc-text">5.4 FFM模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">6.</span> <span class="toc-text">六、GBDT+LR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">7.</span> <span class="toc-text">七、LS-PLM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text">八、总结</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/06/27/bALKwWlMsRvogtJ.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="../index.html">daluzi</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">第二章：推荐系统的进化之路</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-27 19:48:46"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-06-27</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-09-03 16:24:03"><i class="fas fa-history fa-fw"></i> Updated 2020-09-03</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="../../../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/">《深度学习推荐系统》</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2>一、整体框架</h2>
+</style></noscript></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="../img/bitbug_favicon.ico" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="../archives/"><div class="headline">Articles</div><div class="length_num">19</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="../tags/"><div class="headline">Tags</div><div class="length_num">29</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="../categories/"><div class="headline">Categories</div><div class="length_num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">一、整体框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">二、协同过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-定义"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-用户相似度计算"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2 用户相似度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3 最终结果的排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">2.0.4.</span> <span class="toc-text">2.4 ItemCF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-CF的缺点"><span class="toc-number">2.0.5.</span> <span class="toc-text">2.5 CF的缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">三、矩阵分解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1矩阵分解的求解过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-MF优缺点"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2 MF优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">四、逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 流程：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2 数学形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.3 LR的优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">五、自动特征交叉的解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.1.</span> <span class="toc-text">5.1 “辛普森悖论”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.2.</span> <span class="toc-text">5.2 POLY2模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.3.</span> <span class="toc-text">5.3 FM模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">5.0.4.</span> <span class="toc-text">5.4 FFM模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">6.</span> <span class="toc-text">六、GBDT+LR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">7.</span> <span class="toc-text">七、LS-PLM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text">八、总结</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/06/27/bALKwWlMsRvogtJ.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="../index.html">daluzi</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">第二章：推荐系统的进化之路</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-27 19:48:46"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-06-27</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-09-03 16:24:03"><i class="fas fa-history fa-fw"></i> Updated 2020-09-03</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="../../../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/">《深度学习推荐系统》</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2>一、整体框架</h2>
+
 <p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/07/11/vndB6QLsTbFJNGg.jpg" alt="1.png"></p>
 <p>传统推荐系统的发展脉络主要由以下四个部分组成：</p>
 <ul>
@@ -105,28 +106,24 @@ if (autoChangeMode === '1') {
 <li><b>组合模型：</b>为了融合多个模型的优点，将不同模型组合使用是构建推荐模型常用的方法。GBDT+LR等。</li>
 </ul>
 <h2>二、协同过滤</h2>
+
 <p><em>协同过滤的提出：2003年Amazon发表文章<a href="https://ieeexplore.ieee.org/document/1167344" target="_blank" rel="noopener">Amazon.com recommendations: item-to-item collaborative filtering</a></em></p>
-<h4 id="2-1-定义"><a class="header-anchor" href="#2-1-定义">¶</a>2.1 定义</h4>
-<p>协同大家的反馈、评价和意见一起对海量的信息进行过滤，从中筛选出目标用户可能感兴趣的信息的推荐过程。</p>
+<h4 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h4><p>协同大家的反馈、评价和意见一起对海量的信息进行过滤，从中筛选出目标用户可能感兴趣的信息的推荐过程。</p>
 <p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/07/11/Xjb4Q8YEUoDknJ3.jpg" alt="366139DF-46C7-47B9-A03F-7237B62B0EEA.png"></p>
 <p><b>共现矩阵：</b>以上图为例，将有向图转成矩阵的形式，用户作为矩阵行坐标，商品作为列坐标，将“点赞”和“踩”的用户行为数据转换为矩阵中对应的元素值。</p>
-<h4 id="2-2-用户相似度计算"><a class="header-anchor" href="#2-2-用户相似度计算">¶</a>2.2 用户相似度计算</h4>
-<p>对于用户向量<code>i</code>和用户向量<code>j</code></p>
+<h4 id="2-2-用户相似度计算"><a href="#2-2-用户相似度计算" class="headerlink" title="2.2 用户相似度计算"></a>2.2 用户相似度计算</h4><p>对于用户向量<code>i</code>和用户向量<code>j</code></p>
 <ol>
 <li>余弦相似度：$sim(i,j)=cos(i,j)=\frac{i·j}{||i||·||j||}$</li>
-<li>皮尔逊相关系数：<br>
-$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>i)(R</em>{j,P}-\hat{R}<em>j)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>i)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}_j)^2}}$<br>
-其中，<code>R_{i,p}</code>代表用户<code>i</code>对物品<code>p</code>的评分，$\hat{R}_i$是代表用户<code>i</code>对所有物品的平均评分，<code>p</code>代表所有物品的集合。</li>
-<li>基于皮尔逊系数的思路，还可以通过引入物品平均分的方式，<b>减少物品评分偏置对结果的影响:</b><br>
-$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>P)(R</em>{j,P}-\hat{R}<em>P)}{\sqrt[]{\Sigma</em>{p\in P}(R_{i,P}- \hat{R}<em>P)^2}\sqrt[]{\Sigma</em>{p\in P}(R_{j,P}- \hat{R}_P)^2}}$<br>
-其中，$\hat{R}_p$代表物品<code>p</code>得到所有评分的平均分。</li>
+<li>皮尔逊相关系数：<br>$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}_i)(R_{j,P}-\hat{R}_j)}{\sqrt[]{\Sigma_{p\in P}(R_{i,P}- \hat{R}_i)^2}\sqrt[]{\Sigma_{p\in P}(R_{j,P}- \hat{R}_j)^2}}$<br>其中，<code>R_{i,p}</code>代表用户<code>i</code>对物品<code>p</code>的评分，$\hat{R}_i$是代表用户<code>i</code>对所有物品的平均评分，<code>p</code>代表所有物品的集合。</li>
+<li>基于皮尔逊系数的思路，还可以通过引入物品平均分的方式，<b>减少物品评分偏置对结果的影响:</b><br>$sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}_P)(R_{j,P}-\hat{R}_P)}{\sqrt[]{\Sigma_{p\in P}(R_{i,P}- \hat{R}_P)^2}\sqrt[]{\Sigma_{p\in P}(R_{j,P}- \hat{R}_P)^2}}$<br>其中，$\hat{R}_p$代表物品<code>p</code>得到所有评分的平均分。</li>
 </ol>
 <h4>2.3 最终结果的排序</h4>
+
 <p>假设“目标用户与其相似用户的喜好是相似的”</p>
 <p>最常用的方式是<b>利用用户相似度和相似用户的评价的加权平均获得目标用户的评分预测</b>，如下：</p>
-<p>$$R_{u,p}=\frac{\Sigma_{s\in S}(W_{u,s}·R_{s,p})}{\Sigma_{s\in S}W_{u,s}}$$</p>
-<p>其中，权重$W_{u,s}$是用户<code>u</code>和用户<code>s</code>的相似度，$R_{s,P}$是用户<code>s</code>对物品<code>p</code>的评分。</p>
+<script type="math/tex; mode=display">R_{u,p}=\frac{\Sigma_{s\in S}(W_{u,s}·R_{s,p})}{\Sigma_{s\in S}W_{u,s}}</script><p>其中，权重$W_{u,s}$是用户<code>u</code>和用户<code>s</code>的相似度，$R_{s,P}$是用户<code>s</code>对物品<code>p</code>的评分。</p>
 <h4>2.4 ItemCF</h4>
+
 <p>ItemCF是基于物品相似度进行推荐的协同过滤算法。通过计算共现矩阵中物品列向量的相似度得到物品之间的相似矩阵，再找到用户的历史正反馈物品的相似物品进行进一步排序和推荐。</p>
 <ol>
 <li>基于历史数据，构建以用户（假设用户总数为m）为行坐标，物品（物品总数为n）为列坐标的<code>m * n</code>维的共现矩阵。</li>
@@ -135,36 +132,32 @@ $sim(i,j)=\frac{\Sigma_{p\in P}(R_{i,P} - \hat{R}<em>P)(R</em>{j,P}-\hat{R}<em>P
 <li>利用物品相似度矩阵，针对目标用户历史行为中的正反馈物品，找出相似的Top k个物品，组成相似物品集合。</li>
 <li>对相似物品集合中的物品，利用相似度分值进行排序，生成最终的推荐列表。</li>
 </ol>
-<h4 id="2-5-CF的缺点"><a class="header-anchor" href="#2-5-CF的缺点">¶</a>2.5 CF的缺点</h4>
-<ul>
+<h4 id="2-5-CF的缺点"><a href="#2-5-CF的缺点" class="headerlink" title="2.5 CF的缺点"></a>2.5 CF的缺点</h4><ul>
 <li>CF的天然缺陷：推荐结果的头部效应较明显，处理稀疏向量的能力弱。</li>
 <li>CF仅利用用户和物品的交互信息，无法有效地引入用户年龄、性别、商品描述、商品分类、当前时间等一系列用户特征、物品特征和上下文特征。</li>
 </ul>
 <h2>三、矩阵分解</h2>
+
 <p>矩阵分解在CF中“共现矩阵”的基础上，加入了<b>隐向量</b>的概念，加强了模型处理稀疏矩阵的能力。</p>
-<img src= "img/loading.gif" data-src="https://i.loli.net/2020/07/11/bFJ4WoyBGTvUDpg.jpg" alt="A9DA0BC6-B77A-485E-8A5D-DE44BE271712.png" style="zoom:50%;" />
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/07/11/bFJ4WoyBGTvUDpg.jpg" alt="A9DA0BC6-B77A-485E-8A5D-DE44BE271712.png" style="zoom:50%;" /></p>
 <h4>3.1矩阵分解的求解过程</h4>
+
 <p>主要方法有三种：</p>
 <ul>
 <li>特征值分解（Eigen Decomposition）：只能作用于方阵</li>
 <li>奇异值分解（singular Value Decomposition, SVD）：<img src= "img/loading.gif" data-src="https://i.loli.net/2020/07/11/Uzw2Id8ER1t3Prx.jpg" alt="6812192D-0640-4957-90E1-9A131EF5B6A9.png"></li>
-<li>梯度下降（Gradient Descent）:<br>
-求解矩阵分解的目标函数：<br>
-$min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(||q_i||+||p_u||)^2$</li>
+<li>梯度下降（Gradient Descent）:<br>求解矩阵分解的目标函数：<br>$min_{q^<em>,p^</em>}\Sigma_{(u,i)\in K}(r_{u,i}-q_i^Tp_u)^2+\lambda(||q_i||+||p_u||)^2$</li>
 </ul>
 <p>在矩阵分解算法中，由于隐向量的存在，使人意的用户和物品之间都可以得到预测分值。而隐向量的生成过程其实是对共现矩阵进行全局拟合的过程，因此隐向量其实是利用全局信息生成的，有更强的泛化能力。</p>
-<h4 id="3-2-MF优缺点"><a class="header-anchor" href="#3-2-MF优缺点">¶</a>3.2 MF优缺点</h4>
-<ul>
-<li>
-<p>优点：</p>
+<h4 id="3-2-MF优缺点"><a href="#3-2-MF优缺点" class="headerlink" title="3.2 MF优缺点"></a>3.2 MF优缺点</h4><ul>
+<li><p>优点：</p>
 <ol>
 <li>泛化能力强</li>
 <li>空间复杂度低：(n+m)·k</li>
 <li>更好的扩展性和灵活性</li>
 </ol>
 </li>
-<li>
-<p>缺点：</p>
+<li><p>缺点：</p>
 <ol>
 <li>MF同样不方便加入用户、物品和上下文相关的特征</li>
 <li>在缺乏用户历史行为时，无法进行有效的推荐</li>
@@ -172,9 +165,11 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 </li>
 </ul>
 <h2>四、逻辑回归</h2>
+
 <p>逻辑回归将推荐问题看成一个<font color='red'>分类</font>问题，<b>通过预测正样本的概率对物品进行排序。</b></p>
 <p>即为<font color='red'>点击率（Click Through Rate，CTR）</font>预测问题。</p>
 <h4>4.1 流程：</h4>
+
 <ol>
 <li>将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转换成数值型特征向量；</li>
 <li>确定逻辑回归模型的优化目标（以优化“点击率”为例），利用已有样本数据对逻辑回归模型进行训练，确定逻辑回归模型的内部参数；</li>
@@ -182,11 +177,12 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 <li>利用“点击”概率对所有候选物品进行排序，得到推荐列表。</li>
 </ol>
 <h4>4.2 数学形式</h4>
-<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/01/JqcASsOK8b2Qjz3.jpg" alt="6FA14D81-4CD7-40A6-8302-2CCE421AA3F7.png" style="zoom:50%;" />
+
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/01/JqcASsOK8b2Qjz3.jpg" alt="6FA14D81-4CD7-40A6-8302-2CCE421AA3F7.png" style="zoom:50%;" /></p>
 <p>由上图所示，逻辑回归模型将特征向量$x=(x_1,x_2,…,x_n)$作为模型的输入，分别乘上相应的权重系数后再想加，最终，将得到的$x^Tw$输入到sigmoid函数中，使之映射到0-1的区间，得到最终的点击率，因此，最终的数学形式为：</p>
-<p>$$f(x)=\frac{1}{1+e^{-(w·x+b)}}$$</p>
-<p>由数学形式可以看出，LR模型要确定的参数就是相应的权重向量w，常见的训练方法是<b>梯度下降法、牛顿法、拟牛顿法等。</b></p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-(w·x+b)}}</script><p>由数学形式可以看出，LR模型要确定的参数就是相应的权重向量w，常见的训练方法是<b>梯度下降法、牛顿法、拟牛顿法等。</b></p>
 <h4>4.3 LR的优缺点</h4>
+
 <p>优点：</p>
 <ol>
 <li>数学含义上的支撑（假设因变量y服从伯努利分布）；</li>
@@ -198,11 +194,14 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 <li>表达能力不强。</li>
 </ul>
 <h2>五、自动特征交叉的解决方案</h2>
+
 <h4>5.1 “辛普森悖论”</h4>
-<p>​	LR模型表达能力不强的问题，会不可避免地造成有效信息的损失。在仅利用单一特征而非交叉特征进行判断的情况下，有时不仅是信息损失的问题，甚至会得出错误的结论。</p>
-<p>​	定义：<font color=#2196F3 face="宋体">在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。</font></p>
+
+<p>​    LR模型表达能力不强的问题，会不可避免地造成有效信息的损失。在仅利用单一特征而非交叉特征进行判断的情况下，有时不仅是信息损失的问题，甚至会得出错误的结论。</p>
+<p>​    定义：<font color=#2196F3 face="宋体">在对样本集合进行分组研究时，在分组比较中都占优势的一方，在总评中有时反而是失势的一方，这种有悖常理的现象，被称为“辛普森悖论”。</font></p>
 <p>比如，在视频应用点击中：</p>
 <p>男性用户：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -227,7 +226,9 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 </tr>
 </tbody>
 </table>
+</div>
 <p>女性用户：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -252,8 +253,10 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 </tr>
 </tbody>
 </table>
+</div>
 <p>从上面两表看，无论男性还是女性用户，对视频B的点击率都高于视频A，显然推荐系统应该优先考虑向用户推荐视频B。</p>
 <p>但如果<b>忽略性别</b>这个维度，将数据汇总为下表：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -278,16 +281,19 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 </tr>
 </tbody>
 </table>
+</div>
 <p>从汇总的表看，视频A的点击率居然比视频B高，如果据此进行推荐，将得出与之前的结果完全相反的结果，这就是“辛普森悖论”。</p>
 <h4>5.2 POLY2模型</h4>
+
 <p>数学形式：</p>
-<p>$\phi POLY2(w,x)=\sum_{j_1=1}<sup>n\sum_{j_2=j_1+1}</sup>nw_{h(j_1,j_2)}x_{j_1}x_{j_2}$</p>
+<p>$\phi POLY2(w,x)=\sum_{j_1=1}^n\sum_{j_2=j_1+1}^nw_{h(j_1,j_2)}x_{j_1}x_{j_2}$</p>
 <p><em>$x_{j_1}$和$x_{j_2}$是两个特征，$w_{h(j_1,j_2)}$是赋予的对应特征组合的权重。</em></p>
 <p><b>缺点：</b>输入数据本来就很稀疏，POLY2进行无选择的特征交叉会使特征向量更加稀疏，无法收敛；而且会使权重参数的数量从n直接上升到$n^2$。</p>
 <h4>5.3 FM模型</h4>
+
 <p><em>2016年，由Rendle提出</em></p>
 <p>数学形式：</p>
-<p>$\phi FM(w,x)=\sum_{j_1=1}<sup>n\sum_{j_2=j_1+1}</sup>n(w_{j_1}·w_{j_2})x_{j_1}x_{j_2}$</p>
+<p>$\phi FM(w,x)=\sum_{j_1=1}^n\sum_{j_2=j_1+1}^n(w_{j_1}·w_{j_2})x_{j_1}x_{j_2}$</p>
 <p>与POLY2不同，FM模型用<span style="border-bottom:2px dashed red;">两个向量的内积</span>/$(w_{j_1}·w_{j_2})$<span style="border-bottom:2px dashed red;">取代了单一的权重系数</span>$w_{h(j_1,j_2)}$。该模型会为每个特征学习一个隐权重向量。</p>
 <p><b>优点：</b></p>
 <ol>
@@ -295,10 +301,11 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 <li>隐向量的引入使FM模型能更好的解决数据稀疏性的问题。</li>
 </ol>
 <h4>5.4 FFM模型</h4>
+
 <p><em>2015年，基于FM提出的FFM在多项CTR预测大赛中夺魁，并被Criteo、美团等公司深度应用在推荐系统、CTR预测等领域。</em></p>
 <p>主要是引入了<font color=#2196F3 face="宋体">特征域感知（field-aware）</font>概念。</p>
 <p>数学形式：</p>
-<p>$\phi FM(w,x)=\sum_{j_1=1}<sup>n\sum_{j_2=j_1+1}</sup>n(w_{j_1，f_2}·w_{j_2,f_1})x_{j_1}x_{j_2}$</p>
+<p>$\phi FM(w,x)=\sum_{j_1=1}^n\sum_{j_2=j_1+1}^n(w_{j_1，f_2}·w_{j_2,f_1})x_{j_1}x_{j_2}$</p>
 <p><span style="border-bottom:2px dashed red;">与FM的区别在于w不同，这意味着每个特征对应的不是唯一一个隐向量，而是一组隐向量。</span></p>
 <p><b>FFM模型只能做二阶的特征交叉，如果继续提高特征交叉的维度，会不可避免的产生组合爆炸和计算复杂度过高的问题。</b></p>
 <p><b>做个小结：</b></p>
@@ -308,16 +315,18 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 <li><span style="border-bottom:2px dashed red;">FFM每个特征选择与对方域对应的隐向量做内积。</span></li>
 </ul>
 <h2>六、GBDT+LR</h2>
+
 <p><em>2014年Facebook提出基于GBDT+LR（梯度下降树+逻辑回归）组合模型。</em></p>
 <p>简而言之，就是利用GBDT自动进行特征筛选和组合，进而生成新的离散特征向量，再把该特征向量当作LR模型的输入，预估CTR的模型结构，图例如下：</p>
-<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/02/FcrzyjT7ACWRgMx.jpg" alt="D508E64D-9B22-459F-BE02-3F3248AF6D54.png" style="zoom: 33%;" />
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/02/FcrzyjT7ACWRgMx.jpg" alt="D508E64D-9B22-459F-BE02-3F3248AF6D54.png" style="zoom: 33%;" /></p>
 <p>（GBDT和LR两个过程是独立训练的）</p>
 <h2>七、LS-PLM</h2>
+
 <p><em>大规模分段线性模型（Large Scale Piece-wise Linear Model），阿里巴巴早在2012年就主流的推荐模型，2017年公之于众。</em></p>
 <p><span style="border-bottom:2px dashed red;">LS-PLM，又称为MLR（Mixed Logistic Regression，混合逻辑回归），它在逻辑回归的基础上采用分而治之的思路，先对样本进行分片，再在样本分片中应用逻辑回归进行CTR预估。</span></p>
 <p><b>主要是加入了聚类的思想</b></p>
 <p>数学形式：</p>
-<p>$f(x)=\sum_{i=1}<sup>{m}\pi_i(x)·\eta_i(x)=\sum_{i=1}</sup>{m}\frac{e<sup>{\mu_i·x}}{\sum_{j=1}</sup>me<sup>{\mu_j·x}}·\frac{1}{1+e</sup>{-w_i·x}}$</p>
+<p>$f(x)=\sum_{i=1}^{m}\pi_i(x)·\eta_i(x)=\sum_{i=1}^{m}\frac{e^{\mu_i·x}}{\sum_{j=1}^me^{\mu_j·x}}·\frac{1}{1+e^{-w_i·x}}$</p>
 <p><em>其中超参数“分片数”m可以较好地平衡模型的拟合与推广能力</em></p>
 <p>思路是：首先用<span style="border-bottom:2px dashed red;">聚类函数</span>$\pi$对样本进行分类（这里$\pi$采用了softmax函数对样本进行多分类），再用LR模型计算样本在分片中具体的CTR，然后将二者相乘之后求和。</p>
 <p>优势：</p>
@@ -326,6 +335,8 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 <li>模型的稀疏性强：LS-PLM在建模时引入了L1和L2,1范数，可以使最终训练出来的模型具有较高的稀疏度，使模型的部署更加轻量级。</li>
 </ol>
 <h2>八、总结</h2>
+
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -380,11 +391,12 @@ $min_{q<sup>*,p</sup>*}\Sigma_{(u,i)\in K}(r_{u,i}-q_i<sup>Tp_u)</sup>2+\lambda(
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <ul>
 <li>[x] 《深度学习推荐系统第二章》</li>
 </ul>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">daluzi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/">http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../../../tags/recommendation/">recommendation</a><a class="post-meta__tags" href="../../../../tags/DL/">DL</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/09/02/7pHGxSzb1Wt8KmC.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="../../../../img/wepay.jpg" alt="wechat" onclick="window.open('../../../../img/wepay.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="../../../../img/alipay.jpg" alt="alipay" onclick="window.open('../../../../img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="../../28/Docker/"><img class="prev-cover" data-src="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png" onerror="onerror=null;src='../../../../img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Docker</div></div></a></div><div class="next-post pull-right"><a href="../%E7%AC%AC%E4%B8%80%E7%AB%A0/"><img class="next-cover" data-src="https://i.loli.net/2020/06/27/TDHuM3RhKmGaqr6.jpg" onerror="onerror=null;src='../../../../img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">第一章</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/08/16/第三章/" title="第三章"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/08/16/iLayq4OwS6A5lNE.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-16</div><div class="relatedPosts_title">第三章</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/27/第一章/" title="第一章"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/06/27/TDHuM3RhKmGaqr6.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-27</div><div class="relatedPosts_title">第一章</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/23/The-FacT-Taming-Latent-Factor-Models-for-Explainability-with-Factorization-Trees/" title="The FacT: Taming Latent Factor Models for Explainability with Factorization Trees"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/23/T5g7xyimzRloCMt.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-23</div><div class="relatedPosts_title">The FacT: Taming Latent Factor Models for Explainability with Factorization Trees</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/17/图神经网络学习资源汇总/" title="Summary of learning resources"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/04/17/BgjAmd4Vb3ZHPUM.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-17</div><div class="relatedPosts_title">Summary of learning resources</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By daluzi</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="../../../../js/utils.js"></script><script src="../../../../js/main.js"></script><script src="../../../../js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">daluzi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/">http://daluzi.top/2020/06/27/%E7%AC%AC%E4%BA%8C%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../../../tags/recommendation/">recommendation</a><a class="post-meta__tags" href="../../../../tags/DL/">DL</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/10/15/c2LU1SAhaGqH9DK.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="../../../../img/wepay.jpg" alt="wechat" onclick="window.open('../../../../img/wepay.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="../../../../img/alipay.jpg" alt="alipay" onclick="window.open('../../../../img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="../../28/Docker/"><img class="prev-cover" data-src="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png" onerror="onerror=null;src='../../../../img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Docker</div></div></a></div><div class="next-post pull-right"><a href="../%E7%AC%AC%E4%B8%80%E7%AB%A0/"><img class="next-cover" data-src="https://i.loli.net/2020/06/27/TDHuM3RhKmGaqr6.jpg" onerror="onerror=null;src='../../../../img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">第一章</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/08/16/第三章/" title="第三章"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/08/16/iLayq4OwS6A5lNE.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-16</div><div class="relatedPosts_title">第三章</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/27/第一章/" title="第一章"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/06/27/TDHuM3RhKmGaqr6.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-27</div><div class="relatedPosts_title">第一章</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/23/The-FacT-Taming-Latent-Factor-Models-for-Explainability-with-Factorization-Trees/" title="The FacT: Taming Latent Factor Models for Explainability with Factorization Trees"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/05/23/T5g7xyimzRloCMt.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-23</div><div class="relatedPosts_title">The FacT: Taming Latent Factor Models for Explainability with Factorization Trees</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/17/图神经网络学习资源汇总/" title="Summary of learning resources"><img class="relatedPosts_cover" data-src="https://i.loli.net/2020/04/17/BgjAmd4Vb3ZHPUM.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-17</div><div class="relatedPosts_title">Summary of learning resources</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By daluzi</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="Switch Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="../../../../js/utils.js"></script><script src="../../../../js/main.js"></script><script src="../../../../js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
     processEscapes: true,
