@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>FM</title>
+    <url>/2020/10/15/FM/</url>
+    <content><![CDATA[<blockquote>
+<h1>Factorization Machine</h1>
+</blockquote>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/7BrcTiX1P8nCQNb.jpg" alt="图像.jpeg"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/rwpJ5X8hKVu3zZI.jpg" alt="图像 2.jpeg"></p>
+<h4>Code</h4>
+<p><a href="https://github.com/daluzi/Code-for-DL-in-RS/blob/master/2/FM.py" target="_blank" rel="noopener">https://github.com/daluzi/Code-for-DL-in-RS/blob/master/2/FM.py</a></p>
+<h4>Repositories</h4>
+<p>libfm</p>
+<p>libffm</p>
+<p>xLearn</p>
+<p>tffm</p>
+<p>…</p>
+]]></content>
+      <categories>
+        <category>recommendation</category>
+        <category>FM</category>
+      </categories>
+      <tags>
+        <tag>recommedation</tag>
+        <tag>FM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cross Entropy Loss</title>
     <url>/2020/10/15/Cross-Entropy-Loss/</url>
     <content><![CDATA[<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/JL4KDA1PTMluHQF.jpg" alt="1C417C49-4497-494A-9408-0BF5D1861826.png"></p>
