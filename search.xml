@@ -25,7 +25,7 @@
 <h3>Learning paradigm of CF</h3>
 <p>在用户-物品id之间存在语义障碍，这些表面特征之间没有重叠，妨碍交互建模。未来缩小这个障碍，许多研究用来是模型学习更加有信息的用户-物品表示。总节起来就是下图：</p>
 <p><img src= "img/loading.gif" data-src="https://img-blog.csdnimg.cn/20201026173122849.png" alt="img"></p>
-<p>这里<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">和<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i" alt="i">是用户-物品的id，<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?e_%7Bu%7D%5Cin%20%5Cmathbb%7BR%7D%5E%7Bd%7D" alt="e_{u}\in \mathbb{R}^{d}">和<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?e_%7Bi%7D%5Cin%20%5Cmathbb%7BR%7D%5E%7Bd%7D" alt="e_{i}\in \mathbb{R}^{d}">分别是用户<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">和物品<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i" alt="i">的表示。通常使用下面的公式预测，它将预测任务作为同一潜在空间中用户<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">和物品<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i" alt="i">之间的相似性估计：</p>
+<p>这里$u$和$i$是用户-物品的id，$e_{u}\in \mathbb{R}^{d}$和$e_{i}\in \mathbb{R}^{d}$分别是用户$u$和物品$i$的表示。通常使用下面的公式预测，它将预测任务作为同一潜在空间中用户$u$和物品$i$之间的相似性估计：</p>
 <p><img src= "img/loading.gif" data-src="https://img-blog.csdnimg.cn/20201027102729900.png" alt="img"></p>
 <h3>Representation learning of CF</h3>
 <p>有很多方法可以应用到CF的表示学习中，</p>
@@ -33,14 +33,19 @@
 <p>总之，用户项目关系可以明确表示为连通性：单个ID（即无连通性），个人历史记录（即一阶连通性），整体交互图（高阶连通性）。</p>
 <h3>Limitations</h3>
 <p>尽管取得了成功，但是这些统一建模用户-物品关系不足以反映出用户的隐藏意图。这限制了CF表示的可解释性和理解性。具体来说，现有的嵌入表示方法都是使用黑盒神经网络应用在关系中（交互图），并且输出表示。不能区别用户购买物品的不同意图，只是假设用户行为背后有统一的动机。但是，这与现实是相违背的。</p>
-<p>没有对用户意图进行建模，现有的工作难以提供可解释的嵌入表示、语义理解和什么信息被嵌入进了表示中。总的来说，每个交互<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?%28u%2Ci%29" alt="(u,i)">对于<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?e_%7Bu%7D" alt="e_{u}">的表示都是不可分辨的。结果导致每个行为背后的隐藏意图都被高度纠缠在了嵌入中，模糊意图和特定维度之间的映射。</p>
-<p>在推荐中使用解缠表示是非常少见的，知道最近的<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?MacridVAE" alt="MacridVAE">，他把<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?%5Cbeta%20-VAE" alt="\beta -VAE">应用在了交互数据中，并且实现了对用户的解缠表示。由于<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?%5Cbeta%20-VAE" alt="\beta -VAE">的局限性，只是更具历史物品（用户的一阶邻居）被用在表示中，忽略了用户-物品关系的高阶连通性。</p>
+<p>没有对用户意图进行建模，现有的工作难以提供可解释的嵌入表示、语义理解和什么信息被嵌入进了表示中。总的来说，每个交互$(u,i)$对于$e_{u}$的表示都是不可分辨的。结果导致每个行为背后的隐藏意图都被高度纠缠在了嵌入中，模糊意图和特定维度之间的映射。</p>
+<p>在推荐中使用解缠表示是非常少见的，知道最近的$MacridVAE$，他把$\beta -VAE$应用在了交互数据中，并且实现了对用户的解缠表示。由于$\beta -VAE$的局限性，只是更具历史物品（用户的一阶邻居）被用在表示中，忽略了用户-物品关系的高阶连通性。</p>
 <h2>Task formulation</h2>
 <p>我们的任务有两个子任务：1）在用户意图的粒度级别上探索用户项关系 2）生成分离的CF表示</p>
 <h3>Exploring user-item relationships</h3>
-<p>我们的用户行为可以被多种意图驱动。以电影推荐为例，用户<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">用电影<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i_%7B1%7D" alt="i_{1}">打发时间，因此可能不太关心<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i_%7B1%7D" alt="i_{1}">的导演是否符合她的兴趣；然而<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">看<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i_%7B2%7D" alt="i_{2}">是因为<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?i_%7B2%7D" alt="i_{2}">的导演是<img src= "img/loading.gif" data-src="https://private.codecogs.com/gif.latex?u" alt="u">兴趣的一个重要因素。准确的说，不同的用户有不同的贡献行为。</p>
-<p>为了对用户和项之间的</p>
+<p>我们的用户行为可以被多种意图驱动。以电影推荐为例，用户$u$用电影$i_{1}$打发时间，因此可能不太关心$i_{1}$的导演是否符合她的兴趣；然而$u$看$i_{2}$是因为$i_{2}$的导演是兴$u$趣的一个重要因素。准确的说，不同的用户有不同的贡献行为。</p>
+<p>为了对用户和项之间的这种细粒度关系进行建模，我们的目标是了解每个行为的用户意图上的分布$A(u,i)$，$$A(u,i)=(A_1(u,i,···,A_K(u,i)))$$</p>
+<p>其中$A_{k}(u,i)$ 反映了为什么$u$采取$i$的第$K$个意图的概率;$K$是一个超参数用来控制用户隐藏意图的个数。共同检查与特定意图$k$相关的分数，我们可以得出意向图$G_{k}$，被定为成$G_{k}=\left { (u,i,A_{k}(u,i)) \right }$，每个历史交互都被当作一条边分配给$A_{k}(u,i)$。之后，一个带权邻接矩阵$A_{k}$建立在$G_{k}$上。最后，我们得出了一系列的意向图$G=\left { G_{1},…,G_{K} \right }$来分别表示用户物品之间的关系，而不是像之前的工作一样只使用一个。</p>
+<h3>Generating disentangled representations</h3>
+<p>生成用户-物品的解缠表示，具体来说就是提取与个体意图相关的信息作为表示的独立部分。更具体的说，就是设计一个嵌入方程$f(\cdot )$，对于用户$u$生成一个分离的表示$e_{u}$，它含有$k$个组成部分：</p>
+<p>$$e_u=(e_{1u},e_{2u},···,e_{Ku})$$</p>
 <h1>Methodology</h1>
+<p>ddd</p>
 ]]></content>
       <categories>
         <category>explainable recommendation</category>
