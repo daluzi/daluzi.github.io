@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GCN</title>
+    <url>/2020/12/07/GCN/</url>
+    <content><![CDATA[<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/07/JTgIyQax2VevGHP.png" alt="PNG图像-A66D4F0A9E52-1.png"></p>
+<h1>GCN简介</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Kipf T N , Welling M . Semi-Supervised Classification with Graph Convolutional Networks[J]. 2016.</span><br></pre></td></tr></table></figure>
+<p>这篇文章是图神经网络的开山之作，之前文章中总结过这篇文章。它利用了近似的技巧推导出了一个简单而高效的模型，使得图像处理中的卷积操作能够简单的被用到图结构数据处理中来。</p>
+<p>考虑图（例如引文网络）中节点（例如文档）的分类问题，假设该图中只有一小部分节点标签（label）是已知的，我们的分类任务是想通过这部分已知标签的节点和图的结构来推断另一部分未知标签的节点的标签。这类问题可以划分到基于图结构数据的半监督学习问题中。半监督学习（semi-supervised learning）是有监督学习的一个分支，主要研究的是如何利用少量的有标签数据学习大量无标签数据的标签。</p>
+<p>为了对节点进行分类，首先我们可以利用节点自身的特征信息，除此之外，我们还可以利用图结构信息。因此一个典型的图半监督学习问题可以对两个损失函数一起优化：</p>
+<p>$$L = L_{labeled} + \lambda L_{reg}$$</p>
+<p>其中，$L_{labeled}$是基于标签数据的损失函数，$L_{reg}$代表基于图结构信息的损失函数，$\lambda$是调节这两个损失函数相对重要性的超参。</p>
+<p>一般来说，基于图结构信息的损失函数可以表示成：</p>
+<p>$$L_{reg}=\sum_{i,j}A_{ij}|f(X_i)-f(X_j)|<sup>2=f(X)</sup>T\Delta f(X)$$</p>
+<p>其中，$f(·)$是类似神经网络的可微分函数。$X$表示节点特征向量构成的矩阵，其中$X_i$表示节点$v_i$的特征向量，邻接矩阵表示为$A\in \mathbb{R}^{N*N}$（可以是二值的，也可以是加权的），度矩阵$D_{ii}=\sum_jA_{ij}$。$\Delta=D-A$表示无向图的未正则化图拉普拉斯算子。这样的损失函数希望对相邻节点的特征向量做限制，希望它们能尽量相近。</p>
+<p>显然，这样的学习策略基于图中的相邻节点标签可能相同的假设（因为损失函数要求相邻节点的特征向量尽量相似，如果它们的标签不相似的话，那么不能学习到一个从特征向量到标签的有效映射）。然而，这个假设可能会限制模型的能力，因为图的边在语义上不一定代表所连接节点相似。还有一种可能是图中有大量的噪声边。</p>
+<p>因此，在这个工作中，作者不再显示的定义图结构信息的损失函数$L_{reg}$，而是使用神经网络模型$f(X,A)$直接对图结构进行编码，训练所有带标签的节点，来避免损失函数中的正则化项$L_{reg}$。</p>
+<h1>数学知识</h1>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/07/MgjCfzFNWoDa4sL.jpg" alt="IMG_4140DE101473-1.jpeg"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/07/i2rxetFMqjsKuN4.jpg" alt="IMG_45A4D6919D7A-1.jpeg"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/07/RQTol8xhEPY5OjC.jpg" alt="IMG_2F75388E4672-1.jpeg"></p>
+<h1>图上的快速卷积近似</h1>
+]]></content>
+      <categories>
+        <category>GCN</category>
+      </categories>
+      <tags>
+        <tag>Graph Convolutional Networks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DGCF</title>
     <url>/2020/12/01/DGCF/</url>
     <content><![CDATA[<h1>Main idea</h1>
