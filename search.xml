@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GraghSAGE</title>
+    <url>/2020/12/08/GraghSAGE/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>GNN</category>
+      </categories>
+      <tags>
+        <tag>Graph SAmple and aggreGatE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GCN</title>
     <url>/2020/12/07/GCN/</url>
     <content><![CDATA[<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/07/JTgIyQax2VevGHP.png" alt="PNG图像-A66D4F0A9E52-1.png"></p>
@@ -32,7 +43,7 @@
 <p><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:Megvii-Nanjing/ML-GCN.git</p>
 ]]></content>
       <categories>
-        <category>GCN</category>
+        <category>GNN</category>
       </categories>
       <tags>
         <tag>Graph Convolutional Networks</tag>
