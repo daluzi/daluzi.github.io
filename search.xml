@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NMF</title>
+    <url>/2020/12/16/NMF/</url>
+    <content><![CDATA[<h1>Main idea</h1>
+<p>$$V_{m<em>n}\approx W_{m</em>r}H_{r*n}$$</p>
+<h1>Methode</h1>
+<h3>基于欧式距离</h3>
+<p>损失函数为$J(W,H)=1/2\sum_{i,j}[V_{i,j}-(WH)_{i,j}]^2$</p>
+<p>因此，我们分别对<code>W</code>和<code>H</code>求偏导得到两个变量的梯度，具体如下</p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/16/5zE1TIF9rGRJkxb.jpg" alt="1.JPG"></p>
+<p>根据上图的公式<code>(1)</code>和<code>(2)</code>，可以使用梯度下降的方式得到<code>W和H</code>的更新公式：</p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/16/OwzgdbDnk8YKlXv.jpg" alt="2.png"></p>
+<h3>基于KL散度</h3>
+]]></content>
+      <categories>
+        <category>recommendations</category>
+      </categories>
+      <tags>
+        <tag>recommendation</tag>
+        <tag>NMF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GraghSAGE</title>
     <url>/2020/12/08/GraghSAGE/</url>
     <content><![CDATA[<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/12/09/sc3auIX6nzE5dAb.png" alt="framework"></p>
