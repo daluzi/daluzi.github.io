@@ -318,6 +318,7 @@
 <p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/Ku6UFdoNm7sXJ81.jpg" alt="035911ED-CA66-4559-A949-8D1920EEE2BF.png"></p>
 <p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/D8H6a3KMcXV91ZW.jpg" alt="45D48AE1-D789-4478-BC76-29CC7B87FE13.png"></p>
 <p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/10/15/IcwD3v5mS917ZiB.jpg" alt="75F4DC32-0084-4F9F-B0A8-D40616F5559C.png"></p>
+<p>在信息论中，相对熵等价于两个概率分布的信息熵的差值，若其中一个概率分布为真实分布，另一个为理论（拟合）分布，则此时相对熵等于交叉熵与真实分布的信息熵之差，表示使用理论分布拟合真实分布时产生的信息损耗 。</p>
 <h4>Reference</h4>
 <p><a href="https://blog.csdn.net/b1055077005/article/details/100152102" target="_blank" rel="noopener">https://blog.csdn.net/b1055077005/article/details/100152102</a></p>
 ]]></content>
