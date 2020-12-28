@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>covariance matrix</title>
+    <url>/2020/12/28/covariance-matrix/</url>
+    <content><![CDATA[<h1>Covariance matrix(协方差矩阵)</h1>
+<h3>geometric interpretation</h3>
+<p>协方差矩阵定义了数据的传播（方差）和方向（协方差）。因此，如果我们想用一个向量和它的大小来表示协方差矩阵，我们应该简单地尝试找到指向数据最大传播方向上的向量，其大小等于这个方向上的传播（方差）。</p>
+<p>协方差矩阵的最大特征向量总是指向数据最大方差的方向，并且该向量的幅度等于相应的特征值。第二大特征向量总是正交于最大特征向量，并且指向第二大数据的传播方向。</p>
+<ul>
+<li>如果数据的协方差矩阵是对角矩阵，使得协方差是零，那么这意味着方差必须等于特征值。</li>
+<li>如果协方差矩阵不是对角的，使得协方差不为零，那么此时，特征值仍代表数据最大传播方向的方差大小，协方差矩阵的方差分量仍然表示x轴和y轴方向上的方差大小。<br>
+特征值表示沿特征向量方向数据的方差，而协方差矩阵的方差分量表示沿轴的传播。</li>
+</ul>
+<p>协方差矩阵是非负定矩阵。</p>
+<h3>references</h3>
+<p><a href="https://blog.csdn.net/duanyule_cqu/article/details/54959897" target="_blank" rel="noopener">https://blog.csdn.net/duanyule_cqu/article/details/54959897</a></p>
+<p><a href="https://www.cnblogs.com/jins-note/p/10826272.html" target="_blank" rel="noopener">https://www.cnblogs.com/jins-note/p/10826272.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/37609917" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/37609917</a></p>
+<p><a href="https://www.zhihu.com/question/22237507" target="_blank" rel="noopener">https://www.zhihu.com/question/22237507</a></p>
+]]></content>
+      <tags>
+        <tag>covariance matrix</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>similarity</title>
+    <url>/2020/12/27/similarity/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>NMF</title>
     <url>/2020/12/16/NMF/</url>
     <content><![CDATA[<h1>Main idea</h1>
