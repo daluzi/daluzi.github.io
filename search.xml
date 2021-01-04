@@ -11,14 +11,10 @@
 
 
 
-
-
-	<div class="row">
-    <embed src="/DisenGCN.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
 ]]></content>
+      <tags>
+        <tag>GCN</tag>
+      </tags>
   </entry>
   <entry>
     <title>covariance matrix</title>
