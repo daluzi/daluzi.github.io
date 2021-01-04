@@ -3,14 +3,14 @@
   <entry>
     <title>DisenGCN</title>
     <url>/2021/01/04/DisenGCN/</url>
-    <content><![CDATA[
-
-	<div class="row">
-    <embed src="./DisenGCN.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
+    <content><![CDATA[<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/Z6PDzCYdaxENpce.jpg" alt="1.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/BL7wTm6q5sSe39a.jpg" alt="2.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/f2p3bkiNVJWlTte.jpg" alt="3.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/RHLCrQ4l6TzNaV5.jpg" alt="4.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/ECY2ZB6j3opurKm.jpg" alt="5.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/ZBzTu6sjyDG1XKR.jpg" alt="6.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/bkMjrpRHgc8TVEU.jpg" alt="7.png"></p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/01/04/fqJIM9XP7Khkm5R.jpg" alt="8.png"></p>
 ]]></content>
       <tags>
         <tag>GCN</tag>
@@ -2322,24 +2322,6 @@ purpose: learn how to represent the vectors of each node in a heterogeneous grap
       </tags>
   </entry>
   <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Github搭建简单博客总结</title>
     <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1>Hexo+Github搭建简易博客总结</h1>
@@ -2375,6 +2357,24 @@ purpose: learn how to represent the vectors of each node in a heterogeneous grap
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
