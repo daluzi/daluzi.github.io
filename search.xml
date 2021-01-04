@@ -26,7 +26,54 @@
   <entry>
     <title>similarity</title>
     <url>/2020/12/27/similarity/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<ul>
+<li>
+<p>皮尔逊相关系数</p>
+</li>
+<li>
+<p>欧氏距离</p>
+</li>
+<li>
+<p>曼哈顿距离</p>
+</li>
+<li>
+<p>切比雪夫距离</p>
+</li>
+<li>
+<p>闵可夫斯基距离</p>
+</li>
+<li>
+<p>标准化欧氏距离</p>
+</li>
+<li>
+<p>马氏距离</p>
+</li>
+<li>
+<p>夹角余弦</p>
+</li>
+<li>
+<p>汉明距离</p>
+</li>
+<li>
+<p>杰卡德距离 &amp; 杰卡德相似系数</p>
+</li>
+<li>
+<p>相关系数 &amp; 相关距离</p>
+</li>
+<li>
+<p>信息熵</p>
+</li>
+</ul>
+<h1>Pearson correlation coefficient(PCC)</h1>
+<p><b>皮尔逊相关系数</b>是一个介于-1和1之间的数，它度量两个一一对应数列之间的线形相关程度。也就是说，它表示两个数列中对应数字一起增大或者一起减少的可能性。它度量数字一起按比例改变的倾向性，也就是说两个数列中的数字存在一个大致的线形关系。当该倾向性强时，相关值趋于1；当相关性很弱时，相关值趋于0。在负相关的情况下一个序列的值很高而另一个序列的值低-----相关值趋于-1.</p>
+<p><font color='red'>皮尔逊相关系数是两个序列协方差与两者方差乘积的比值</font></p>
+]]></content>
+      <categories>
+        <category>ML</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+      </tags>
   </entry>
   <entry>
     <title>NMF</title>
@@ -2259,6 +2306,24 @@ purpose: learn how to represent the vectors of each node in a heterogeneous grap
       </tags>
   </entry>
   <entry>
+    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
+    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
+    <content><![CDATA[<blockquote>
+<blockquote>
+<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Muilimodal</tag>
+        <tag>machine learning</tag>
+        <tag>survey</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo+Github搭建简单博客总结</title>
     <url>/2019/11/23/Hexo+Github%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1>Hexo+Github搭建简易博客总结</h1>
@@ -2294,24 +2359,6 @@ purpose: learn how to represent the vectors of each node in a heterogeneous grap
 ]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Multimodal Machine Learning:A Survey and Taxonomy</title>
-    <url>/2019/11/23/Multimodal-Machine-Learning-A-Survey-and-Taxonomy/</url>
-    <content><![CDATA[<blockquote>
-<blockquote>
-<p>This article is a survey for multimodal machine learning. This paper surveys the recent advances in multimodal machine learning itself and presents them in a common taxonomy. They go beyond the typical early and late fusion categorization and identify broader challenges that are faced by multimodal machine learning, namely: <strong>representation, translation, alignment, fusion, and co-learning.</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Index Terms:<strong>Multimodal, machine learning, introductory, survey</strong></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Muilimodal</tag>
-        <tag>machine learning</tag>
-        <tag>survey</tag>
       </tags>
   </entry>
   <entry>
