@@ -124,6 +124,25 @@
 <p>$$I(x,y)=log_2{\frac{p(x,y)}{p(x)p(y)}}$$</p>
 <p>上式中，<code>I(x,y)</code>表示x与y的互信息值；<code>p(x,y)</code>是x与y共同出现的频率；<code>p(x),p(y)</code>分别是x，y单独出现的频率；<code>I(x,y)</code>越大，表明x，y的关联程度比较强，即x与y越相似。</p>
 <p><b>互信息不仅能说明两者是否有关系，还能反应它们之间的强弱，这个特性可以很好的计算两个项的相似性，推荐系统中，会使用到这种相似性比较，所以利用互信息算法计算项与项之间的相似度，然后根据相似值的大小推荐物品，实现对物品的推荐。</b></p>
+<h1> beta-divergence family</h1>
+<p>仅看损失函数：</p>
+<ul>
+<li>Squared Frobenius norm:<br>
+$$ \underbrace{arg min}<em>{W,H}\frac{1}{2}||A-WH||^2</em>{Fro}+\alpha \rho||W||<em>1+\alpha \rho||H||<em>1 + \frac{\alpha (1-\rho)}{2}||W||^2</em>{Fro}+\frac{\alpha (1-\rho)}{2}||H||^2</em>{Fro}$$</li>
+</ul>
+<p>其中，$$\frac{1}{2}||A-WH||<sup>2_{Fro}=\frac{1}{2}\sum_{i,j}(A_{ij}-WH_{ij})</sup>2$$</p>
+<ul>
+<li>
+<p>Kullback-Leibler (KL):<br>
+$$d_{KL}(X,Y)=\sum_{i,j}(X_{ij}log(\frac{X_{ij}}{Y_{ij}})-X_{ij}+Y_{ij})$$</p>
+</li>
+<li>
+<p>Itakura-Saito (IS):<br>
+$$d_{IS}(X,Y)=\sum_{ij}(\frac{X_{ij}}{Y_{ij}}-log(\frac{X_{ij}}{Y_{ij}})-1)$$</p>
+</li>
+</ul>
+<p>实际上，上面三个公式是beta-divergence family中的三个特殊情况（分别是当beta=2，1，0），其原型是：</p>
+<p>$$d_\beta (X,Y)=\sum_{i,j}\frac{1}{\beta (\beta -1)}(X_{ij}^\beta +(\beta -1)Y_{ij}^\beta )-\beta X_{ij}Y_{ij}^{\beta -1}$$</p>
 ]]></content>
       <categories>
         <category>recommendations</category>
