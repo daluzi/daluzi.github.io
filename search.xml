@@ -91,6 +91,8 @@
 <p>$$DCG_{GT} = 2 + (\frac{2}{log_2 2} + \frac{1}{log_2 3} + \frac{0}{log_2 4}) = 4.6309$$</p>
 <p>$$DCG_{RF1} = 2 + (\frac{2}{log_2 2} + \frac{1}{log_2 3} + \frac{0}{log_2 4}) = 4.6309$$</p>
 <p>$$DCG_{RF2} = 2 + (\frac{1}{log_2 2} + \frac{2}{log_2 3} + \frac{0}{log_2 4}) = 4.2619$$</p>
+<p><b>reference</b></p>
+<p><a href="https://web.stanford.edu/class/cs276/handouts/EvaluationNew-handout-6-per.pdf" target="_blank" rel="noopener">https://web.stanford.edu/class/cs276/handouts/EvaluationNew-handout-6-per.pdf</a></p>
 ]]></content>
       <categories>
         <category>ML</category>
@@ -556,8 +558,8 @@ $$d_{IS}(X,Y)=\sum_{ij}(\frac{X_{ij}}{Y_{ij}}-log(\frac{X_{ij}}{Y_{ij}})-1)$$</p
         <category>ML</category>
       </categories>
       <tags>
-        <tag>Cross-entropy-loss</tag>
         <tag>ML</tag>
+        <tag>Cross-entropy-loss</tag>
       </tags>
   </entry>
   <entry>
