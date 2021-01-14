@@ -558,8 +558,8 @@ $$d_{IS}(X,Y)=\sum_{ij}(\frac{X_{ij}}{Y_{ij}}-log(\frac{X_{ij}}{Y_{ij}})-1)$$</p
         <category>ML</category>
       </categories>
       <tags>
-        <tag>ML</tag>
         <tag>Cross-entropy-loss</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -2598,6 +2598,8 @@ purpose: learn how to represent the vectors of each node in a heterogeneous grap
 Recommender system(RS) has been successfully exploited to solve information overload.Many methods proposed to improve the performance of RS.And there are two main problems needed to solve:**1.the problems of cold start for users(new users into the RS with little historical behavior)2.the sparsity of datasets(the proportion of rated user-item pairs in all the user-item pairs of RS)**.
 <p>In this paper, three social factors,<strong>personal interest,interpersonal interest similarity,and interpersonal influence</strong>, fuse into a unified personalized recommendation model based on probabilistic matrix factorization.</p>
 <h2 id='2'>Problem formulation</h2>
+<h1>Code</h1>
+<p><a href="https://github.com/daluzi/PRM2" target="_blank" rel="noopener">https://github.com/daluzi/PRM2</a></p>
 ]]></content>
       <tags>
         <tag>RS</tag>
