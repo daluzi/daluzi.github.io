@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MacridVAE</title>
+    <url>/2021/01/19/MacridVAE/</url>
+    <content><![CDATA[<h1>Introduction</h1>
+<p>阿里19年在NeurIPS上发表的文章<b>《Learning Disentangled Representations for Recommendation》</b></p>
+<p>这篇文章从<font color='red'>认知</font>的角度来看待推荐系统。</p>
+<p>在做人和商品的过程中，相比于黑盒模型，我们更想关注匹配过程中人的认知因素。人为什么喜欢一件商品，他是对哪些概念动了心，种了草，他是因为什么原因点了击，收了藏，下了单，他当下关注点在哪个认知层面的东西，我们的推荐系统能显式的知道、消化并且准确相应吗？这些所谓的认知因素，并不是商品固有的细粒度的属性、品类，而是一种从人的角度理解商品的可传播可解释的概念。<font color='red'>其更像是广告商会选择去打动人心的记忆点</font>。而推荐系统区别于搜索场景的一个点恰好在于是否能主动激活用户潜在的兴趣，帮助用户找到并接受意料之外的商品。因此，如何挖掘潜在的认知概念，并以合理的方式将潜在可接受的认知概念传递给用户可能是未来一段时间推荐系统需要有所突破的事情。</p>
+<p>当然，关注这样的认知过程并不是为了端到端的做“下一个商品”的预测或者点击率预估亦或者是评分预估。至少前人在大规模数据的线上经验能表明，产品形态不变的可解释推荐，相比于黑盒模型并不能真正提高最终的点击和转化效果。因此相比于可解释推荐，认知推荐更强调人的因素，其归宿必然是技术驱动产品形态上的创新。而新的产品形态则可以创造新的需求、用户习惯和新的商业场景。</p>
+<h1>文章背景</h1>
+<p>文章关注两个与认知相关的子任务：</p>
+<ul>
+<li>商品在人的认知空间中，它们是如何表征的，这样的表征是否具有可解释性，例如是否能找到对应的某一维就能够代表一个独立的“语义”。<font color='red'>这里的语义，其所具有的可解释性其实本质是一个与认知和传播相关的概念，既是能被人们理解和传播的。</font>类似的，人在这个空间下的表征，是否也具有这样的语义。联系解离化表征(Disentangled Representation Learning)在连续型数据上的发展，作者探索其是否能从离散数据，特别是用户行为数据上学习到类似的结果。</li>
+<li>基于这样的表征，我们能否提出新型的推荐应用，并至少给出一种原型方案。</li>
+</ul>
+<h1>什么是解离化表征</h1>
+<p><img src= "img/loading.gif" data-src="https://image.jiqizhixin.com/uploads/editor/e9616e74-3643-436c-bb96-9f839c420d59/640.png" alt="img"></p>
+<p>目前来说，其实解离化向量并没有一个标准的定义。如上图所示，假设一副图片的向量表示中，不同的维度含义不同并且这个含义还能被人类所能识别，我们就称这样的向量是一个解离化的向量表示。例如第一维是方位，第二维是大小，第三维是椅子腿的风格。得到这样的向量有几个好处：1）鲁棒性，可迁移性；2）解释性；3）可控制的生成。前两点其实和因果推断的优势类似，第三点主要应用方面有较大的潜力。</p>
+<h1>Method</h1>
+<p><b>这个工作，仅使用到用户行为数据，并不涉及任何商品属性以及用户特征。</b>作者探索从用户行为当中，能否得到一些认知相关的决策因素并以可解离的方式对商品和用户进行表示。</p>
+<p>N users   M items</p>
+<p>设平台上有M个商品，记用户u与商品i的交互记录为$x_{u,i}\in {0,1}$，取值为1表示用户点击了该商品，取值为0表示没有相关记录。那么用户u的行为可以记作$x_u = {x_{u,i}:x_{u,i}=1}$。我们的目标是获得用户u的向量化表征，同时我们的模型也会产生商品的表征${z_u}_{u=1}<sup>N$，同时我们的模型也会产出商品的表征${h_i}_{i=1}</sup>M \in \mathbb{R}^{M\times d}$，以供我们的推荐系统根据用户的表征召回一批商品。</p>
+<p>针对电商平台上用户行为的特点，我们的模型采用了层次化的设计：它在推理一个用户的表征时将依次进行宏观解离化(macro disentanglement)和微观解离化(micro disentanglement)。</p>
+<p><b>宏观解离化：</b></p>
+<h1>Reference</h1>
+<p><a href="https://www.jiqizhixin.com/articles/2019-12-13-3" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-12-13-3</a></p>
+<p><a href="https://www.qbitai.com/2019/12/9856.html" target="_blank" rel="noopener">https://www.qbitai.com/2019/12/9856.html</a></p>
+<h1>Code</h1>
+<p><a href="https://jianxinma.github.io/disentangle-recsys.html" target="_blank" rel="noopener">https://jianxinma.github.io/disentangle-recsys.html</a></p>
+]]></content>
+      <categories>
+        <category>explainable recommendation</category>
+        <category>disentangle</category>
+      </categories>
+      <tags>
+        <tag>recommendation</tag>
+        <tag>explainable recommendation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NDCG</title>
     <url>/2021/01/05/NDCG/</url>
     <content><![CDATA[<h1>Discounted Cumulative Gain</h1>
