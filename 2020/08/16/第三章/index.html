@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第三章 | daluzi</title><meta name="description" content="一、深度学习推荐模型的演化关系图   整体来说，主要是以多层感知机(Multi-Layer Perceptron，MLP)为核心，通过改变神经网络的结构来构建各异的模型，比如：  改变神经网络的复杂程度 改变特征交叉方式 组合多种模型 FM模型的深度学习演化版本 注意力机制与推荐模型的结合 序列模型与推荐模型的结合 强化学习与推荐模型的结合 等  二、AutoRec——单隐层神经网络推荐模型  2"><meta name="keywords" content="recommendation,DL"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="第三章"><meta property="og:url" content="http://daluzi.top/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="一、深度学习推荐模型的演化关系图   整体来说，主要是以多层感知机(Multi-Layer Perceptron，MLP)为核心，通过改变神经网络的结构来构建各异的模型，比如：  改变神经网络的复杂程度 改变特征交叉方式 组合多种模型 FM模型的深度学习演化版本 注意力机制与推荐模型的结合 序列模型与推荐模型的结合 强化学习与推荐模型的结合 等  二、AutoRec——单隐层神经网络推荐模型  2"><meta property="og:image" content="https://i.loli.net/2020/08/16/iLayq4OwS6A5lNE.jpg"><meta property="article:published_time" content="2020-08-16T15:13:59.000Z"><meta property="article:modified_time" content="2020-09-03T12:44:47.301Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第三章 | daluzi</title><meta name="description" content="一、深度学习推荐模型的演化关系图  整体来说，主要是以多层感知机(Multi-Layer Perceptron，MLP)为核心，通过改变神经网络的结构来构建各异的模型，比如：  改变神经网络的复杂程度 改变特征交叉方式 组合多种模型 FM模型的深度学习演化版本 注意力机制与推荐模型的结合 序列模型与推荐模型的结合 强化学习与推荐模型的结合 等  二、AutoRec——单隐层神经网络推荐模型 201"><meta name="keywords" content="recommendation,DL"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="第三章"><meta property="og:url" content="http://daluzi.top/2020/08/16/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="一、深度学习推荐模型的演化关系图  整体来说，主要是以多层感知机(Multi-Layer Perceptron，MLP)为核心，通过改变神经网络的结构来构建各异的模型，比如：  改变神经网络的复杂程度 改变特征交叉方式 组合多种模型 FM模型的深度学习演化版本 注意力机制与推荐模型的结合 序列模型与推荐模型的结合 强化学习与推荐模型的结合 等  二、AutoRec——单隐层神经网络推荐模型 201"><meta property="og:image" content="https://i.loli.net/2020/08/16/iLayq4OwS6A5lNE.jpg"><meta property="article:published_time" content="2020-08-16T15:13:59.000Z"><meta property="article:modified_time" content="2020-09-03T12:44:47.301Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -96,8 +96,7 @@ if (autoChangeMode === '1') {
   opacity: 1
 }
 </style></noscript></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="../img/bitbug_favicon.ico" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="../archives/"><div class="headline">Articles</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="../tags/"><div class="headline">Tags</div><div class="length_num">38</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="../categories/"><div class="headline">Categories</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">一、深度学习推荐模型的演化关系图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">2.</span> <span class="toc-text">二、AutoRec——单隐层神经网络推荐模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text">三、Deep Crossing模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">4.</span> <span class="toc-text">四、NeuralCF模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">5.</span> <span class="toc-text">五、PNN模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">6.</span> <span class="toc-text">六、Wide&amp;Deep模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">7.</span> <span class="toc-text">七、FM与深度学习模型的结合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">7.0.0.1.</span> <span class="toc-text">7.1 FNN----用FM的隐向量完成Embedding层初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">7.0.0.2.</span> <span class="toc-text">7.2 DeepFM---用FM代替Wide部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">7.0.0.3.</span> <span class="toc-text">7.3 NFM---FM的神经网络化尝试</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">8.</span> <span class="toc-text">八、注意力机制在推荐模型中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">8.0.0.1.</span> <span class="toc-text">8.1 AFM---引入注意力机制的FM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">8.0.0.2.</span> <span class="toc-text">8.2 DIN---引入注意力机制的深度学习网络</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">9.</span> <span class="toc-text">九、DIEN——序列模型与推荐系统的结合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">9.0.0.1.</span> <span class="toc-text">9.1 兴趣抽取层的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-number">9.0.0.2.</span> <span class="toc-text">9.2 兴趣进化层的结构</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">10.</span> <span class="toc-text">十、强化学习与推荐系统的结合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">11.</span> <span class="toc-text">十一、总结</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/16/iLayq4OwS6A5lNE.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="../index.html">daluzi</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">第三章</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-08-16 23:13:59"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-08-16</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-09-03 20:44:47"><i class="fas fa-history fa-fw"></i> Updated 2020-09-03</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="../../../../categories/%E3%80%8A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E3%80%8B/">《深度学习推荐系统》</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1>一、深度学习推荐模型的演化关系图</h1>
-
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/17/wEVPFOIKdDo1Rj6.jpg" alt="BBA75C44-476D-4786-B990-7EEE2FB4DF45.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/17/wEVPFOIKdDo1Rj6.jpg" alt="BBA75C44-476D-4786-B990-7EEE2FB4DF45.png" style="zoom:50%;" />
 <p>整体来说，主要是以<font color='red'>多层感知机(Multi-Layer Perceptron，MLP)</font>为核心，通过改变神经网络的结构来构建各异的模型，比如：</p>
 <ul>
 <li>改变神经网络的复杂程度</li>
@@ -110,25 +109,26 @@ if (autoChangeMode === '1') {
 <li>等</li>
 </ul>
 <h1>二、AutoRec——单隐层神经网络推荐模型</h1>
-
 <p><em>2015 澳大利亚国立大学提出。</em></p>
 <p>它将<font color='red'>自编码器（AutoEncoder）的思想和协同过滤</font>结合，提出了一种单隐层神经网络推荐模型。</p>
 <p><b>原理：</b></p>
-<p>​        利用协同过滤中的共现矩阵，完成物品向量或用户向量的自编码。再利用自编码的结果得到用户对物品的预估评分，进而进行推荐排序。</p>
+<p>​		利用协同过滤中的共现矩阵，完成物品向量或用户向量的自编码。再利用自编码的结果得到用户对物品的预估评分，进而进行推荐排序。</p>
 <blockquote>
 <p>自编码器：假设其数据向量为r，自编码器的作用是将向量r作为输入，通过自编码器后，得到的输出向量尽量接近其本身。</p>
 <p>假设自编码器的重建函数为$ h(r;\theta) $，那么自编码器的目标函数为：</p>
-<script type="math/tex; mode=display">min_\theta\sum_{r\in S}||r - h(r;\theta)||_2^2</script><p>其中，S是所有数据向量的集合。</p>
+<p>$$ min_\theta\sum_{r\in S}||r - h(r;\theta)||_2^2 $$</p>
+<p>其中，S是所有数据向量的集合。</p>
 <p>一般来说，重建函数的参数数量远小于输入向量的维度数量，因此自编码器相当于完成了<b>数据压缩和降维</b>的工作。</p>
 </blockquote>
 <p>AutoRec使用单隐层神经网络的结构来解决构建重建函数的问题。模型结构图如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/23/wo71GfOnrbxZcI6.jpg" alt="84CCD42D-718C-4122-8F08-7A8DCD155589.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/23/wo71GfOnrbxZcI6.jpg" alt="84CCD42D-718C-4122-8F08-7A8DCD155589.png" style="zoom:50%;" />
 <p>网络的输入层是物品的评分向量<code>r</code>，输出层是一个多分类层。图中蓝色的神经元代表模型的<code>k</code>维单隐层，其中<code>k&lt;&lt;m</code>。图中的<code>V</code>和<code>W</code>分别代表输入层到隐层，以及隐层到输出层的参数矩阵。该模型结构代表的重建函数的具体形式如：</p>
-<script type="math/tex; mode=display">h(r;\theta)=f(W·g(V_r+\mu)+b)</script><p>其中，<code>f(.)</code>，<code>g(.)</code>分别为输出层神经元和隐层神经元的激活函数。</p>
+<p>$$h(r;\theta)=f(W·g(V_r+\mu)+b)$$</p>
+<p>其中，<code>f(.)</code>，<code>g(.)</code>分别为输出层神经元和隐层神经元的激活函数。</p>
 <p><b>为防止过拟合，在加入<code>L2</code>正则化后，</b>AutoRec目标函数的具体形式为：</p>
-<script type="math/tex; mode=display">min_\theta\sum_{i=1}^n||r^{(i)} - h(r^{(i)};\theta)||_2^2+\lambda/2·(||W||_F^2+||V||_F^2)</script><p>模型的训练利用梯度反向传播即可完成。</p>
+<p>$$ min_\theta\sum_{i=1}<sup>n||r</sup>{(i)} - h(r<sup>{(i)};\theta)||_2</sup>2+\lambda/2·(||W||_F<sup>2+||V||_F</sup>2) $$</p>
+<p>模型的训练利用梯度反向传播即可完成。</p>
 <h1>三、Deep Crossing模型</h1>
-
 <p><em>2016年，微软提出Deep Crossing模型，一次深度学习架构在推荐系统中的完整应用。</em></p>
 <p><b>应用场景</b>：微软搜索引擎Bing中的搜索广告推荐场景。</p>
 <p><b>目标：</b>用户搜索关键词后，搜索引擎除了返回相关结果，还会返回与搜索词相关的广告，因此要尽可能地<font color='red'>增加搜索广告的点击率，准确地预测广告点击率。</font></p>
@@ -146,7 +146,7 @@ if (autoChangeMode === '1') {
 <li><font color='blue'>如何在输出层中达成问题设定的优化目标</font>（Scoring层）</li>
 </ul>
 <p><b>网络结构如下：</b></p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/Y2rRUmLtgyBz3ih.jpg" alt="4EB1E155-2663-49C3-AD1E-A07C00A48211.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/Y2rRUmLtgyBz3ih.jpg" alt="4EB1E155-2663-49C3-AD1E-A07C00A48211.png" style="zoom:50%;" />
 <p>包括4层：Embedding层、stacking层、Multiple Residual Units层和Scoring层。各层作用如下：</p>
 <ol>
 <li>Embedding层：作用是将稀疏的类别型特征转换成稠密的Embedding向量，具体的策略包括Word2vec、Graph Embedding等；</li>
@@ -157,13 +157,13 @@ if (autoChangeMode === '1') {
 <blockquote>
 <p><b>残差神经网络：</b></p>
 <p>残差神经网络就是由残差单元组成的神经网络，具体结构如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/fQyPaNArvOxdo9T.jpg" alt="E7D0AD35-937A-4A65-B49E-F8D6CCBF8D26.png" style="zoom:33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/fQyPaNArvOxdo9T.jpg" alt="E7D0AD35-937A-4A65-B49E-F8D6CCBF8D26.png" style="zoom:33%;" />
 <p>特点：</p>
 <ol>
 <li>输入经过两层以ReLU为激活函数的全连接层后，生成输出向量；</li>
 <li>输入可以通过一个短路通路直接与输出向量进行元素加操作，生成最终的输出向量</li>
 </ol>
-<p>在这样的结构下，残差单元中的两层ReLU网络其实拟合的是<font color='red'>输出和输入之间的残差</font>（$x^0-x^i$），这就是为什么要叫做残差神经网络。</p>
+<p>在这样的结构下，残差单元中的两层ReLU网络其实拟合的是<font color='red'>输出和输入之间的残差</font>（$x<sup>0-x</sup>i$），这就是为什么要叫做残差神经网络。</p>
 <p>残差神经网络的诞生主要是为了解决两个问题：</p>
 <ul>
 <li>神经网络是不是越深越好？对于传统的基于感知机的神经网络，当网络加深之后，往往存在过拟合现象，即网络越深，在测试集上的表现越差。而在残差网络中，由于有输入向量短路的存在，很多时候可以越过两层ReLU网络，减少过拟合现象的发生。</li>
@@ -171,10 +171,9 @@ if (autoChangeMode === '1') {
 </ul>
 </blockquote>
 <h1>四、NeuralCF模型</h1>
-
 <p><em>2017年，新加坡国立大学提出基于深度学习的协同过滤模型NeuralCF。</em></p>
 <p>下图为传统矩阵分解的网络化形式表示和NeuralCF模型的对比：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/EF7geXozukZxjhY.jpg" alt="944F9428-2FAE-4623-A4D9-1D7F4255B2E3.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/EF7geXozukZxjhY.jpg" alt="944F9428-2FAE-4623-A4D9-1D7F4255B2E3.png" style="zoom:50%;" />
 <p>图的左半部分是传统MF的网络化形式表示，其中用户隐向量和物品隐向量都可以看作是Embedding层。可以看出，NeuralCF模型用“多层神经网络+输出层”的结构替代了矩阵分解模型中简单的内积操作。优点是：</p>
 <ol>
 <li>让用户向量和物品向量做更充分的交叉，得到更多有价值的特征组合信息；</li>
@@ -182,40 +181,47 @@ if (autoChangeMode === '1') {
 </ol>
 <p><b>广义矩阵分解模型（Generalized Matrix Factorization）：</b>用任意的互操作形式代替用户和物品向量的互操作层。</p>
 <p>基于此，该论文还提出了一种混合模型，整合了原始NeuralCF模型和以元素积为互操作的广义矩阵分解模型，如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/Xw4WhbKeuCJMVLY.jpg" alt="45B2031A-5ADC-4C51-95D2-27D2A3C38AB0.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/08/25/Xw4WhbKeuCJMVLY.jpg" alt="45B2031A-5ADC-4C51-95D2-27D2A3C38AB0.png" style="zoom:50%;" />
 <blockquote>
 <p><b>softmax函数：</b></p>
 <p>目前很多深度模型的输出层都使用softmax函数，<font color='red'>解决多分类问题的目标拟合问题。</font></p>
 <p>数学形式：</p>
-<script type="math/tex; mode=display">\sigma(X)_i=\frac{exp(x_i)}{\sum^n_{j=1}exp(x_i)},当i=1,...,n且X=[x_1,...,x_n]^T\in\mathbb{R}</script><p>可以看出，softmax函数解决了从一个原始的n维向量，向一个n维的概率分布映射问题。</p>
+<p>$$\sigma(X)_i=\frac{exp(x_i)}{\sum<sup>n_{j=1}exp(x_i)},当i=1,…,n且X=[x_1,…,x_n]</sup>T\in\mathbb{R}$$</p>
+<p>可以看出，softmax函数解决了从一个原始的n维向量，向一个n维的概率分布映射问题。</p>
 <p>在分类问题上，softmax函数往往和交叉熵（cross-entropy）损失函数一起使用：</p>
-<script type="math/tex; mode=display">LOSS_{Cross Entropy}=-\sum_iy_iln(\sigma(x)_i)</script><p>其中$y_i$是第i个分类的真实标签值，$\sigma(x)_i$代表softmax函数对第i个分类的预测值。</p>
+<p>$$LOSS_{Cross Entropy}=-\sum_iy_iln(\sigma(x)_i)$$</p>
+<p>其中$y_i$是第i个分类的真实标签值，$\sigma(x)_i$代表softmax函数对第i个分类的预测值。</p>
 <p>因为softmax函数把分类输出标准化成了多个分类的概率分布，而交叉熵正好刻画了预测分类和真实结果之间的相似度，所以softmax函数往往与交叉熵搭配使用。</p>
 <p>softmax函数的导数形式为：</p>
-<script type="math/tex; mode=display">{\frac{\partial\sigma(x)_i}{\partial x_j}}=\begin{cases}
-   \sigma(x)_i(1-\sigma(x)_j), & i=j \\
-   -\sigma(x)_i·\sigma(x)_j & i\neq j
-   \end{cases}</script><p>基于链式法则，交叉熵函数到softmax函数第j维输入$x_j$的导数形式为：</p>
-<script type="math/tex; mode=display">\frac{\partial Loss}{\partial x_j}=\frac{\partial Loss}{\partial \sigma(x)}·\frac{\partial \sigma(x)}{\partial x_j}</script><p>在多分类问题中，真实值中只有一个维度是1，其余维度都为0，假设第k维是1，即$y_k=1$，那么交叉熵损失函数可以简化成如下形式：</p>
-<script type="math/tex; mode=display">LOSS_{Cross Entropy}=-\sum_iy_iln(\sigma(x)_i)=-y_k·ln(\sigma(x)_k)=-ln(\sigma(x)_k)</script><p>则有：</p>
-<script type="math/tex; mode=display">\frac{\partial Loss}{\partial x_j}=\frac{\partial(-ln(\sigma(x)_k))}{\partial\sigma(x)_k}·\frac{\partial\sigma(x)_k}{\partial x_j}=-\frac{1}{\sigma(x)_k}·\frac{\partial\sigma(x)_k}{\partial x_j}=\begin{cases}\sigma(x)_j-1, & j=k \\
-   \sigma(x)_j, & j\neq k
-   \end{cases}</script><p>即$j=k$时，结果为算出的值减一，$j\neq k$时，为算出来的值。</p>
+<p>$$ {\frac{\partial\sigma(x)_i}{\partial x_j}}=\begin{cases}<br>
+\sigma(x)_i(1-\sigma(x)_j), &amp; i=j \<br>
+-\sigma(x)_i·\sigma(x)_j &amp; i\neq j<br>
+\end{cases}$$</p>
+<p>基于链式法则，交叉熵函数到softmax函数第j维输入$x_j$的导数形式为：</p>
+<p>$$\frac{\partial Loss}{\partial x_j}=\frac{\partial Loss}{\partial \sigma(x)}·\frac{\partial \sigma(x)}{\partial x_j}$$</p>
+<p>在多分类问题中，真实值中只有一个维度是1，其余维度都为0，假设第k维是1，即$y_k=1$，那么交叉熵损失函数可以简化成如下形式：</p>
+<p>$$LOSS_{Cross Entropy}=-\sum_iy_iln(\sigma(x)_i)=-y_k·ln(\sigma(x)_k)=-ln(\sigma(x)_k)$$</p>
+<p>则有：</p>
+<p>$$\frac{\partial Loss}{\partial x_j}=\frac{\partial(-ln(\sigma(x)_k))}{\partial\sigma(x)_k}·\frac{\partial\sigma(x)_k}{\partial x_j}=-\frac{1}{\sigma(x)_k}·\frac{\partial\sigma(x)_k}{\partial x_j}=\begin{cases}\sigma(x)_j-1, &amp; j=k \<br>
+\sigma(x)_j, &amp; j\neq k<br>
+\end{cases}$$</p>
+<p>即$j=k$时，结果为算出的值减一，$j\neq k$时，为算出来的值。</p>
 <p>可以看出，softmax函数与交叉熵的配合，不仅在数学含义上完美统一，而且在梯度形式上也非常简洁。基于上式的梯度形式，通过梯度反向传播的方法，即可完成整个神经网路权重的更新。</p>
 </blockquote>
 <h1>五、PNN模型</h1>
-
 <p><em>2016年，上海交大提出PNN模型，给出了特征交互方式的几种设计思路。</em></p>
 <p>同样是解决CTR预估和推荐系统的问题，结构上，和Deep Crossing类似，唯一的区别就是<font color='red'>PNN模型使用乘积层（Product Layer）代替了Deep Crossing模型中的Stacking层。</font>因此，不同特征之间进行了两两交互，获取了更多的交叉信息。模型结构如下图：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/02/P2e1UAwvNXcDHKT.jpg" alt="938F6510-F504-42CC-AD81-897BF995258B.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/02/P2e1UAwvNXcDHKT.jpg" alt="938F6510-F504-42CC-AD81-897BF995258B.png" style="zoom:50%;" />
 <p><b>Product层：</b></p>
 <p>由上图，模型的乘积层由<font color='red'>内积操作部分</font>和<font color='red'>外积操作部分</font>组成。</p>
 <p>【内积】就是经典的向量内积运算，假设输入特征向量分别为$f_i,f_j$，特征的内积互操作$g_{inner}(f_i,f_j)$的定义为：</p>
-<script type="math/tex; mode=display">g_{inner}(f_i,f_j)=\langle f_i,f_j \rangle</script><p>【外积】就是对输入特征向量$f_i,f_j$的各维度进行两两交叉，生成特征交叉矩阵，外积互操作$g_{inner}(f_i,f_j)$的定义为：</p>
-<script type="math/tex; mode=display">g_{inner}(f_i,f_j)=f_i,f_j^T</script><p>外积互操作生成的是特征向量$f_i,f_j$各维度两两交叉而成的一个$M*M$的方阵。这样的外积操作无疑会直接将问题的复杂度从原来的$M$提升到$M^2$，为了在一定程度上减小模型训练的负担，PNN模型的论文中介绍了一种降维的方法，就是把所有两两特征Embedding向量外积互操作的结果叠加（Superposition），形成一个叠加外积互操作矩阵<code>p</code>，具体形式如：</p>
-<script type="math/tex; mode=display">p=\sum_{i=1}^M\sum_{j=1}^Mg_{outer}(f_i,f_j)=\sum_{i=1}^M\sum_{j=1}^Mf_i,f_j^T=f_{\sum}f_{\sum}^T=\sum_{i=1}^Mf_i</script><p><b>优点和局限：</b>PNN的结构特点在于强调了特征EMbedding向量之间的交叉方式是多种多样的，有针对性的做不同特征之间的交叉，从而让模型更容易捕获特征的交叉信息。但同时，对所有特征进行无差别的交叉，也在一定程度上忽略了原始特征向量中包含的有价值信息。</p>
+<p>$$g_{inner}(f_i,f_j)=\langle f_i,f_j \rangle$$</p>
+<p>【外积】就是对输入特征向量$f_i,f_j$的各维度进行两两交叉，生成特征交叉矩阵，外积互操作$g_{inner}(f_i,f_j)$的定义为：</p>
+<p>$$g_{inner}(f_i,f_j)=f_i,f_j^T$$</p>
+<p>外积互操作生成的是特征向量$f_i,f_j$各维度两两交叉而成的一个$M*M$的方阵。这样的外积操作无疑会直接将问题的复杂度从原来的$M$提升到$M^2$，为了在一定程度上减小模型训练的负担，PNN模型的论文中介绍了一种降维的方法，就是把所有两两特征Embedding向量外积互操作的结果叠加（Superposition），形成一个叠加外积互操作矩阵<code>p</code>，具体形式如：</p>
+<p>$$p=\sum_{i=1}<sup>M\sum_{j=1}</sup>Mg_{outer}(f_i,f_j)=\sum_{i=1}<sup>M\sum_{j=1}</sup>Mf_i,f_j<sup>T=f_{\sum}f_{\sum}</sup>T=\sum_{i=1}^Mf_i$$</p>
+<p><b>优点和局限：</b>PNN的结构特点在于强调了特征EMbedding向量之间的交叉方式是多种多样的，有针对性的做不同特征之间的交叉，从而让模型更容易捕获特征的交叉信息。但同时，对所有特征进行无差别的交叉，也在一定程度上忽略了原始特征向量中包含的有价值信息。</p>
 <h1>六、Wide&Deep模型</h1>
-
 <p><em>2016年，谷歌应用商店（Google Play）推荐团队提出wide&amp;deep模型。该模型由单层的Wide部分和多层Deep部分组成混合模型，其中Wide部分的主要作用是让模型具有较强的“记忆能力”，Deep部分的主要作用是让模型具有“泛化能力”。</em></p>
 <blockquote>
 <p>【“记忆能力”】可以被理解为模型直接学习并利用历史数据中物品或者特征的“共现频率”的能力。</p>
@@ -223,78 +229,76 @@ if (autoChangeMode === '1') {
 <p>【“泛化能力”】可以被理解为模型传递特征的相关性，以及发掘稀疏甚至从来没有出现过的稀有特征与最终标签相关性的能力。</p>
 </blockquote>
 <p>模型如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/gvwxSn9KPu62OBb.jpg" alt="EB6B7812-AA1A-4C7F-A870-DBE0E7EA8732.png" style="zoom:50%;" /></p>
-<font color='red'>Wide&Deep模型把单输入层的Wide部分与由Embedding层和多隐层组成的Deep部分连接起来，一起输入最终的输出层。单层的Wide部分善于处理大量稀疏的id类特征；Deep部分利用神经网络表达能力强的特点，进行深层的特征交叉，挖掘藏在特征背后的数据模式。最终，利用逻辑回归模型，输出层将Wide部分和Deep部分组合起来，形成统一的模型。</font>
-
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/gvwxSn9KPu62OBb.jpg" alt="EB6B7812-AA1A-4C7F-A870-DBE0E7EA8732.png" style="zoom:50%;" />
+<p><font color='red'>Wide&amp;Deep模型把单输入层的Wide部分与由Embedding层和多隐层组成的Deep部分连接起来，一起输入最终的输出层。单层的Wide部分善于处理大量稀疏的id类特征；Deep部分利用神经网络表达能力强的特点，进行深层的特征交叉，挖掘藏在特征背后的数据模式。最终，利用逻辑回归模型，输出层将Wide部分和Deep部分组合起来，形成统一的模型。</font></p>
 <p>详细结构如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/QbYWcN6yuz3LH5e.jpg" alt="960CD5C1-64BD-45C9-BED3-045F6995F40C.png" style="zoom: 33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/QbYWcN6yuz3LH5e.jpg" alt="960CD5C1-64BD-45C9-BED3-045F6995F40C.png" style="zoom: 33%;" />
 <p>Wide部分组合“已安装应用”和“曝光应用”两个特征的函数被称为交叉积变换（Cross Product Transformation）函数，其形式化定义如：</p>
-<script type="math/tex; mode=display">\Phi_k(X)=\prod_{i=1}^dx_i^{c_{ki}}  ,c_{ki}\in \lbrace 0,1 \rbrace</script><p>$c_{ki}$是一个布尔变量，当第<code>i</code>个特征属于第<code>k</code>个组合特征时，$c_{ki}$的值为1，否则为0；$x_i$是第<code>i</code>个特征的值。</p>
+<p>$$\Phi_k(X)=\prod_{i=1}<sup>dx_i</sup>{c_{ki}}  ,c_{ki}\in \lbrace 0,1 \rbrace$$</p>
+<p>$c_{ki}$是一个布尔变量，当第<code>i</code>个特征属于第<code>k</code>个组合特征时，$c_{ki}$的值为1，否则为0；$x_i$是第<code>i</code>个特征的值。</p>
 <p><b>【Deep&amp;Cross模型】</b></p>
 <p><em>2017年，斯坦福大学和谷歌的研究人员提出的，简称DCN。</em></p>
 <p>模型如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/akYKPXtIzxhrCZf.jpg" alt="6EBC6AEB-113C-4463-8AA7-762869E224B8.png" style="zoom:33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/akYKPXtIzxhrCZf.jpg" alt="6EBC6AEB-113C-4463-8AA7-762869E224B8.png" style="zoom:33%;" />
 <p>用Cross网络代替了Wide部分，目的是增加特征之间的交互力度，使用多层交叉层（Cross layer）对输入向量进行特征交叉。假设第<code>l</code>层交叉层的输出向量为$x_l$，那么第<code>l+1</code>层的输出向量如：</p>
-<script type="math/tex; mode=display">x_{l+1}=x_0x_l^TW_l+b_l+x_l</script><p><b>Wide&amp;Deep优点：</b></p>
+<p>$$x_{l+1}=x_0x_l^TW_l+b_l+x_l$$</p>
+<p><b>Wide&amp;Deep优点：</b></p>
 <ol>
 <li>抓住了业务问题的本质特点，能够融合传统模型记忆能力和深度学习模型泛化能力的优势；</li>
 <li>模型的结构并不复杂，比较容易在工程上实现、训练和上线，这加速了其在业界的推广应用。</li>
 </ol>
 <h1>七、FM与深度学习模型的结合</h1>
-
 <h4>7.1 FNN----用FM的隐向量完成Embedding层初始化</h4>
-
 <p><em>2016年，伦敦大学提出FNN。</em></p>
 <p>模型结构如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/rNISYnPe94Z1HCv.jpg" alt="CF1662F1-DF76-47AE-8F13-D503813AA832.png" style="zoom: 33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/rNISYnPe94Z1HCv.jpg" alt="CF1662F1-DF76-47AE-8F13-D503813AA832.png" style="zoom: 33%;" />
 <p>在神经网络的参数初始化过程中，往往采用随机初始化这种不包含任何先验信息的初始化方法。由于Embedding层的输入极端稀疏化，导致Embedding层的收敛速度非常缓慢。再加上Embedding层的参数数量往往占整个神经网络参数数量的大半以上，因此<font color='red'>模型的收敛速度往往受限于Embedding层。</font></p>
 <blockquote>
 <p>【为什么Embedding层的收敛速度往往很慢】</p>
 <p>Embedding层的作用是将稀疏输入向量转换成稠密向量，它速度慢主要有两个原因：</p>
 <ol>
-<li>Embedding层的参数数量巨大。比如，假设输入层的维度是100000，Embedding层输出维度是32，上层再加5层32维的全连接层，最后输出层维度是10，那么输出层到Embedding层的参数数量是32<em>100000=3200000，其余所有层的参数总数是（32 </em> 32）<em> 4 + 32 </em> 10 = 4416。那么Embedding层的权重总数占比是3200000/（3200000 + 4416）= 99.86%。</li>
+<li>Embedding层的参数数量巨大。比如，假设输入层的维度是100000，Embedding层输出维度是32，上层再加5层32维的全连接层，最后输出层维度是10，那么输出层到Embedding层的参数数量是32<em>100000=3200000，其余所有层的参数总数是（32 * 32）</em> 4 + 32 * 10 = 4416。那么Embedding层的权重总数占比是3200000/（3200000 + 4416）= 99.86%。</li>
 <li>由于输入向量过于稀疏，在随机梯度下降的过程中，只有与非零特征相连的Embedding层权重会被更新，这进一步降低了Embedding层的收敛速度。</li>
 </ol>
 </blockquote>
-<font color='red'>针对Embedding层收敛速度的难题，FNN模型的解决思路是有FM模型训练好的各特征隐向量初始化Embedding层的参数，相当于在初始化神经网络参数时，已经引入了有价值的先验信息。</font>
-
+<p><font color='red'>针对Embedding层收敛速度的难题，FNN模型的解决思路是有FM模型训练好的各特征隐向量初始化Embedding层的参数，相当于在初始化神经网络参数时，已经引入了有价值的先验信息。</font></p>
 <p>下图展示FM各参数和FNN中Embedding层各参数的对应关系：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/P1ZCdnQRc9E6gx5.jpg" alt="C705F516-03DB-40E0-8E8C-9C7D81631C47.png" style="zoom:33%;" /></p>
-<p>需要注意的是，虽然把FM中的参数指向了Embedding层各神经元，但其具体意义是初始化Embedding神经元与输入神经元之间的连接权重。假设FM隐向量的维度m，第i个特征域的第k维特征的隐向量是$v_{i,k}=(v_{i,k}^1,v_{i,k}^2,…,v_{i,k}^l,…,v_{i,k}^m)$，那么隐向量的第l维$v_{i,k}^l$就会成为连接输入神经元k和Embedding神经元l之间连接权重的初始值。</p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/P1ZCdnQRc9E6gx5.jpg" alt="C705F516-03DB-40E0-8E8C-9C7D81631C47.png" style="zoom:33%;" />
+<p>需要注意的是，虽然把FM中的参数指向了Embedding层各神经元，但其具体意义是初始化Embedding神经元与输入神经元之间的连接权重。假设FM隐向量的维度m，第i个特征域的第k维特征的隐向量是$v_{i,k}=(v_{i,k}<sup>1,v_{i,k}</sup>2,…,v_{i,k}<sup>l,…,v_{i,k}</sup>m)$，那么隐向量的第l维$v_{i,k}^l$就会成为连接输入神经元k和Embedding神经元l之间连接权重的初始值。</p>
 <h4>7.2 DeepFM---用FM代替Wide部分</h4>
-
-<p><em>2017年，哈工大和华为联合提出DeepFM模型。</em> </p>
+<p><em>2017年，哈工大和华为联合提出DeepFM模型。</em></p>
 <p>模型结构如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/PsFV9AqpnyK8TxD.jpg" alt="4D2082B5-8E18-4B15-94D9-EAE55075088D.png" style="zoom:33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/PsFV9AqpnyK8TxD.jpg" alt="4D2082B5-8E18-4B15-94D9-EAE55075088D.png" style="zoom:33%;" />
 <p>DeepFM对Wide&amp;Deep模型的改进之处在于，它用FM替换了原来的Wide部分，加强了浅层网络部分特征组合的能力。如上图，左边的FM部分对不同特征的Embedding进行了两两交叉，也就是将Embedding向量当作原FM中的特征隐向量。</p>
 <h4>7.3 NFM---FM的神经网络化尝试</h4>
-
 <p><em>2017年，新加坡国立大学提出NFM模型。</em></p>
 <p>原因：无论是FM，还是FFM，归根结底是一个二阶特征交叉的模型，受组合爆炸问题的困扰，FM几乎不可能扩展到三阶以上，这就限制了FM模型的表达能力。</p>
 <p>在数学形式上，NFM模型的主要思路是用一个表达能力更强的函数代替FM中二阶隐向量内积的部分。</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/ZEjbMtYq93QrfpB.jpg" alt="985A7573-A2DF-4A03-A6D1-E943A776B4A5.png" style="zoom:33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/ZEjbMtYq93QrfpB.jpg" alt="985A7573-A2DF-4A03-A6D1-E943A776B4A5.png" style="zoom:33%;" />
 <p><span style="border-bottom:2px dashed red;">如果用传统机器学习的思路来设计NFM模型中的函数f(x)，那么势必会通过一系列的数据推导构造一个表达能力更强的函数。但进入深度学习时代后，由于深度学习网络理论上有拟合任何复杂函数的能力，f(x)的构造工作可以交由某个深度学习网络来完成，并通过梯度反向传播来学习。</span></p>
 <p>NFM用以替代FM二阶部分的神经网络结构如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/6ZY2upkWqE5RBLy.jpg" alt="DA0E357C-7A07-4AF9-B2CD-5ADE2D4A4D9A.png" style="zoom:33%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/6ZY2upkWqE5RBLy.jpg" alt="DA0E357C-7A07-4AF9-B2CD-5ADE2D4A4D9A.png" style="zoom:33%;" />
 <p>主要就是特征交叉池化层（Bi-interaction Pooling Layer）。假设$V_x$是所有特征域的Embedding集合，那么特征交叉池化层的具体操作为：</p>
-<script type="math/tex; mode=display">f_{BI}(V_x)=\sum_{i=1}^{n}\sum_{j=i+1}^n(x_iv_i)\odot(x_jv_j)</script><p>其中，$\odot$代表两个向量的元素积操作。</p>
+<p>$$f_{BI}(V_x)=\sum_{i=1}<sup>{n}\sum_{j=i+1}</sup>n(x_iv_i)\odot(x_jv_j)$$</p>
+<p>其中，$\odot$代表两个向量的元素积操作。</p>
 <h1>八、注意力机制在推荐模型中的应用</h1>
-
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/fct2AOhCSaN5TgI.jpg" alt="9F98393C-6F49-49E4-ABD1-322746588D12.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/fct2AOhCSaN5TgI.jpg" alt="9F98393C-6F49-49E4-ABD1-322746588D12.png" style="zoom:50%;" />
 <h4>8.1 AFM---引入注意力机制的FM</h4>
-
 <p><em>2017年，浙江大学提出AFM。可以在做是NFM的延续。</em></p>
 <p>在NFM中，不同于的特征Embedding向量经过特征交叉池化层的交叉，将各交叉特征向量进行“加和”，输入最后由多层神经网络组成的输出层。问题的关键在于加和池化（Sum Pooling）操作，它相当于“一视同仁”地对待所有交叉特征，不考虑不同特征对结果的影响程度，事实上消解了大量有价值的信息。</p>
 <p>注意力机制，<font color='red'>基于假设——不同的交叉特征对于结果的影响程度不同。</font></p>
 <p>因此，AFM模型引入注意力机制是通过在特征交叉层和最终的输出层之间加入注意力网络（Attention Net）实现的。结果图如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/NXlJPE4hOm9qd7p.jpg" alt="5EEAB5BA-CBD3-4CF6-AADF-E53BF86147C8.png" style="zoom: 50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/NXlJPE4hOm9qd7p.jpg" alt="5EEAB5BA-CBD3-4CF6-AADF-E53BF86147C8.png" style="zoom: 50%;" />
 <p>与NFM一样，AFM的特征交叉过程同样采用了元素积操作，</p>
-<script type="math/tex; mode=display">f_{PI}(\varepsilon)=\lbrace (v\odot v_j)x_ix_j \rbrace_{(i,j)\in\mathbb{R}_x}</script><p>AFM加入注意力得分后的池化过程如，</p>
-<script type="math/tex; mode=display">f_{Att}(f_{PI}(\varepsilon))=\sum_{(i,j)\in\mathbb{R}}a_{ij}(v_i\odot v_j)x_ix_j</script><p>对注意力得分$a_{ij}$来说，最简单的方法就是用一个权重参数来表示，但<font color='red'>为了防止交叉特征数据稀疏问题带来的权重参数难以收敛，AFM模型使用了一个在两两特征交叉层（Pair-wise Interaction Layer）和池化层之间的注意力网络来生成注意力得分。</font></p>
+<p>$$f_{PI}(\varepsilon)=\lbrace (v\odot v_j)x_ix_j \rbrace_{(i,j)\in\mathbb{R}_x}$$</p>
+<p>AFM加入注意力得分后的池化过程如，</p>
+<p>$$f_{Att}(f_{PI}(\varepsilon))=\sum_{(i,j)\in\mathbb{R}}a_{ij}(v_i\odot v_j)x_ix_j$$</p>
+<p>对注意力得分$a_{ij}$来说，最简单的方法就是用一个权重参数来表示，但<font color='red'>为了防止交叉特征数据稀疏问题带来的权重参数难以收敛，AFM模型使用了一个在两两特征交叉层（Pair-wise Interaction Layer）和池化层之间的注意力网络来生成注意力得分。</font></p>
 <p>该注意力网络的结构是一个简单的单全连接层加softmax输出层的结构，数学形式如：</p>
-<script type="math/tex; mode=display">a_{ij}^{\prime}=\mathbb{h}^TReLU(W(v_i\odot v_j)x_ix_j+b)</script><script type="math/tex; mode=display">a_{ij}=\frac{exp(a_{ij}^{\prime})}{\sum_{i,j\in\mathbb{R}_X}exp(a_{ij}^\prime)}</script><p>其中要学习的参数就是特征交叉层到注意力网络全连接层的权重矩阵<code>W</code>，偏置向量<code>b</code>，以及全连接层到softmax输出层的权重向量<code>h</code>。</p>
+<p>$$a_{ij}<sup>{\prime}=\mathbb{h}</sup>TReLU(W(v_i\odot v_j)x_ix_j+b)$$</p>
+<p>$$a_{ij}=\frac{exp(a_{ij}<sup>{\prime})}{\sum_{i,j\in\mathbb{R}_X}exp(a_{ij}</sup>\prime)}$$</p>
+<p>其中要学习的参数就是特征交叉层到注意力网络全连接层的权重矩阵<code>W</code>，偏置向量<code>b</code>，以及全连接层到softmax输出层的权重向量<code>h</code>。</p>
 <h4>8.2 DIN---引入注意力机制的深度学习网络</h4>
-
 <p><em>2018年，阿里提出DIN模型。</em></p>
 <p>应用场景是阿里巴巴的电商广告推荐，模型的输入特征分为两部分：</p>
 <ul>
@@ -302,21 +306,20 @@ if (autoChangeMode === '1') {
 <li>另一部分是候选广告a的特征组。</li>
 </ul>
 <p>不论是用户还是广告，都含有两个非常重要的特征——商品id（good_id）和商铺（shop_id）。用户特征里的商品id是一个序列，代表用户曾经点击过的商品集合，商品id同理；而广告特征里的商品id和商铺id就是广告对应的商品id和商铺id。结构图如下：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/bOFo2NMtRg1drkE.jpg" alt="E1587F81-D5B9-4627-94C5-1FD65BB7E846.png" style="zoom:50%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/bOFo2NMtRg1drkE.jpg" alt="E1587F81-D5B9-4627-94C5-1FD65BB7E846.png" style="zoom:50%;" />
 <p>注意力的权重：利用候选商品和历史行为商品之间的相关性计算出一个权重，这个权重就代表了“注意力”的强弱，注意力部分的形式化表达如：</p>
-<script type="math/tex; mode=display">V_u=f(V_a)=\sum_{i=1}^Nw_i\cdot V_i=\sum_{i=1}^Ng(V_i,V_a)\cdot V_i</script><p>其中，$V_u$是用户的Embedding向量，$V_a$是候选广告商品的Embedding向量，$V_i$是用户u的第i次行为的EMbedding向量（这里就是那次浏览的商品或店铺的Embedding向量）。注意力得分$g(V_i,V_j)$是使用一个注意力激活单元（activation unit）来生成注意力得分，结构就是上图右上角的激活单元模块。</p>
+<p>$$V_u=f(V_a)=\sum_{i=1}^Nw_i\cdot V_i=\sum_{i=1}^Ng(V_i,V_a)\cdot V_i$$</p>
+<p>其中，$V_u$是用户的Embedding向量，$V_a$是候选广告商品的Embedding向量，$V_i$是用户u的第i次行为的EMbedding向量（这里就是那次浏览的商品或店铺的Embedding向量）。注意力得分$g(V_i,V_j)$是使用一个注意力激活单元（activation unit）来生成注意力得分，结构就是上图右上角的激活单元模块。</p>
 <h1>九、DIEN——序列模型与推荐系统的结合</h1>
-
 <p><em>2019年，阿里巴巴提出DIN的演化版本：DIEN。</em></p>
-<font color='red'>特定用户的历史行为都是一个随时间排序的序列，既然是时间相关的序列，九一定存在或深或浅的前后依赖关系。</font>
-
+<p><font color='red'>特定用户的历史行为都是一个随时间排序的序列，既然是时间相关的序列，九一定存在或深或浅的前后依赖关系。</font></p>
 <p>序列信息的重要性在于：</p>
 <ol>
 <li>它加强了最近行为对下次行为预测的影响；</li>
 <li>序列模型能够学习到购买<font color='red'>趋势</font>的信息。</li>
 </ol>
 <p>模型结构图：</p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/F6wZUVatCumJAiH.jpg" alt="70F492DD-701F-471B-AE0F-21A0953586CE.png" style="zoom: 67%;" /></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/09/03/F6wZUVatCumJAiH.jpg" alt="70F492DD-701F-471B-AE0F-21A0953586CE.png" style="zoom: 67%;" />
 <p>模型仍是输入层+Embedding层+连接层+多层全连接神经网络+输出层的整体架构。</p>
 <p>图中的彩色部分叫做兴趣进化网络，也是主要创新点，包括三层：</p>
 <ol>
@@ -325,23 +328,24 @@ if (autoChangeMode === '1') {
 <li>兴趣进化层（Interest Evolving Layer，浅红色部分）：主要作用是通过在兴趣抽取层基础上加入注意力机制，模拟与当前目标广告相关的兴趣进化过程。</li>
 </ol>
 <h4>9.1 兴趣抽取层的结构</h4>
-
 <p>兴趣抽取层的基本结构是GRU（Gated Recurrent Unit，门循环单元）网络。相比传统的序列模型RNN（Recurrent Neural Network，循环神经网络）和LSTM（Long Short-Term Memory，长短期记忆网络），<span style="border-bottom:2px dashed red;">GRU解决了RNN的梯度消失问题（Vanishing Gradients Problem）。与LSTM相比，GRU的参数数量更少，训练收敛速度更快。</span></p>
 <p>每个GRU单元的具体形式由系列公式定义</p>
-<script type="math/tex; mode=display">u_t=\sigma(W^ui_t+U^uh_{t-1}+b^u)</script><script type="math/tex; mode=display">r_t=\sigma(W^ri_t+U^rh_{t-1}+b^r)</script><script type="math/tex; mode=display">\widetilde{h_t{}}=tanh(W^hi_t+r_t\circ U^hh_{t-1}+b^h)</script><script type="math/tex; mode=display">h_t=(1-u_t)\circ h_{t-1}+u_t\circ \widetilde{h_t{}}</script><p>其中，$\sigma$是Sigmoid激活函数，$\circ$是元素积操作，$W^u,W^r,W^h,U^z,U^r,U^h$是6组需要学习的参数矩阵，$i_t$是输入状态向量，也就是行为序列层的各行为Embedding向量$b(t)$，$h_t$是GRU网络中第<code>t</code>个隐状态向量。</p>
+<p>$$u_t=\sigma(W<sup>ui_t+U</sup>uh_{t-1}+b^u)$$</p>
+<p>$$r_t=\sigma(W<sup>ri_t+U</sup>rh_{t-1}+b^r)$$</p>
+<p>$$\widetilde{h_t{}}=tanh(W^hi_t+r_t\circ U<sup>hh_{t-1}+b</sup>h)$$</p>
+<p>$$h_t=(1-u_t)\circ h_{t-1}+u_t\circ \widetilde{h_t{}}$$</p>
+<p>其中，$\sigma$是Sigmoid激活函数，$\circ$是元素积操作，$W<sup>u,W</sup>r,W<sup>h,U</sup>z,U<sup>r,U</sup>h$是6组需要学习的参数矩阵，$i_t$是输入状态向量，也就是行为序列层的各行为Embedding向量$b(t)$，$h_t$是GRU网络中第<code>t</code>个隐状态向量。</p>
 <p>经过由GRU组成的兴趣抽取层后，用户的行为向量$b(t)$被进一步抽象化，形成了兴趣状态向量$h(t)$。</p>
 <h4>9.2 兴趣进化层的结构</h4>
-
 <p>这一层加入了注意力机制，目的是更有针对性地模拟与目标广告相关的兴趣进化路径。</p>
 <p>注意力得分的生成过程和DIN完全一致，都是当前状态向量与目标广告向量进行互作用的结果，即考虑了与目标广告的相关性。</p>
 <p>兴趣进化层完成注意力机制的引入是通过AUGRU（GRU with Attentional Update gate，基于注意力更新门的GRU）结构，在原GRU的更新门的结构上加入了注意力得分，具体形式为</p>
-<script type="math/tex; mode=display">\widetilde{u}_t^\prime=a_t\cdot u_t^\prime</script><script type="math/tex; mode=display">h_t^\prime=(1-\widetilde{u}_t^\prime)\circ h_{t-1}^\prime+\widetilde{u}_t\circ \widetilde{h_t{}}</script><h1>十、强化学习与推荐系统的结合</h1>
-
+<p>$$\widetilde{u}_t^\prime=a_t\cdot u_t^\prime$$</p>
+<p>$$h_t<sup>\prime=(1-\widetilde{u}_t</sup>\prime)\circ h_{t-1}^\prime+\widetilde{u}_t\circ \widetilde{h_t{}}$$</p>
+<h1>十、强化学习与推荐系统的结合</h1>
 <p>强化学习（Reinforcement Learning）是近年来机器学习领域非常热门的研究话题，它的研究起源于机器人领域，针对智能体在不断变化的环境中决策和学习的过程进行建模。</p>
 <p>2018年，宾夕法尼亚大学和微软亚洲研究院提出DRN，将强化学习应用于新闻推荐系统。</p>
 <h1>十一、总结</h1>
-
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -432,7 +436,6 @@ if (autoChangeMode === '1') {
 </tr>
 </tbody>
 </table>
-</div>
 <hr>
 <ul>
 <li>[x] 《深度学习推荐系统第三章》</li>
