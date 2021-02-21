@@ -26,11 +26,22 @@
 <p>​		对偶性即导致相同的物理结果，而表面上不同的理论之间的对应。</p>
 <p>傅立叶变换中的应用：</p>
 <p>​		一个函数x(t)和它的傅立叶变换X(jw)之间的关系可以用下面的两个公式表示：</p>
-<p>$x(t)=\frac{1}{2 \pi }\int_{-\infty}<sup>{\infty}X(jw)e</sup>{jwt}dw$</p>
+<p>$x(t)= \frac{1}{2 \pi } \int_{-\infty}^{\infty} X(jw)e^{jwt} dw$</p>
 <p>和</p>
-<p>$X(jw)=\int_{-\infty}<sup>{\infty}x(t)e</sup>{-jwt}dt$</p>
+<p>$X(jw)= \int_{-\infty}^{\infty} x(t) e^{-jwt} dt$</p>
 </blockquote>
 <p>本文的主要挑战点：</p>
+<ul>
+<li><b>在异质信息网络中如何同时考虑属性和结构信息进行相关性度量</b>：不同类型的节点之间存在多条非对称的元路径；不同类型的节点属性特性不同，不能直接用欧式距离、余弦相似度等进行度量。</li>
+<li><b>如何利用约束信息同时优化相关性度量和双聚类</b>：在异质信息网络中，存在一些约束条件，如must-link和connot-link的节点对，这些约束条件同时促进了相关性度量和双聚类。如何设计有效的半监督框架，将相关性度量和双聚类进行融合，是另一个挑战。</li>
+</ul>
+<h3>方法</h3>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/02/21/76QPH1FwGoWd5tq.jpg" alt="framework.png"></p>
+<p><span style="border-bottom:2px dashed blue;">SCCAIN中，首先分别提出了异质节点的结构和属性相关性度量，继而设计一种统一的相关性度量方法。其次，设计了一种半监督的正交矩阵三分解框架，用于分解不同类型的节点聚类和聚簇相关性挖掘。最后，将相关性度量和双聚类融合到一个统一的框架中，迭代优化相关性度量和双聚类。</span></p>
+<p><b>结构相关性度量</b></p>
+<p>考虑到节点类型不同，节点之间的结构信息可以通过非对称元路径构成，本文基于HeteSim来度量单一元路径上的相关性，即：</p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/02/21/48wkGj1gvtRZE9P.jpg" alt="jgxgx.png"></p>
+<p>其中，$V_{s,i}$和$V_{t,j}$分别表示s类型的节点i和t类型的节点j，$R_1 \omicron … \omicron R_l$表示构成元路径的关系类型序列。$O$和$I$表示出度和入度。考虑到存在多条元路径，我们分别针对每条元路径进行相关性度量，并通过元路径权重参数融合多条元路径，即：</p>
 <h3>Code</h3>
 <p><a href="https://github.com/yuduo93/SCCAIN" target="_blank" rel="noopener">https://github.com/yuduo93/SCCAIN</a></p>
 ]]></content>
