@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SCCAIN</title>
+    <url>/2021/02/21/SCCAIN/</url>
+    <content><![CDATA[<h1>SCCAIN</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Semi-supervised Co-Clustering on Attributed Heterogeneous Information Networks[J]. Information Processing &amp; Management, 57( 6).</span><br><span class="line">《属性异质信息网络上的半监督双聚类》</span><br></pre></td></tr></table></figure>
+<p><font color='blue'>早先的方法独立地针对指定类型的节点进行结构相似性度量而忽视了不同类型节点之间的关联关系。</font></p>
+<p>本文研究<font color='red'>同时聚合不同类型节点的问题，其目的是挖掘异质节点之间的潜在关联，并同时针对不同类型的节点进行聚类划分。</font></p>
+<p>有两个主要挑战：</p>
+<ol>
+<li>节点之间的相似性/相关性<span style="border-bottom:2px dashed red;">不仅和结构信息相关，同时也和离散/连续的节点属性相关。</span></li>
+<li>聚类和相似性度量往往是相互促进的。</li>
+</ol>
+<p>概述：</p>
+<p>本文首先利用多条元路径和节点属性，设计了一种融合结构和属性的可学习的整体相关性度量方法。继而，本文提出了属性异质网络半监督双聚类方法SCCAIN，基于约束的正交非负矩阵三分解对不同类型的节点同时进行聚类。最后，设计了一种端到端的优化框架，可以联合优化相关性度量和双聚类。</p>
+<h3>Introduction</h3>
+<p>异质信息网络HIN包含了多种类型的节点和边关系，融合了更多的结构信息和语义特征。<span style="border-bottom:2px dashed red;">在HIN的聚类中，如何融合多关系下的节点之间的相似性度量是关键因素。</span>最近的一些方法提出融合多条元路径，自动学习不同元路径的权重。这些方法只利用了HIN中的结构信息，而忽视了节点上的属性特征。</p>
+<p>举个栗子：</p>
+<p><img src= "img/loading.gif" data-src="https://i.loli.net/2021/02/21/IL7KUwaibYnzfVc.jpg" alt="example.png"></p>
+<p>在上述图片中，当只考虑结构信息时，基于A-P-A和A-P-C-P-A元路径，作者可以聚合成两类，即{$A_1,A_2,A_3$}和{$A_4,A_5$}。而当额外考虑属性信息时，我们可以更精细地将$A_2$和{$A_1,A_3$}分离开。</p>
+<p><span style="border-bottom:2px dashed yellow;">为了将属性信息进行整合，一种朴素的方案是将所有的属性视作节点，其维度作为节点类型，整合到原始的异质信息网络中。</span>然而，这种方法只能处理离散特征，如类别、城市、机构等，而难以刻画连续特征如年龄、合作作者数量等。<span style="border-bottom:2px dashed blue;">一种更加合理的设计是将所有的属性信息构建成属性向量，其中每个维度表示一种属性特征。</span>最近的工作，如SCHAIN和SCAN，主要针对相同类型的节点同时进行聚类。而实际上，不同类型的类簇之间往往具有潜在的关联。例如，会议的聚类结果往往可以促进作者的聚类，反之亦然。</p>
+<p><span style="border-bottom:2px dashed yellow;">为了同时聚合不同类型的节点以及挖掘不同类型类簇之间的潜在关联，双聚类/协同聚类(co-clustering)是一个较好的选择。</span>与传统聚类方法不同，<font color='red'>双聚类利用特征与样本的对偶性，实现特征与样本的同时聚类。此外，双聚类方法能够在不同节点类型的簇之间推导出潜在的对应关系，从而使得到的簇更具可解释性。</font></p>
+<blockquote>
+<p>对偶性（Duality）：</p>
+<p>​		对偶性即导致相同的物理结果，而表面上不同的理论之间的对应。</p>
+<p>傅立叶变换中的应用：</p>
+<p>​		一个函数x(t)和它的傅立叶变换X(jw)之间的关系可以用下面的两个公式表示：</p>
+<p>$x(t)=\frac{1}{2 \pi }\int_{-\infty}<sup>{\infty}X(jw)e</sup>{jwt}dw$</p>
+<p>和</p>
+<p>$X(jw)=\int_{-\infty}<sup>{\infty}x(t)e</sup>{-jwt}dt$</p>
+</blockquote>
+<p>本文的主要挑战点：</p>
+<h3>Code</h3>
+<p><a href="https://github.com/yuduo93/SCCAIN" target="_blank" rel="noopener">https://github.com/yuduo93/SCCAIN</a></p>
+]]></content>
+      <categories>
+        <category>HIN</category>
+        <category>recommendation</category>
+        <category>NMTF</category>
+      </categories>
+      <tags>
+        <tag>Heterogeneous Information Networks</tag>
+        <tag>NMTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacridVAE</title>
     <url>/2021/01/19/MacridVAE/</url>
     <content><![CDATA[<h1>Introduction</h1>
