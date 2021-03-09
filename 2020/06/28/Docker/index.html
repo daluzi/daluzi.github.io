@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Docker | daluzi</title><meta name="description" content="Docker purpose：​    解决环境配置麻烦的问题。 other options: 虚拟机：资源占用多、冗余步骤多、启动慢。 Linux容器(LXC)：LXC不是模拟一个完整的操作系统，而是对进程进行隔离。即在正常进行的外面套了一个保护层，对于容器里面的进程来说，它接触到的各种资源都是虚拟的。从而实现与底层系统的隔离。启动快、资源占用少、体积小。   Docker install​"><meta name="keywords" content="docker"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/06/28/Docker/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Docker"><meta property="og:url" content="http://daluzi.top/2020/06/28/Docker/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="Docker purpose：​    解决环境配置麻烦的问题。 other options: 虚拟机：资源占用多、冗余步骤多、启动慢。 Linux容器(LXC)：LXC不是模拟一个完整的操作系统，而是对进程进行隔离。即在正常进行的外面套了一个保护层，对于容器里面的进程来说，它接触到的各种资源都是虚拟的。从而实现与底层系统的隔离。启动快、资源占用少、体积小。   Docker install​"><meta property="og:image" content="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png"><meta property="article:published_time" content="2020-06-28T14:56:07.000Z"><meta property="article:modified_time" content="2020-06-29T01:03:25.301Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="en-US" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Docker | daluzi</title><meta name="description" content="¶Docker  ¶purpose： ​	解决环境配置麻烦的问题。 ¶other options:  虚拟机：资源占用多、冗余步骤多、启动慢。 Linux容器(LXC)：LXC不是模拟一个完整的操作系统，而是对进程进行隔离。即在正常进行的外面套了一个保护层，对于容器里面的进程来说，它接触到的各种资源都是虚拟的。从而实现与底层系统的隔离。启动快、资源占用少、体积小。   ¶Docker instal"><meta name="keywords" content="docker"><meta name="author" content="daluzi"><meta name="copyright" content="daluzi"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="../../../../img/bitbug_favicon.ico"><link rel="canonical" href="http://daluzi.top/2020/06/28/Docker/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Docker"><meta property="og:url" content="http://daluzi.top/2020/06/28/Docker/"><meta property="og:site_name" content="daluzi"><meta property="og:description" content="¶Docker  ¶purpose： ​	解决环境配置麻烦的问题。 ¶other options:  虚拟机：资源占用多、冗余步骤多、启动慢。 Linux容器(LXC)：LXC不是模拟一个完整的操作系统，而是对进程进行隔离。即在正常进行的外面套了一个保护层，对于容器里面的进程来说，它接触到的各种资源都是虚拟的。从而实现与底层系统的隔离。启动快、资源占用少、体积小。   ¶Docker instal"><meta property="og:image" content="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png"><meta property="article:published_time" content="2020-06-28T14:56:07.000Z"><meta property="article:modified_time" content="2020-06-29T01:03:25.301Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -95,89 +95,98 @@ if (autoChangeMode === '1') {
 .justified-gallery img{
   opacity: 1
 }
-</style></noscript></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="../img/bitbug_favicon.ico" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="../archives/"><div class="headline">Articles</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="../tags/"><div class="headline">Tags</div><div class="length_num">42</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="../categories/"><div class="headline">Categories</div><div class="length_num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker"><span class="toc-number">1.</span> <span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#purpose："><span class="toc-number">1.0.1.</span> <span class="toc-text">purpose：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#other-options"><span class="toc-number">1.0.2.</span> <span class="toc-text">other options:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-install"><span class="toc-number">1.0.3.</span> <span class="toc-text">Docker install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#image文件"><span class="toc-number">1.0.4.</span> <span class="toc-text">image文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hello-world实例"><span class="toc-number">1.0.5.</span> <span class="toc-text">hello world实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器文件"><span class="toc-number">1.0.6.</span> <span class="toc-text">容器文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dockerfile文件"><span class="toc-number">1.0.7.</span> <span class="toc-text">Dockerfile文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例：制作自己的Docker容器"><span class="toc-number">1.0.8.</span> <span class="toc-text">实例：制作自己的Docker容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他有用的命令"><span class="toc-number">1.0.9.</span> <span class="toc-text">其他有用的命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem"><span class="toc-number">2.</span> <span class="toc-text">Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reference"><span class="toc-number">2.0.1.</span> <span class="toc-text">reference:</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="../index.html">daluzi</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Docker</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-28 22:56:07"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-06-28</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-06-29 09:03:25"><i class="fas fa-history fa-fw"></i> Updated 2020-06-29</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="../../../../categories/Docker/">Docker</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png" alt="docker.png" style="zoom: 80%;" /></p>
-<h4 id="purpose："><a href="#purpose：" class="headerlink" title="purpose："></a>purpose：</h4><p>​    解决环境配置麻烦的问题。</p>
-<h4 id="other-options"><a href="#other-options" class="headerlink" title="other options:"></a>other options:</h4><ul>
+</style></noscript></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="../img/bitbug_favicon.ico" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="../archives/"><div class="headline">Articles</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="../tags/"><div class="headline">Tags</div><div class="length_num">43</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="../categories/"><div class="headline">Categories</div><div class="length_num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker"><span class="toc-number">1.</span> <span class="toc-text">¶Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#purpose："><span class="toc-number">1.0.1.</span> <span class="toc-text">¶purpose：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#other-options"><span class="toc-number">1.0.2.</span> <span class="toc-text">¶other options:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-install"><span class="toc-number">1.0.3.</span> <span class="toc-text">¶Docker install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#image文件"><span class="toc-number">1.0.4.</span> <span class="toc-text">¶image文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hello-world实例"><span class="toc-number">1.0.5.</span> <span class="toc-text">¶hello world实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器文件"><span class="toc-number">1.0.6.</span> <span class="toc-text">¶容器文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dockerfile文件"><span class="toc-number">1.0.7.</span> <span class="toc-text">¶Dockerfile文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例：制作自己的Docker容器"><span class="toc-number">1.0.8.</span> <span class="toc-text">¶实例：制作自己的Docker容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他有用的命令"><span class="toc-number">1.0.9.</span> <span class="toc-text">¶其他有用的命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem"><span class="toc-number">2.</span> <span class="toc-text">¶Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#reference"><span class="toc-number">2.0.1.</span> <span class="toc-text">¶reference:</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="../index.html">daluzi</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="../index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="../archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="../tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="../categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="../music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="../movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="../link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="../about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Docker</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-28 22:56:07"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-06-28</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-06-29 09:03:25"><i class="fas fa-history fa-fw"></i> Updated 2020-06-29</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="../../../../categories/Docker/">Docker</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="Docker"><a class="header-anchor" href="#Docker">¶</a>Docker</h2>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/06/28/hnm5d3vaqzFY9sJ.png" alt="docker.png" style="zoom: 80%;" />
+<h4 id="purpose："><a class="header-anchor" href="#purpose：">¶</a>purpose：</h4>
+<p>​	解决环境配置麻烦的问题。</p>
+<h4 id="other-options"><a class="header-anchor" href="#other-options">¶</a>other options:</h4>
+<ul>
 <li>虚拟机：资源占用多、冗余步骤多、启动慢。</li>
 <li>Linux容器(LXC)：LXC不是模拟一个完整的操作系统，而是对进程进行隔离。即在正常进行的外面套了一个保护层，对于容器里面的进程来说，它接触到的各种资源都是虚拟的。从而实现与底层系统的隔离。启动快、资源占用少、体积小。</li>
 </ul>
 <hr>
-<h4 id="Docker-install"><a href="#Docker-install" class="headerlink" title="Docker install"></a>Docker install</h4><p>​    属于LXC的一种封装，提供简单易用的容器使用接口，是目前最流行的LXC。</p>
-<p>​    Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。总体来说，Docker 的接口相当简单，用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。</p>
-<p>​    Docker 需要用户具有 sudo 权限，为了避免每次命令都输入<code>sudo</code>，可以把用户加入 Docker 用户组（<a href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user" target="_blank" rel="noopener">官方文档</a>）。</p>
+<h4 id="Docker-install"><a class="header-anchor" href="#Docker-install">¶</a>Docker install</h4>
+<p>​	属于LXC的一种封装，提供简单易用的容器使用接口，是目前最流行的LXC。</p>
+<p>​	Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。总体来说，Docker 的接口相当简单，用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。</p>
+<p>​	Docker 需要用户具有 sudo 权限，为了避免每次命令都输入<code>sudo</code>，可以把用户加入 Docker 用户组（<a href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user" target="_blank" rel="noopener">官方文档</a>）。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    Docker 是服务器——客户端架构。命令行运行<code>docker</code>命令的时候，需要本机有 Docker 服务。如果这项服务没有启动，可以用下面的命令启动（<a href="https://docs.docker.com/config/daemon/systemd/" target="_blank" rel="noopener">官方文档</a>）。</p>
+<p>​	Docker 是服务器----客户端架构。命令行运行<code>docker</code>命令的时候，需要本机有 Docker 服务。如果这项服务没有启动，可以用下面的命令启动（<a href="https://docs.docker.com/config/daemon/systemd/" target="_blank" rel="noopener">官方文档</a>）。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># service 命令的用法</span></span><br><span class="line">$ sudo service docker start</span><br><span class="line"></span><br><span class="line"><span class="comment"># systemctl 命令的用法</span></span><br><span class="line">$ sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h4 id="image文件"><a href="#image文件" class="headerlink" title="image文件"></a>image文件</h4><p>​    <strong>Docker 把应用程序及其依赖，打包在 image 文件里面。</strong>只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
-<p>​    image 是二进制文件。实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p>
+<h4 id="image文件"><a class="header-anchor" href="#image文件">¶</a>image文件</h4>
+<p>​	**Docker 把应用程序及其依赖，打包在 image 文件里面。**只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
+<p>​	image 是二进制文件。实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有 image 文件。</span></span><br><span class="line">$ docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除 image 文件</span></span><br><span class="line">$ docker image rm [imageName]</span><br></pre></td></tr></table></figure>
-<p>​    image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p>
-<p>​    为了方便共享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> 是最重要、最常用的 image 仓库。此外，出售自己制作的 image 文件也是可以的。</p>
-<h4 id="hello-world实例"><a href="#hello-world实例" class="headerlink" title="hello world实例"></a>hello world实例</h4><p>​    首先，运行下面的命令，将 image 文件从仓库抓取到本地。</p>
+<p>​	image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p>
+<p>​	为了方便共享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> 是最重要、最常用的 image 仓库。此外，出售自己制作的 image 文件也是可以的。</p>
+<h4 id="hello-world实例"><a class="header-anchor" href="#hello-world实例">¶</a>hello world实例</h4>
+<p>​	首先，运行下面的命令，将 image 文件从仓库抓取到本地。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image pull library/hello-world</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面代码中，<code>docker image pull</code>是抓取 image 文件的命令。<code>library/hello-world</code>是 image 文件在仓库里面的位置，其中<code>library</code>是 image 文件所在的组，<code>hello-world</code>是 image 文件的名字。</p>
-<p>​    由于 Docker 官方提供的 image 文件，都放在<a href="https://hub.docker.com/r/library/" target="_blank" rel="noopener"><code>library</code></a>组里面，所以它的是默认组，可以省略。因此，上面的命令可以写成下面这样。</p>
+<p>​	上面代码中，<code>docker image pull</code>是抓取 image 文件的命令。<code>library/hello-world</code>是 image 文件在仓库里面的位置，其中<code>library</code>是 image 文件所在的组，<code>hello-world</code>是 image 文件的名字。</p>
+<p>​	由于 Docker 官方提供的 image 文件，都放在<a href="https://hub.docker.com/r/library/" target="_blank" rel="noopener"><code>library</code></a>组里面，所以它的是默认组，可以省略。因此，上面的命令可以写成下面这样。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image pull hello-world</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    抓取成功以后，就可以在本机看到这个 image 文件了。</p>
+<p>​	抓取成功以后，就可以在本机看到这个 image 文件了。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image ls</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    现在，运行这个 image 文件。</p>
+<p>​	现在，运行这个 image 文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run hello-world</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <code>docker container run</code>命令会从 image 文件，生成一个正在运行的容器实例。</p>
-<p>​    注意，<code>docker container run</code>命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从仓库自动抓取。因此，前面的<code>docker image pull</code>命令并不是必需的步骤。</p>
+<p>​	<code>		docker container run</code>命令会从 image 文件，生成一个正在运行的容器实例。</p>
+<p>​	注意，<code>docker container run</code>命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从仓库自动抓取。因此，前面的<code>docker image pull</code>命令并不是必需的步骤。</p>
 <p>如果运行成功，你会在屏幕上读到下面的输出。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run hello-world</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    输出这段提示以后，<code>hello world</code>就会停止运行，容器自动终止。</p>
-<p>​    有些容器不会自动终止，因为提供的是服务。比如，安装运行 Ubuntu 的 image，就可以在命令行体验 Ubuntu 系统。</p>
+<p>​	输出这段提示以后，<code>hello world</code>就会停止运行，容器自动终止。</p>
+<p>​	有些容器不会自动终止，因为提供的是服务。比如，安装运行 Ubuntu 的 image，就可以在命令行体验 Ubuntu 系统。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run -it ubuntu bash</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    对于那些不会自动终止的容器，必须使用<a href="https://docs.docker.com/engine/reference/commandline/container_kill/" target="_blank" rel="noopener"><code>docker container kill</code></a> 命令手动终止。</p>
+<p>​	对于那些不会自动终止的容器，必须使用<a href="https://docs.docker.com/engine/reference/commandline/container_kill/" target="_blank" rel="noopener"><code>docker container kill</code></a> 命令手动终止。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container <span class="built_in">kill</span> [containID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h4 id="容器文件"><a href="#容器文件" class="headerlink" title="容器文件"></a>容器文件</h4><p>​    <strong>image 文件生成的容器实例，本身也是一个文件，称为容器文件。</strong>也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</p>
+<h4 id="容器文件"><a class="header-anchor" href="#容器文件">¶</a>容器文件</h4>
+<p>​	**image 文件生成的容器实例，本身也是一个文件，称为容器文件。**也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机正在运行的容器</span></span><br><span class="line">$ docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">$ docker container ls --all</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面命令的输出结果之中，包括容器的 ID。很多地方都需要提供这个 ID，比如上一节终止容器运行的<code>docker container kill</code>命令。</p>
-<p>​    终止运行的容器文件，依然会占据硬盘空间，可以使用<a href="https://docs.docker.com/engine/reference/commandline/container_rm/" target="_blank" rel="noopener"><code>docker container rm</code></a>命令删除。</p>
+<p>​	上面命令的输出结果之中，包括容器的 ID。很多地方都需要提供这个 ID，比如上一节终止容器运行的<code>docker container kill</code>命令。</p>
+<p>​	终止运行的容器文件，依然会占据硬盘空间，可以使用<a href="https://docs.docker.com/engine/reference/commandline/container_rm/" target="_blank" rel="noopener"><code>docker container rm</code></a>命令删除。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container rm [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    运行上面的命令之后，再使用<code>docker container ls --all</code>命令，就会发现被删除的容器文件已经消失了。</p>
-<h4 id="Dockerfile文件"><a href="#Dockerfile文件" class="headerlink" title="Dockerfile文件"></a>Dockerfile文件</h4><p>​    学会使用 image 文件以后，接下来的问题就是，如何可以生成 image 文件？如果你要推广自己的软件，势必要自己制作 image 文件。</p>
-<p>​    这就需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。Docker 根据 该文件生成二进制的 image 文件。</p>
-<p>​    下面通过一个实例，演示如何编写 Dockerfile 文件。</p>
-<h4 id="实例：制作自己的Docker容器"><a href="#实例：制作自己的Docker容器" class="headerlink" title="实例：制作自己的Docker容器"></a>实例：制作自己的Docker容器</h4><p>​    下面我以 <a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="noopener">koa-demos</a> 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。</p>
-<p>​    作为准备工作，请先<a href="https://github.com/ruanyf/koa-demos/archive/master.zip" target="_blank" rel="noopener">下载源码</a>。</p>
+<p>​	运行上面的命令之后，再使用<code>docker container ls --all</code>命令，就会发现被删除的容器文件已经消失了。</p>
+<h4 id="Dockerfile文件"><a class="header-anchor" href="#Dockerfile文件">¶</a>Dockerfile文件</h4>
+<p>​	学会使用 image 文件以后，接下来的问题就是，如何可以生成 image 文件？如果你要推广自己的软件，势必要自己制作 image 文件。</p>
+<p>​	这就需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。Docker 根据 该文件生成二进制的 image 文件。</p>
+<p>​	下面通过一个实例，演示如何编写 Dockerfile 文件。</p>
+<h4 id="实例：制作自己的Docker容器"><a class="header-anchor" href="#实例：制作自己的Docker容器">¶</a>实例：制作自己的Docker容器</h4>
+<p>​	下面我以 <a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="noopener">koa-demos</a> 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。</p>
+<p>​	作为准备工作，请先<a href="https://github.com/ruanyf/koa-demos/archive/master.zip" target="_blank" rel="noopener">下载源码</a>。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/ruanyf/koa-demos.git</span><br><span class="line">$ <span class="built_in">cd</span> koa-demos</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>​    <b>1 编写 Dockerfile 文件</b></p>
-<p>​    首先，在项目的根目录下，新建一个文本文件<code>.dockerignore</code>，写入下面的<a href="https://github.com/ruanyf/koa-demos/blob/master/.dockerignore" target="_blank" rel="noopener">内容</a>。</p>
+<p>​	首先，在项目的根目录下，新建一个文本文件<code>.dockerignore</code>，写入下面的<a href="https://github.com/ruanyf/koa-demos/blob/master/.dockerignore" target="_blank" rel="noopener">内容</a>。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.git</span><br><span class="line">node_modules</span><br><span class="line">npm-debug.log</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面代码表示，这三个路径要排除，不要打包进入 image 文件。如果你没有路径要排除，这个文件可以不新建。</p>
-<p>​    然后，在项目的根目录下，新建一个文本文件 Dockerfile，写入下面的<a href="https://github.com/ruanyf/koa-demos/blob/master/Dockerfile" target="_blank" rel="noopener">内容</a>。</p>
+<p>​	上面代码表示，这三个路径要排除，不要打包进入 image 文件。如果你没有路径要排除，这个文件可以不新建。</p>
+<p>​	然后，在项目的根目录下，新建一个文本文件 Dockerfile，写入下面的<a href="https://github.com/ruanyf/koa-demos/blob/master/Dockerfile" target="_blank" rel="noopener">内容</a>。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM node:8.4</span><br><span class="line">COPY . /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">RUN npm install --registry=https://registry.npm.taobao.org</span><br><span class="line">EXPOSE 3000</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面代码一共五行，含义如下。</p>
+<p>​	上面代码一共五行，含义如下。</p>
 <blockquote>
 <ul>
 <li><code>FROM node:8.4</code>：该 image 文件继承官方的 node image，冒号表示标签，这里标签是<code>8.4</code>，即8.4版本的 node。</li>
@@ -187,22 +196,22 @@ if (autoChangeMode === '1') {
 <li><code>EXPOSE 3000</code>：将容器 3000 端口暴露出来， 允许外部连接这个端口。</li>
 </ul>
 </blockquote>
-<p>​    <b>10.2 创建 image 文件</b></p>
-<p>​    有了 Dockerfile 文件以后，就可以使用<code>docker image build</code>命令创建 image 文件了。</p>
+<p>​	<b>10.2 创建 image 文件</b></p>
+<p>​	有了 Dockerfile 文件以后，就可以使用<code>docker image build</code>命令创建 image 文件了。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image build -t koa-demo .</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker image build -t koa-demo:0.0.1 .</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面代码中，<code>-t</code>参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是<code>latest</code>。最后的那个点表示 Dockerfile 文件所在的路径，上例是当前路径，所以是一个点。</p>
-<p>​    如果运行成功，就可以看到新生成的 image 文件<code>koa-demo</code>了。</p>
+<p>​	上面代码中，<code>-t</code>参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是<code>latest</code>。最后的那个点表示 Dockerfile 文件所在的路径，上例是当前路径，所以是一个点。</p>
+<p>​	如果运行成功，就可以看到新生成的 image 文件<code>koa-demo</code>了。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image ls</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <b>10.3 生成容器</b></p>
-<p>​    <code>docker container run</code>命令会从 image 文件生成容器。</p>
+<p>​	<b>10.3 生成容器</b></p>
+<p>​	<code>docker container run</code>命令会从 image 文件生成容器。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run -p 8000:3000 -it koa-demo /bin/bash</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker container run -p 8000:3000 -it koa-demo:0.0.1 /bin/bash</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面命令的各个参数含义如下：</p>
+<p>​	上面命令的各个参数含义如下：</p>
 <blockquote>
 <ul>
 <li><code>-p</code>参数：容器的 3000 端口映射到本机的 8000 端口。</li>
@@ -211,96 +220,103 @@ if (autoChangeMode === '1') {
 <li><code>/bin/bash</code>：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。</li>
 </ul>
 </blockquote>
-<p>​    如果一切正常，运行上面的命令以后，就会返回一个命令行提示符。</p>
+<p>​	如果一切正常，运行上面的命令以后，就会返回一个命令行提示符。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@66d80f4aaf1e:/app<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    这表示你已经在容器里面了，返回的提示符就是容器内部的 Shell 提示符。执行下面的命令。</p>
+<p>​	这表示你已经在容器里面了，返回的提示符就是容器内部的 Shell 提示符。执行下面的命令。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@66d80f4aaf1e:/app<span class="comment"># node demos/01.js</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    这时，Koa 框架已经运行起来了。打开本机的浏览器，访问 <a href="http://127.0.0.1:8000，网页显示&quot;Not" target="_blank" rel="noopener">http://127.0.0.1:8000，网页显示&quot;Not</a> Found”，这是因为这个 <a href="https://github.com/ruanyf/koa-demos/blob/master/demos/01.js" target="_blank" rel="noopener">demo</a> 没有写路由。</p>
-<p>​    这个例子中，Node 进程运行在 Docker 容器的虚拟环境里面，进程接触到的文件系统和网络接口都是虚拟的，与本机的文件系统和网络接口是隔离的，因此需要定义容器与物理机的端口映射（map）。</p>
-<p>​    现在，在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。此外，也可以用<code>docker container kill</code>终止容器运行。</p>
+<p>​	这时，Koa 框架已经运行起来了。打开本机的浏览器，访问 <a href="http://127.0.0.1:8000" target="_blank" rel="noopener">http://127.0.0.1:8000</a>，网页显示&quot;Not Found&quot;，这是因为这个 <a href="https://github.com/ruanyf/koa-demos/blob/master/demos/01.js" target="_blank" rel="noopener">demo</a> 没有写路由。</p>
+<p>​	这个例子中，Node 进程运行在 Docker 容器的虚拟环境里面，进程接触到的文件系统和网络接口都是虚拟的，与本机的文件系统和网络接口是隔离的，因此需要定义容器与物理机的端口映射（map）。</p>
+<p>​	现在，在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。此外，也可以用<code>docker container kill</code>终止容器运行。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在本机的另一个终端窗口，查出容器的 ID</span></span><br><span class="line">$ docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止指定的容器运行</span></span><br><span class="line">$ docker container <span class="built_in">kill</span> [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    容器停止运行之后，并不会消失，用下面的命令删除容器文件。</p>
+<p>​	容器停止运行之后，并不会消失，用下面的命令删除容器文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查出容器的 ID</span></span><br><span class="line">$ docker container ls --all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">$ docker container rm [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    也可以使用<code>docker container run</code>命令的<code>--rm</code>参数，在容器终止运行后自动删除容器文件。</p>
+<p>​	也可以使用<code>docker container run</code>命令的<code>--rm</code>参数，在容器终止运行后自动删除容器文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run --rm -p 8000:3000 -it koa-demo /bin/bash</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <b>10.4 CMD 命令</b></p>
-<p>​    上一节的例子里面，容器启动以后，需要手动输入命令<code>node demos/01.js</code>。我们可以把这个命令写在 Dockerfile 里面，这样容器启动以后，这个命令就已经执行了，不用再手动输入了。</p>
+<p>​	<b>10.4 CMD 命令</b></p>
+<p>​	上一节的例子里面，容器启动以后，需要手动输入命令<code>node demos/01.js</code>。我们可以把这个命令写在 Dockerfile 里面，这样容器启动以后，这个命令就已经执行了，不用再手动输入了。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM node:8.4</span><br><span class="line">COPY . /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">RUN npm install --registry=https://registry.npm.taobao.org</span><br><span class="line">EXPOSE 3000</span><br><span class="line">CMD node demos/01.js</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    上面的 Dockerfile 里面，多了最后一行<code>CMD node demos/01.js</code>，它表示容器启动后自动执行<code>node demos/01.js</code>。</p>
-<p>​    你可能会问，<code>RUN</code>命令与<code>CMD</code>命令的区别在哪里？简单说，<code>RUN</code>命令在 image 文件的构建阶段执行，执行结果都会打包进入 image 文件；<code>CMD</code>命令则是在容器启动后执行。另外，一个 Dockerfile 可以包含多个<code>RUN</code>命令，但是只能有一个<code>CMD</code>命令。</p>
-<p>​    注意，指定了<code>CMD</code>命令以后，<code>docker container run</code>命令就不能附加命令了（比如前面的<code>/bin/bash</code>），否则它会覆盖<code>CMD</code>命令。现在，启动容器可以使用下面的命令。</p>
+<p>​	上面的 Dockerfile 里面，多了最后一行<code>CMD node demos/01.js</code>，它表示容器启动后自动执行<code>node demos/01.js</code>。</p>
+<p>​	你可能会问，<code>RUN</code>命令与<code>CMD</code>命令的区别在哪里？简单说，<code>RUN</code>命令在 image 文件的构建阶段执行，执行结果都会打包进入 image 文件；<code>CMD</code>命令则是在容器启动后执行。另外，一个 Dockerfile 可以包含多个<code>RUN</code>命令，但是只能有一个<code>CMD</code>命令。</p>
+<p>​	注意，指定了<code>CMD</code>命令以后，<code>docker container run</code>命令就不能附加命令了（比如前面的<code>/bin/bash</code>），否则它会覆盖<code>CMD</code>命令。现在，启动容器可以使用下面的命令。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container run --rm -p 8000:3000 -it koa-demo:0.0.1</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <b>10.5 发布 image 文件</b></p>
-<p>​    容器运行成功后，就确认了 image 文件的有效性。这时，我们就可以考虑把 image 文件分享到网上，让其他人使用。</p>
-<p>​    首先，去 <a href="https://hub.docker.com/" target="_blank" rel="noopener">hub.docker.com</a> 或 <a href="https://cloud.docker.com/" target="_blank" rel="noopener">cloud.docker.com</a> 注册一个账户。然后，用下面的命令登录。</p>
+<p>​	<b>10.5 发布 image 文件</b></p>
+<p>​	容器运行成功后，就确认了 image 文件的有效性。这时，我们就可以考虑把 image 文件分享到网上，让其他人使用。</p>
+<p>​	首先，去 <a href="https://hub.docker.com/" target="_blank" rel="noopener">hub.docker.com</a> 或 <a href="https://cloud.docker.com/" target="_blank" rel="noopener">cloud.docker.com</a> 注册一个账户。然后，用下面的命令登录。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker login</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    接着，为本地的 image 标注用户名和版本。</p>
+<p>​	接着，为本地的 image 标注用户名和版本。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image tag [imageName] [username]/[repository]:[tag]</span><br><span class="line"><span class="comment"># 实例</span></span><br><span class="line">$ docker image tag koa-demos:0.0.1 ruanyf/koa-demos:0.0.1</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    也可以不标注用户名，重新构建一下 image 文件。</p>
+<p>​	也可以不标注用户名，重新构建一下 image 文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image build -t [username]/[repository]:[tag] .</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    最后，发布 image 文件。</p>
+<p>​	最后，发布 image 文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker image push [username]/[repository]:[tag]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    发布成功以后，登录 hub.docker.com，就可以看到已经发布的 image 文件。</p>
-<h4 id="其他有用的命令"><a href="#其他有用的命令" class="headerlink" title="其他有用的命令"></a>其他有用的命令</h4><p>​    docker 的主要用法就是上面这些，此外还有几个命令，也非常有用。</p>
-<p>​    <strong>（1）docker container start</strong></p>
-<p>​    前面的<code>docker container run</code>命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。如果希望重复使用容器，就要使用<code>docker container start</code>命令，它用来启动已经生成、已经停止运行的容器文件。</p>
+<p>​	发布成功以后，登录 <a href="http://hub.docker.com" target="_blank" rel="noopener">hub.docker.com</a>，就可以看到已经发布的 image 文件。</p>
+<h4 id="其他有用的命令"><a class="header-anchor" href="#其他有用的命令">¶</a>其他有用的命令</h4>
+<p>​	docker 的主要用法就是上面这些，此外还有几个命令，也非常有用。</p>
+<p>​	<strong>（1）docker container start</strong></p>
+<p>​	前面的<code>docker container run</code>命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。如果希望重复使用容器，就要使用<code>docker container start</code>命令，它用来启动已经生成、已经停止运行的容器文件。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container start [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <strong>（2）docker container stop</strong></p>
-<p>​    前面的<code>docker container kill</code>命令终止容器运行，相当于向容器里面的主进程发出 SIGKILL 信号。而<code>docker container stop</code>命令也是用来终止容器运行，相当于向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。</p>
+<p>​	<strong>（2）docker container stop</strong></p>
+<p>​	前面的<code>docker container kill</code>命令终止容器运行，相当于向容器里面的主进程发出 SIGKILL 信号。而<code>docker container stop</code>命令也是用来终止容器运行，相当于向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ bash container stop [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。</p>
-<p>​    <strong>（3）docker container logs</strong></p>
+<p>​	这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。</p>
+<p>​	<strong>（3）docker container logs</strong></p>
 <p><code>docker container logs</code>命令用来查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令查看输出。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container logs [containerID]</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <strong>（4）docker container exec</strong></p>
-<p>​    <code>docker container exec</code>命令用于进入一个正在运行的 docker 容器。如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。</p>
+<p>​	<strong>（4）docker container exec</strong></p>
+<p>​	<code>	docker container exec</code>命令用于进入一个正在运行的 docker 容器。如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container <span class="built_in">exec</span> -it [containerID] /bin/bash</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>​    <strong>（5）docker container cp</strong></p>
-<p>​    <code>docker container cp</code>命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。</p>
+<p>​	<strong>（5）docker container cp</strong></p>
+<p>​	<code>docker container cp</code>命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。</p>
 <blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker container cp [containID]:[/path/to/file] .</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>​    Windows上安装了docker之后，netkeeper报如下错误：</p>
-<p>​    <b>sorry,this application cannot be run under a Virtual Machine</b></p>
-<p><img src= "img/loading.gif" data-src="https://i.loli.net/2020/06/29/bpL5eSUHEQGAOtT.png" alt="error.png" style="zoom:50%;" /></p>
-<p>​    搜索了到如下几种参考方法(直接看第三种即可)：</p>
-<p>​    1.开机时打开BIOS，关闭virtual tchnology这一选项,具体操作参考下面链接(<a href="http://www.udaxia.com/upqd/5254.html).但对于我没法尝试.(失败" target="_blank" rel="noopener">http://www.udaxia.com/upqd/5254.html).但对于我没法尝试.(失败</a>)<br>​    2.在控制面板→程序→启用或关闭 Windows 功能下,取消Hyper-V选项,重启电脑,参考下面链接（<a href="https://blog.csdn.net/sdut15110581043/article/details/53330481/).尝试无数遍,重启无数遍,均失败.(失败" target="_blank" rel="noopener">https://blog.csdn.net/sdut15110581043/article/details/53330481/).尝试无数遍,重启无数遍,均失败.(失败</a>)</p>
-<p>​    <b>可忽略上面失败的解决方案</b><br>​    3.禁用Hyper-V正确姿势来了(第二种方法不行)<br>​    ①打开Windows PowerShell（管理员）</p>
-<p>​    ②运行命令bcdedit /set hypervisorlaunchtype off<br>​    注意:上述命令有一个空格的存在</p>
-<p>​    ③重启计算机</p>
-<p>​    如果要重新开启Hyper-V，按照方法3执行bcdedit / set hypervisorlaunchtype auto 命令并重启计算机即可。</p>
+<h2 id="Problem"><a class="header-anchor" href="#Problem">¶</a>Problem</h2>
+<p>​	Windows上安装了docker之后，netkeeper报如下错误：</p>
+<p>​	<b>sorry,this application cannot be run under a Virtual Machine</b></p>
+<img src= "img/loading.gif" data-src="https://i.loli.net/2020/06/29/bpL5eSUHEQGAOtT.png" alt="error.png" style="zoom:50%;" />
+<p>​	搜索了到如下几种参考方法(直接看第三种即可)：</p>
+<p>​	1.开机时打开BIOS，关闭virtual tchnology这一选项,具体操作参考下面链接(<a href="http://www.udaxia.com/upqd/5254.html" target="_blank" rel="noopener">http://www.udaxia.com/upqd/5254.html</a>).但对于我没法尝试.(失败)<br>
+​	2.在控制面板→程序→启用或关闭 Windows 功能下,取消Hyper-V选项,重启电脑,参考下面链接（<a href="https://blog.csdn.net/sdut15110581043/article/details/53330481/" target="_blank" rel="noopener">https://blog.csdn.net/sdut15110581043/article/details/53330481/</a>).尝试无数遍,重启无数遍,均失败.(失败)</p>
+<p>​	<b>可忽略上面失败的解决方案</b><br>
+​	3.禁用Hyper-V正确姿势来了(第二种方法不行)<br>
+​	①打开Windows PowerShell（管理员）</p>
+<p>​	②运行命令bcdedit /set hypervisorlaunchtype off<br>
+​	注意:上述命令有一个空格的存在</p>
+<p>​	③重启计算机</p>
+<p>​	如果要重新开启Hyper-V，按照方法3执行bcdedit / set hypervisorlaunchtype auto 命令并重启计算机即可。</p>
 <p>原文链接：<a href="https://blog.csdn.net/qq_43942195/article/details/88600624" target="_blank" rel="noopener">https://blog.csdn.net/qq_43942195/article/details/88600624</a></p>
-<h4 id="reference"><a href="#reference" class="headerlink" title="reference:"></a>reference:</h4><ul>
+<h4 id="reference"><a class="header-anchor" href="#reference">¶</a>reference:</h4>
+<ul>
 <li><a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker官网</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">阮一峰的Dockers入门</a></li>
 </ul>
